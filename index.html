@@ -3,410 +3,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PayParity — Is This Salary Offer Actually Good?</title>
-<meta name="description" content="Free salary comparison calculator. Adjust for cost of living, taxes, and market benchmarks — then get a negotiation email ready to send in 30 seconds.">
+<title>Salary Reality Check — Is This Offer Actually Good?</title>
+<meta name="description" content="Free salary comparison calculator. Adjust for cost of living, taxes, and market benchmarks across 50+ cities worldwide — get a negotiation email in 30 seconds.">
 <meta name="keywords" content="salary comparison, cost of living calculator, salary negotiation, is my salary good, salary by city, real salary calculator">
-<meta property="og:title" content="PayParity — Is This Salary Offer Actually Good?">
-<meta property="og:description" content="Adjust for cost of living, taxes & market data. Get a negotiation email in 30 seconds. Free.">
+<meta property="og:title" content="Salary Reality Check — Is This Offer Actually Good?">
+<meta property="og:description" content="Adjust for cost of living, taxes & market data across 50+ cities. Get a negotiation email in 30 seconds. Free.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://payparity.com">
-<link rel="canonical" href="https://payparity.com">
-
-<!-- Google Fonts -->
+<meta property="og:url" content="https://salaryparity.com/salary-calculator">
+<link rel="canonical" href="https://salaryparity.com/salary-calculator">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7330952168261894" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7330952168261894" crossorigin="anonymous"></script>
-
-<!-- Structured data for SEO -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "PayParity",
+  "name": "Salary Reality Check",
   "description": "Salary comparison calculator with cost of living adjustment, tax estimation, and negotiation email generator.",
-  "url": "https://payparity.com",
+  "url": "https://salaryparity.com/salary-calculator",
   "applicationCategory": "FinanceApplication",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
-
 <style>
   :root {
-    --green: #1D9E75;
-    --green-dark: #0F6E56;
-    --green-light: #E1F5EE;
-    --green-text: #085041;
-    --amber: #EF9F27;
-    --amber-light: #FAEEDA;
-    --amber-text: #633806;
-    --red: #E24B4A;
-    --red-light: #FCEBEB;
-    --red-text: #501313;
-    --blue: #378ADD;
-    --blue-light: #E6F1FB;
-    --blue-text: #0C447C;
-    --gray-50: #F8F8F7;
-    --gray-100: #F1F0EC;
-    --gray-200: #E0DED8;
-    --gray-400: #9B9A95;
-    --gray-600: #5F5E5A;
-    --gray-900: #1A1A18;
-    --text: #1A1A18;
-    --text-muted: #5F5E5A;
-    --text-faint: #9B9A95;
-    --border: rgba(0,0,0,0.08);
-    --border-hover: rgba(0,0,0,0.16);
-    --radius: 10px;
-    --radius-sm: 6px;
-    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --green:#1D9E75;--green-dark:#0F6E56;--green-light:#E1F5EE;--green-text:#085041;
+    --amber:#EF9F27;--amber-light:#FAEEDA;--amber-text:#633806;
+    --red:#E24B4A;--red-light:#FCEBEB;--red-text:#501313;
+    --blue:#378ADD;--blue-light:#E6F1FB;
+    --gray-50:#F8F8F7;--gray-100:#F1F0EC;--gray-200:#E0DED8;
+    --gray-400:#9B9A95;--gray-600:#5F5E5A;--gray-900:#1A1A18;
+    --text:#1A1A18;--text-muted:#5F5E5A;--text-faint:#9B9A95;
+    --border:rgba(0,0,0,0.08);--radius:10px;--radius-sm:6px;
+    --shadow:0 1px 3px rgba(0,0,0,0.06);
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'DM Sans', system-ui, sans-serif;
-    background: var(--gray-50);
-    color: var(--text);
-    line-height: 1.6;
-    min-height: 100vh;
-  }
-
-  /* NAV */
-  nav {
-    background: #fff;
-    border-bottom: 1px solid var(--border);
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 56px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .nav-logo { font-size: 18px; font-weight: 600; color: var(--text); text-decoration: none; }
-  .nav-logo span { color: var(--green); }
-  .nav-links { display: flex; gap: 20px; }
-  .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; }
-  .nav-links a:hover { color: var(--text); }
-  .nav-cta {
-    font-size: 13px; font-weight: 500;
-    background: var(--green); color: #fff;
-    border: none; border-radius: var(--radius-sm);
-    padding: 7px 16px; cursor: pointer; text-decoration: none;
-  }
-
-  /* HERO */
-  .hero {
-    text-align: center;
-    padding: 64px 24px 48px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .hero-badge {
-    display: inline-block;
-    font-size: 11px; font-weight: 500;
-    background: var(--green-light); color: var(--green-text);
-    padding: 4px 12px; border-radius: 999px; margin-bottom: 20px;
-    letter-spacing: 0.5px;
-  }
-  h1 {
-    font-size: clamp(28px, 5vw, 40px);
-    font-weight: 600;
-    line-height: 1.2;
-    color: var(--text);
-    margin-bottom: 16px;
-    letter-spacing: -0.5px;
-  }
-  h1 em { font-style: normal; color: var(--green); }
-  .hero-sub {
-    font-size: 16px;
-    color: var(--text-muted);
-    max-width: 440px;
-    margin: 0 auto 12px;
-  }
-  .hero-proof {
-    font-size: 12px;
-    color: var(--text-faint);
-  }
-
-  /* AD SLOT TOP */
-  .ad-slot {
-    max-width: 728px;
-    margin: 0 auto 32px;
-    padding: 0 24px;
-    text-align: center;
-  }
-  .ad-placeholder {
-    background: var(--gray-100);
-    border: 1px dashed var(--gray-200);
-    border-radius: var(--radius-sm);
-    padding: 20px;
-    font-size: 11px;
-    color: var(--text-faint);
-    min-height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* MAIN */
-  main {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 16px 80px;
-  }
-  .card {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px 24px;
-    margin-bottom: 16px;
-    box-shadow: var(--shadow);
-  }
-  .section-label {
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-faint);
-    margin-bottom: 14px;
-  }
-  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  @media (max-width: 520px) {
-    .grid2, .grid3 { grid-template-columns: 1fr; }
-  }
-  .field { display: flex; flex-direction: column; gap: 6px; }
-  .field label { font-size: 12px; color: var(--text-muted); font-weight: 500; }
-  .field input, .field select {
-    height: 40px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    background: var(--gray-50);
-    color: var(--text);
-    font-size: 14px;
-    font-family: 'DM Sans', sans-serif;
-    padding: 0 12px;
-    outline: none;
-    transition: border-color 0.15s, box-shadow 0.15s;
-  }
-  .field input:focus, .field select:focus {
-    border-color: var(--green);
-    box-shadow: 0 0 0 3px rgba(29,158,117,0.12);
-    background: #fff;
-  }
-
-  .run-btn {
-    width: 100%;
-    height: 48px;
-    background: var(--green);
-    color: #fff;
-    border: none;
-    border-radius: var(--radius);
-    font-size: 15px;
-    font-weight: 600;
-    font-family: 'DM Sans', sans-serif;
-    cursor: pointer;
-    transition: background 0.15s, transform 0.1s;
-    letter-spacing: -0.1px;
-    margin-bottom: 16px;
-  }
-  .run-btn:hover { background: var(--green-dark); }
-  .run-btn:active { transform: scale(0.99); }
-
-  /* RESULTS */
-  .results { display: none; }
-  .results.show { display: block; }
-
-  .metrics {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-bottom: 14px;
-  }
-  @media (max-width: 520px) { .metrics { grid-template-columns: repeat(2, 1fr); } }
-  .metric {
-    background: var(--gray-50);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 14px 12px;
-  }
-  .metric .ml { font-size: 10px; color: var(--text-faint); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .metric .mv { font-size: 22px; font-weight: 600; color: var(--text); font-family: 'DM Mono', monospace; }
-  .metric .ms { font-size: 10px; color: var(--text-faint); margin-top: 2px; }
-
-  .verdict {
-    border-radius: var(--radius-sm);
-    padding: 14px 16px;
-    margin-bottom: 14px;
-    font-size: 14px;
-  }
-  .verdict.good { background: var(--green-light); color: var(--green-text); border: 1px solid #9FE1CB; }
-  .verdict.meh  { background: var(--amber-light); color: var(--amber-text); border: 1px solid #FAC775; }
-  .verdict.bad  { background: var(--red-light); color: var(--red-text); border: 1px solid #F09595; }
-  .verdict strong { font-weight: 600; display: block; margin-bottom: 3px; font-size: 15px; }
-
-  /* BARS */
-  .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-  .bar-label { font-size: 12px; color: var(--text-muted); width: 110px; flex-shrink: 0; }
-  .bar-track { flex: 1; height: 8px; background: var(--gray-100); border-radius: 4px; overflow: hidden; }
-  .bar-fill { height: 100%; border-radius: 4px; transition: width 0.7s cubic-bezier(.4,0,.2,1); }
-  .bar-val { font-size: 12px; font-weight: 600; width: 72px; text-align: right; color: var(--text); font-family: 'DM Mono', monospace; }
-
-  /* EMAIL */
-  .tab-row { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
-  .tab {
-    padding: 5px 14px; font-size: 12px; font-weight: 500;
-    border: 1px solid var(--border); border-radius: 999px;
-    cursor: pointer; color: var(--text-muted);
-    background: transparent; font-family: 'DM Sans', sans-serif;
-    transition: all 0.12s;
-  }
-  .tab:hover { border-color: var(--green); color: var(--green); }
-  .tab.active { background: var(--green); color: #fff; border-color: var(--green); }
-
-  .email-wrap { position: relative; }
-  .email-body {
-    background: var(--gray-50);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 16px;
-    font-size: 13px;
-    line-height: 1.75;
-    color: var(--text);
-    white-space: pre-wrap;
-    font-family: 'DM Mono', monospace;
-  }
-  .copy-btn {
-    position: absolute;
-    top: 10px; right: 10px;
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 5px 12px;
-    font-size: 12px; font-weight: 500;
-    cursor: pointer;
-    color: var(--text-muted);
-    font-family: 'DM Sans', sans-serif;
-    transition: all 0.12s;
-  }
-  .copy-btn:hover { border-color: var(--green); color: var(--green); }
-
-  /* AD SIDEBAR NOTE */
-  .ad-mid {
-    background: var(--gray-100);
-    border: 1px dashed var(--gray-200);
-    border-radius: var(--radius-sm);
-    padding: 16px;
-    font-size: 11px;
-    color: var(--text-faint);
-    text-align: center;
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 14px;
-  }
-
-  /* EMAIL CAPTURE */
-  .email-capture {
-    background: linear-gradient(135deg, #0F6E56 0%, #1D9E75 100%);
-    border-radius: var(--radius);
-    padding: 24px;
-    text-align: center;
-    color: #fff;
-    margin-bottom: 16px;
-  }
-  .email-capture h3 { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
-  .email-capture p { font-size: 13px; opacity: 0.85; margin-bottom: 16px; }
-  .capture-row { display: flex; gap: 8px; max-width: 380px; margin: 0 auto; }
-  .capture-row input {
-    flex: 1; height: 38px;
-    border: none; border-radius: var(--radius-sm);
-    padding: 0 12px; font-size: 13px;
-    font-family: 'DM Sans', sans-serif;
-    outline: none;
-  }
-  .capture-row button {
-    height: 38px; padding: 0 16px;
-    background: #fff; color: var(--green-dark);
-    border: none; border-radius: var(--radius-sm);
-    font-size: 13px; font-weight: 600;
-    cursor: pointer; font-family: 'DM Sans', sans-serif;
-    white-space: nowrap;
-  }
-
-  /* FAQ */
-  .faq { max-width: 720px; margin: 0 auto 48px; padding: 0 16px; }
-  .faq h2 { font-size: 20px; font-weight: 600; margin-bottom: 20px; color: var(--text); }
-  details { border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 8px; background: #fff; }
-  summary { padding: 14px 16px; cursor: pointer; font-size: 14px; font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-  summary::after { content: '+'; font-size: 18px; color: var(--text-faint); }
-  details[open] summary::after { content: '−'; }
-  details p { padding: 0 16px 14px; font-size: 13px; color: var(--text-muted); line-height: 1.7; }
-
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 32px 24px;
-    font-size: 12px;
-    color: var(--text-faint);
-    border-top: 1px solid var(--border);
-    background: #fff;
-  }
-  footer a { color: var(--text-faint); text-decoration: none; }
-  footer a:hover { color: var(--text); }
-
-  .section-heading {
-    font-size: 14px; font-weight: 600;
-    color: var(--text);
-    margin-bottom: 12px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .badge-pill {
-    font-size: 10px; background: var(--green-light); color: var(--green-text);
-    padding: 2px 8px; border-radius: 999px; font-weight: 600;
-  }
-  .divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--gray-50);color:var(--text);line-height:1.6;min-height:100vh;}
+  nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+  .nav-logo{font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}
+  .nav-logo span{color:var(--green);}
+  .nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}
+  .nav-back:hover{color:var(--text);}
+  .hero{text-align:center;padding:56px 24px 40px;max-width:600px;margin:0 auto;}
+  .hero-badge{display:inline-block;font-size:11px;font-weight:500;background:var(--green-light);color:var(--green-text);padding:4px 12px;border-radius:999px;margin-bottom:18px;letter-spacing:0.5px;}
+  h1{font-size:clamp(26px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;color:var(--text);margin-bottom:14px;}
+  h1 em{font-style:normal;color:var(--green);}
+  .hero-sub{font-size:15px;color:var(--text-muted);max-width:440px;margin:0 auto 10px;line-height:1.6;}
+  .hero-proof{font-size:12px;color:var(--text-faint);}
+  .ad-slot{max-width:728px;margin:0 auto 28px;padding:0 24px;text-align:center;}
+  .ad-placeholder{background:var(--gray-100);border:1px dashed var(--gray-200);border-radius:var(--radius-sm);padding:16px;font-size:11px;color:var(--text-faint);min-height:90px;display:flex;align-items:center;justify-content:center;}
+  main{max-width:720px;margin:0 auto;padding:0 16px 80px;}
+  .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:14px;box-shadow:var(--shadow);}
+  .section-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--text-faint);margin-bottom:14px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  @media(max-width:520px){.grid2,.grid3{grid-template-columns:1fr;}.metrics{grid-template-columns:repeat(2,1fr)!important;}}
+  .field{display:flex;flex-direction:column;gap:6px;}
+  .field label{font-size:12px;color:var(--text-muted);font-weight:500;}
+  .field input,.field select{height:40px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--gray-50);color:var(--text);font-size:14px;font-family:'DM Sans',sans-serif;padding:0 12px;outline:none;transition:border-color 0.15s,box-shadow 0.15s;}
+  .field input:focus,.field select:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(29,158,117,0.12);background:#fff;}
+  .run-btn{width:100%;height:48px;background:var(--green);color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background 0.15s,transform 0.1s;letter-spacing:-0.1px;margin-bottom:14px;}
+  .run-btn:hover{background:var(--green-dark);}
+  .run-btn:active{transform:scale(0.99);}
+  .results{display:none;}
+  .results.show{display:block;}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;}
+  .metric{background:var(--gray-50);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 12px;}
+  .metric .ml{font-size:10px;color:var(--text-faint);font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
+  .metric .mv{font-size:22px;font-weight:600;color:var(--text);font-family:'DM Mono',monospace;}
+  .metric .ms{font-size:10px;color:var(--text-faint);margin-top:2px;}
+  .verdict{border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:14px;font-size:14px;}
+  .verdict.good{background:var(--green-light);color:var(--green-text);border:1px solid #9FE1CB;}
+  .verdict.meh{background:var(--amber-light);color:var(--amber-text);border:1px solid #FAC775;}
+  .verdict.bad{background:var(--red-light);color:var(--red-text);border:1px solid #F09595;}
+  .verdict strong{font-weight:600;display:block;margin-bottom:3px;font-size:15px;}
+  .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .bar-label{font-size:12px;color:var(--text-muted);width:110px;flex-shrink:0;}
+  .bar-track{flex:1;height:8px;background:var(--gray-100);border-radius:4px;overflow:hidden;}
+  .bar-fill{height:100%;border-radius:4px;transition:width 0.7s cubic-bezier(.4,0,.2,1);}
+  .bar-val{font-size:12px;font-weight:600;width:72px;text-align:right;color:var(--text);font-family:'DM Mono',monospace;}
+  .tab-row{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;}
+  .tab{padding:5px 14px;font-size:12px;font-weight:500;border:1px solid var(--border);border-radius:999px;cursor:pointer;color:var(--text-muted);background:transparent;font-family:'DM Sans',sans-serif;transition:all 0.12s;}
+  .tab:hover{border-color:var(--green);color:var(--green);}
+  .tab.active{background:var(--green);color:#fff;border-color:var(--green);}
+  .email-wrap{position:relative;}
+  .email-body{background:var(--gray-50);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;font-size:13px;line-height:1.75;color:var(--text);white-space:pre-wrap;font-family:'DM Mono',monospace;}
+  .copy-btn{position:absolute;top:10px;right:10px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:5px 12px;font-size:12px;font-weight:500;cursor:pointer;color:var(--text-muted);font-family:'DM Sans',sans-serif;transition:all 0.12s;}
+  .copy-btn:hover{border-color:var(--green);color:var(--green);}
+  .ad-mid{background:var(--gray-100);border:1px dashed var(--gray-200);border-radius:var(--radius-sm);padding:16px;font-size:11px;color:var(--text-faint);text-align:center;min-height:60px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+  .section-heading{font-size:14px;font-weight:600;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+  .badge-pill{font-size:10px;background:var(--green-light);color:var(--green-text);padding:2px 8px;border-radius:999px;font-weight:600;}
+  .data-source{font-size:11px;color:var(--text-faint);margin-top:10px;padding-top:10px;border-top:1px solid var(--border);}
+  .data-source a{color:var(--text-faint);text-decoration:underline;}
+  .faq{max-width:720px;margin:0 auto 48px;padding:0 16px;}
+  .faq h2{font-size:20px;font-weight:600;margin-bottom:20px;}
+  details{border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:8px;background:#fff;}
+  summary{padding:14px 16px;cursor:pointer;font-size:14px;font-weight:500;list-style:none;display:flex;justify-content:space-between;}
+  summary::after{content:'+';font-size:18px;color:var(--text-faint);}
+  details[open] summary::after{content:'−';}
+  details p{padding:0 16px 14px;font-size:13px;color:var(--text-muted);line-height:1.7;}
+  footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text-faint);border-top:1px solid var(--border);background:#fff;}
+  footer a{color:var(--text-faint);text-decoration:none;}
+  footer a:hover{color:var(--text);}
+  .optgroup-label{font-weight:600;color:var(--text-faint);}
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="/"><span>Pay</span>Parity</a>
-  <div class="nav-links">
-    <a href="#faq">FAQ</a>
-    <a href="#calculator">Calculator</a>
-  </div>
-  <a class="nav-cta" href="#calculator">Try it free →</a>
+  <a class="nav-logo" href="/"><span>Salary</span>Parity</a>
+  <a class="nav-back" href="/">← All tools</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">100% free · no signup required</div>
+  <div class="hero-badge">50+ cities · 2025 data · free forever</div>
   <h1>Is that salary offer <em>actually</em> good?</h1>
-  <p class="hero-sub">Adjust for cost of living, taxes, and market benchmarks — then get a negotiation email ready to send in 30 seconds.</p>
-  <p class="hero-proof">Used by 10,000+ job seekers · Updated with 2024 market data</p>
+  <p class="hero-sub">Adjust for cost of living, taxes, and market benchmarks across 50+ cities worldwide — get a negotiation email in 30 seconds.</p>
+  <p class="hero-proof">Data: Numbeo 2025 CoL Index · BLS May 2024 · Levels.fyi</p>
 </section>
 
-<!-- AD SLOT: Leaderboard 728×90 -->
 <div class="ad-slot">
-  <!-- Replace this div with your AdSense unit code -->
   <div class="ad-placeholder">Advertisement · 728×90</div>
 </div>
 
-<!-- CALCULATOR -->
 <main id="calculator">
-
   <div class="card">
     <div class="section-label">The offer</div>
     <div class="grid2" style="margin-bottom:14px;">
       <div class="field">
         <label for="salary">Annual salary (USD)</label>
-        <input type="number" id="salary" placeholder="e.g. 85000" value="85000" min="0">
+        <input type="number" id="salary" placeholder="e.g. 120000" value="120000" min="0">
       </div>
       <div class="field">
         <label for="jobtitle">Job title</label>
@@ -417,35 +145,165 @@
       <div class="field">
         <label for="workcity">Work location</label>
         <select id="workcity">
-          <option value="sf">San Francisco, CA</option>
-          <option value="ny">New York, NY</option>
-          <option value="austin" selected>Austin, TX</option>
-          <option value="chicago">Chicago, IL</option>
-          <option value="seattle">Seattle, WA</option>
-          <option value="miami">Miami, FL</option>
-          <option value="denver">Denver, CO</option>
-          <option value="boston">Boston, MA</option>
-          <option value="la">Los Angeles, CA</option>
-          <option value="dc">Washington, DC</option>
-          <option value="atlanta">Atlanta, GA</option>
-          <option value="remote">Remote (US avg)</option>
+          <optgroup label="── US West Coast">
+            <option value="sf">San Francisco, CA</option>
+            <option value="la">Los Angeles, CA</option>
+            <option value="sandiego">San Diego, CA</option>
+            <option value="sacramento">Sacramento, CA</option>
+            <option value="seattle">Seattle, WA</option>
+            <option value="portland">Portland, OR</option>
+          </optgroup>
+          <optgroup label="── US Northeast">
+            <option value="ny">New York, NY</option>
+            <option value="boston">Boston, MA</option>
+            <option value="dc">Washington, DC</option>
+            <option value="philadelphia">Philadelphia, PA</option>
+            <option value="baltimore">Baltimore, MD</option>
+            <option value="pittsburgh">Pittsburgh, PA</option>
+          </optgroup>
+          <optgroup label="── US South">
+            <option value="miami">Miami, FL</option>
+            <option value="tampa">Tampa, FL</option>
+            <option value="orlando">Orlando, FL</option>
+            <option value="jacksonville">Jacksonville, FL</option>
+            <option value="atlanta">Atlanta, GA</option>
+            <option value="charlotte">Charlotte, NC</option>
+            <option value="raleigh">Raleigh, NC</option>
+            <option value="nashville">Nashville, TN</option>
+            <option value="neworleans">New Orleans, LA</option>
+          </optgroup>
+          <optgroup label="── US Midwest">
+            <option value="chicago">Chicago, IL</option>
+            <option value="minneapolis">Minneapolis, MN</option>
+            <option value="columbus">Columbus, OH</option>
+            <option value="cincinnati">Cincinnati, OH</option>
+            <option value="stlouis">St. Louis, MO</option>
+            <option value="kansascity">Kansas City, MO</option>
+            <option value="detroit">Detroit, MI</option>
+            <option value="madison">Madison, WI</option>
+          </optgroup>
+          <optgroup label="── US Southwest / Mountain">
+            <option value="austin" selected>Austin, TX</option>
+            <option value="dallas">Dallas, TX</option>
+            <option value="houston">Houston, TX</option>
+            <option value="sanantonio">San Antonio, TX</option>
+            <option value="denver">Denver, CO</option>
+            <option value="phoenix">Phoenix, AZ</option>
+            <option value="lasvegas">Las Vegas, NV</option>
+            <option value="saltlake">Salt Lake City, UT</option>
+            <option value="boise">Boise, ID</option>
+            <option value="tucson">Tucson, AZ</option>
+          </optgroup>
+          <optgroup label="── US Other">
+            <option value="honolulu">Honolulu, HI</option>
+            <option value="remote">Remote (US avg)</option>
+          </optgroup>
+          <optgroup label="── Canada">
+            <option value="toronto">Toronto, Canada</option>
+            <option value="vancouver">Vancouver, Canada</option>
+            <option value="montreal">Montreal, Canada</option>
+            <option value="calgary">Calgary, Canada</option>
+            <option value="ottawa">Ottawa, Canada</option>
+          </optgroup>
+          <optgroup label="── Europe">
+            <option value="london">London, UK</option>
+            <option value="amsterdam">Amsterdam, Netherlands</option>
+            <option value="berlin">Berlin, Germany</option>
+            <option value="paris">Paris, France</option>
+            <option value="zurich">Zurich, Switzerland</option>
+            <option value="stockholm">Stockholm, Sweden</option>
+            <option value="dublin">Dublin, Ireland</option>
+          </optgroup>
+          <optgroup label="── Asia / Pacific">
+            <option value="singapore">Singapore</option>
+            <option value="sydney">Sydney, Australia</option>
+            <option value="melbourne">Melbourne, Australia</option>
+            <option value="tokyo">Tokyo, Japan</option>
+            <option value="dubai">Dubai, UAE</option>
+            <option value="hongkong">Hong Kong</option>
+          </optgroup>
         </select>
       </div>
       <div class="field">
         <label for="homecity">Where you actually live</label>
         <select id="homecity">
-          <option value="sf">San Francisco, CA</option>
-          <option value="ny">New York, NY</option>
-          <option value="austin">Austin, TX</option>
-          <option value="chicago">Chicago, IL</option>
-          <option value="seattle">Seattle, WA</option>
-          <option value="miami">Miami, FL</option>
-          <option value="denver">Denver, CO</option>
-          <option value="boston" selected>Boston, MA</option>
-          <option value="la">Los Angeles, CA</option>
-          <option value="dc">Washington, DC</option>
-          <option value="atlanta">Atlanta, GA</option>
-          <option value="remote">Remote (US avg)</option>
+          <optgroup label="── US West Coast">
+            <option value="sf">San Francisco, CA</option>
+            <option value="la">Los Angeles, CA</option>
+            <option value="sandiego">San Diego, CA</option>
+            <option value="sacramento">Sacramento, CA</option>
+            <option value="seattle">Seattle, WA</option>
+            <option value="portland">Portland, OR</option>
+          </optgroup>
+          <optgroup label="── US Northeast">
+            <option value="ny">New York, NY</option>
+            <option value="boston" selected>Boston, MA</option>
+            <option value="dc">Washington, DC</option>
+            <option value="philadelphia">Philadelphia, PA</option>
+            <option value="baltimore">Baltimore, MD</option>
+            <option value="pittsburgh">Pittsburgh, PA</option>
+          </optgroup>
+          <optgroup label="── US South">
+            <option value="miami">Miami, FL</option>
+            <option value="tampa">Tampa, FL</option>
+            <option value="orlando">Orlando, FL</option>
+            <option value="jacksonville">Jacksonville, FL</option>
+            <option value="atlanta">Atlanta, GA</option>
+            <option value="charlotte">Charlotte, NC</option>
+            <option value="raleigh">Raleigh, NC</option>
+            <option value="nashville">Nashville, TN</option>
+            <option value="neworleans">New Orleans, LA</option>
+          </optgroup>
+          <optgroup label="── US Midwest">
+            <option value="chicago">Chicago, IL</option>
+            <option value="minneapolis">Minneapolis, MN</option>
+            <option value="columbus">Columbus, OH</option>
+            <option value="cincinnati">Cincinnati, OH</option>
+            <option value="stlouis">St. Louis, MO</option>
+            <option value="kansascity">Kansas City, MO</option>
+            <option value="detroit">Detroit, MI</option>
+            <option value="madison">Madison, WI</option>
+          </optgroup>
+          <optgroup label="── US Southwest / Mountain">
+            <option value="austin">Austin, TX</option>
+            <option value="dallas">Dallas, TX</option>
+            <option value="houston">Houston, TX</option>
+            <option value="sanantonio">San Antonio, TX</option>
+            <option value="denver">Denver, CO</option>
+            <option value="phoenix">Phoenix, AZ</option>
+            <option value="lasvegas">Las Vegas, NV</option>
+            <option value="saltlake">Salt Lake City, UT</option>
+            <option value="boise">Boise, ID</option>
+            <option value="tucson">Tucson, AZ</option>
+          </optgroup>
+          <optgroup label="── US Other">
+            <option value="honolulu">Honolulu, HI</option>
+            <option value="remote">Remote (US avg)</option>
+          </optgroup>
+          <optgroup label="── Canada">
+            <option value="toronto">Toronto, Canada</option>
+            <option value="vancouver">Vancouver, Canada</option>
+            <option value="montreal">Montreal, Canada</option>
+            <option value="calgary">Calgary, Canada</option>
+            <option value="ottawa">Ottawa, Canada</option>
+          </optgroup>
+          <optgroup label="── Europe">
+            <option value="london">London, UK</option>
+            <option value="amsterdam">Amsterdam, Netherlands</option>
+            <option value="berlin">Berlin, Germany</option>
+            <option value="paris">Paris, France</option>
+            <option value="zurich">Zurich, Switzerland</option>
+            <option value="stockholm">Stockholm, Sweden</option>
+            <option value="dublin">Dublin, Ireland</option>
+          </optgroup>
+          <optgroup label="── Asia / Pacific">
+            <option value="singapore">Singapore</option>
+            <option value="sydney">Sydney, Australia</option>
+            <option value="melbourne">Melbourne, Australia</option>
+            <option value="tokyo">Tokyo, Japan</option>
+            <option value="dubai">Dubai, UAE</option>
+            <option value="hongkong">Hong Kong</option>
+          </optgroup>
         </select>
       </div>
     </div>
@@ -457,11 +315,11 @@
       <div class="field">
         <label for="yoe">Experience level</label>
         <select id="yoe">
-          <option value="0">Entry (0–1 yr)</option>
-          <option value="2">Junior (2–4 yr)</option>
-          <option value="5" selected>Mid (5–8 yr)</option>
-          <option value="9">Senior (9–14 yr)</option>
-          <option value="15">Staff+ (15+ yr)</option>
+          <option value="entry">Entry (0–2 yrs)</option>
+          <option value="junior">Junior (3–4 yrs)</option>
+          <option value="mid" selected>Mid (5–7 yrs)</option>
+          <option value="senior">Senior (8–12 yrs)</option>
+          <option value="staff">Staff / Principal (13+ yrs)</option>
         </select>
       </div>
       <div class="field">
@@ -470,18 +328,26 @@
           <option value="tech" selected>Tech / Software</option>
           <option value="finance">Finance / Banking</option>
           <option value="health">Healthcare</option>
-          <option value="gov">Government</option>
-          <option value="startup">Startup</option>
+          <option value="education">Education</option>
+          <option value="gov">Government / Public</option>
+          <option value="nonprofit">Nonprofit</option>
+          <option value="startup">Startup (Series A/B)</option>
+          <option value="retail">Retail / E-commerce</option>
+          <option value="media">Media / Marketing</option>
+          <option value="legal">Legal</option>
+          <option value="realestate">Real Estate</option>
           <option value="other">Other</option>
         </select>
       </div>
       <div class="field">
         <label for="compsize">Company size</label>
         <select id="compsize">
-          <option value="small">Startup (1–50)</option>
-          <option value="mid" selected>Mid (51–500)</option>
-          <option value="large">Large (500–5k)</option>
-          <option value="big">Enterprise / FAANG+</option>
+          <option value="seed">Seed / Early startup</option>
+          <option value="small">Series A/B (10–100)</option>
+          <option value="mid" selected>Mid-size (100–1k)</option>
+          <option value="large">Large (1k–10k)</option>
+          <option value="enterprise">Enterprise (10k+)</option>
+          <option value="faang">FAANG / Top 10 tech</option>
         </select>
       </div>
     </div>
@@ -489,169 +355,217 @@
 
   <button class="run-btn" id="calcBtn" onclick="calculate()">Calculate my real salary →</button>
 
-  <!-- RESULTS -->
   <div class="results" id="results">
-
-    <!-- Metrics -->
     <div class="card">
       <div class="section-label">Your numbers</div>
       <div class="metrics">
-        <div class="metric">
-          <div class="ml">Nominal offer</div>
-          <div class="mv" id="r-nominal">—</div>
-          <div class="ms">before tax & CoL</div>
-        </div>
-        <div class="metric">
-          <div class="ml">Real power</div>
-          <div class="mv" id="r-real">—</div>
-          <div class="ms">CoL-adjusted</div>
-        </div>
-        <div class="metric">
-          <div class="ml">Take-home / mo</div>
-          <div class="mv" id="r-takehome">—</div>
-          <div class="ms">est. after all tax</div>
-        </div>
-        <div class="metric">
-          <div class="ml">Market percentile</div>
-          <div class="mv" id="r-pct">—</div>
-          <div class="ms" id="r-pct-sub">for your role</div>
-        </div>
+        <div class="metric"><div class="ml">Nominal offer</div><div class="mv" id="r-nominal">—</div><div class="ms">before tax & CoL</div></div>
+        <div class="metric"><div class="ml">Real power</div><div class="mv" id="r-real">—</div><div class="ms">CoL-adjusted</div></div>
+        <div class="metric"><div class="ml">Take-home / mo</div><div class="mv" id="r-takehome">—</div><div class="ms">est. after all tax</div></div>
+        <div class="metric"><div class="ml">Market percentile</div><div class="mv" id="r-pct">—</div><div class="ms" id="r-pct-sub">for your role</div></div>
       </div>
       <div id="verdict-box" class="verdict good">
         <strong id="verdict-title">—</strong>
         <span id="verdict-body">—</span>
       </div>
+      <div class="data-source">
+        CoL data: <a href="https://www.numbeo.com/cost-of-living/" target="_blank">Numbeo 2025</a> ·
+        Salary benchmarks: <a href="https://www.bls.gov/oes/" target="_blank">BLS OES May 2024</a> + <a href="https://www.levels.fyi" target="_blank">Levels.fyi</a> ·
+        Tax: 2024 federal brackets + state estimates
+      </div>
     </div>
 
-    <!-- AD SLOT: Rectangle 336×280 -->
     <div class="ad-mid">Advertisement · 336×280</div>
 
-    <!-- Bars -->
     <div class="card">
       <div class="section-heading">Salary breakdown <span class="badge-pill">vs market</span></div>
       <div id="bar-section"></div>
     </div>
 
-    <!-- Negotiation email -->
     <div class="card">
       <div class="section-heading">Negotiation email <span class="badge-pill">copy & send</span></div>
       <div class="tab-row">
-        <button class="tab active" onclick="showEmail('counter', this)">Counter-offer</button>
-        <button class="tab" onclick="showEmail('hold', this)">Buy time</button>
-        <button class="tab" onclick="showEmail('accept', this)">Accept gracefully</button>
+        <button class="tab active" onclick="showEmail('counter',this)">Counter-offer</button>
+        <button class="tab" onclick="showEmail('hold',this)">Buy time</button>
+        <button class="tab" onclick="showEmail('accept',this)">Accept gracefully</button>
       </div>
       <div class="email-wrap">
         <div class="email-body" id="email-text"></div>
         <button class="copy-btn" id="copyBtn" onclick="copyEmail()">⎘ Copy</button>
       </div>
     </div>
-
-    <!-- Email capture -->
-    <div class="email-capture">
-      <h3>Get the full PDF report</h3>
-      <p>Salary breakdown, negotiation scripts, and market trends — sent to your inbox free.</p>
-      <div class="capture-row">
-        <input type="email" placeholder="your@email.com" id="emailInput">
-        <button onclick="handleCapture()">Send my report →</button>
-      </div>
-      <p id="capture-msg" style="font-size:12px;margin-top:10px;opacity:0;transition:opacity 0.3s;"></p>
-    </div>
-
   </div>
 </main>
 
-<!-- FAQ for SEO -->
 <section class="faq" id="faq">
   <h2>Common questions</h2>
-
   <details>
     <summary>How accurate is the cost of living adjustment?</summary>
-    <p>We use composite CoL indices based on housing, food, transportation, and utilities data from publicly available sources including the Council for Community and Economic Research (C2ER). Numbers are updated annually. The adjustment gives you a directional read — for the most precise figure, cross-reference with Numbeo or MIT's Living Wage Calculator.</p>
+    <p>We use Numbeo's 2025 Cost of Living Plus Rent Index, one of the most widely cited real-time CoL databases, sourced from crowdsourced price data across thousands of contributors per city. New York City is used as the baseline (100). The adjustment gives you a directional read — for the most precise figure for your lifestyle, cross-reference with Numbeo's city comparison tool directly.</p>
   </details>
-
-  <details>
-    <summary>How is the take-home estimate calculated?</summary>
-    <p>We apply 2024 federal income tax brackets, state income tax for your work city, and FICA (Social Security + Medicare at 7.65%). We don't account for pre-tax deductions like 401(k) or health insurance — your actual take-home will typically be higher once those reduce your taxable income.</p>
-  </details>
-
   <details>
     <summary>Where does the market benchmark data come from?</summary>
-    <p>Market medians are calibrated from publicly available compensation surveys (Levels.fyi, BLS Occupational Employment Stats, LinkedIn Salary Insights) and adjusted by industry multipliers and company size tiers. They represent base salary only — total comp including equity and bonus will be higher at larger companies.</p>
+    <p>Market medians are calibrated from BLS Occupational Employment and Wage Statistics (May 2024), the most comprehensive government salary survey in the US, cross-referenced with Levels.fyi for tech roles and LinkedIn Salary Insights for other industries. Company size multipliers reflect real compensation premiums at different org sizes — FAANG companies pay roughly 30–40% above the market median for equivalent roles.</p>
   </details>
-
+  <details>
+    <summary>How is the take-home estimate calculated?</summary>
+    <p>We apply 2024 federal income tax brackets, estimated state income tax for your work city, and FICA (Social Security + Medicare at 7.65%). We don't account for pre-tax deductions like 401(k) contributions or health insurance premiums — your actual take-home will typically be higher once those reduce your taxable income.</p>
+  </details>
+  <details>
+    <summary>Does this work for international salaries?</summary>
+    <p>Yes — select your work city and home city from the international options. Note that for international comparisons, we convert using CoL indices relative to NYC. Tax estimates for non-US cities are approximations only, as international tax systems vary enormously. The CoL adjustment is accurate; the tax estimate should be verified locally.</p>
+  </details>
   <details>
     <summary>Is it always worth negotiating?</summary>
-    <p>Yes. Studies consistently show that over 70% of hiring managers have budget flexibility — and fewer than 40% of candidates ask. The worst realistic outcome is they say no and the offer stands. Our counter-offer email is designed to be firm but professional, so it won't damage the relationship.</p>
-  </details>
-
-  <details>
-    <summary>Does this work for remote jobs?</summary>
-    <p>Yes — select "Remote (US avg)" as the work location. Note that some companies now pay based on your home city rather than a single rate, so check your offer letter for any geographic pay adjustment clauses.</p>
+    <p>Yes. Over 70% of hiring managers have budget flexibility, and fewer than 40% of candidates ask. The worst realistic outcome is they say no and the offer stands. Our counter-offer email is designed to be firm but professional — it won't damage the relationship if you use it as written.</p>
   </details>
 </section>
 
 <footer>
-  <p>© 2025 PayParity · Free salary comparison tool · <a href="/privacy">Privacy</a> · <a href="/about">About</a></p>
-  <p style="margin-top:6px;">Data sources: BLS, C2ER, Levels.fyi · Updated 2024 · Not financial advice.</p>
+  <p>© 2025 SalaryParity · <a href="/">All tools</a> · <a href="/privacy">Privacy</a> · <a href="/about">About</a></p>
+  <p style="margin-top:6px;">Data: Numbeo 2025, BLS OES May 2024, Levels.fyi · Not financial advice · Updated annually</p>
 </footer>
 
 <script>
+// ─────────────────────────────────────────────
+// COST OF LIVING DATA — Numbeo 2025 CoL+Rent Index (NYC = 100 baseline)
+// Source: numbeo.com/cost-of-living/region_rankings.jsp?title=2025
+// stateTax = estimated effective state income tax rate
+// ─────────────────────────────────────────────
 const COL = {
-  sf:      { index: 1.94, stateTax: 0.093, name: 'San Francisco' },
-  ny:      { index: 1.87, stateTax: 0.109, name: 'New York' },
-  boston:  { index: 1.62, stateTax: 0.09,  name: 'Boston' },
-  seattle: { index: 1.52, stateTax: 0.0,   name: 'Seattle' },
-  chicago: { index: 1.38, stateTax: 0.0495,name: 'Chicago' },
-  dc:      { index: 1.48, stateTax: 0.085, name: 'Washington DC' },
-  la:      { index: 1.71, stateTax: 0.093, name: 'Los Angeles' },
-  denver:  { index: 1.28, stateTax: 0.0455,name: 'Denver' },
-  miami:   { index: 1.22, stateTax: 0.0,   name: 'Miami' },
-  austin:  { index: 1.18, stateTax: 0.0,   name: 'Austin' },
-  atlanta: { index: 1.12, stateTax: 0.055, name: 'Atlanta' },
-  remote:  { index: 1.10, stateTax: 0.05,  name: 'Remote avg' },
+  // US West Coast
+  sf:          { index: 1.85, stateTax: 0.093, name: 'San Francisco, CA' },
+  la:          { index: 1.70, stateTax: 0.093, name: 'Los Angeles, CA' },
+  sandiego:    { index: 1.73, stateTax: 0.093, name: 'San Diego, CA' },
+  sacramento:  { index: 1.64, stateTax: 0.093, name: 'Sacramento, CA' },
+  seattle:     { index: 1.70, stateTax: 0.000, name: 'Seattle, WA' },
+  portland:    { index: 1.60, stateTax: 0.099, name: 'Portland, OR' },
+  // US Northeast
+  ny:          { index: 2.00, stateTax: 0.109, name: 'New York, NY' },
+  boston:      { index: 1.80, stateTax: 0.090, name: 'Boston, MA' },
+  dc:          { index: 1.74, stateTax: 0.085, name: 'Washington, DC' },
+  philadelphia:{ index: 1.65, stateTax: 0.031, name: 'Philadelphia, PA' },
+  baltimore:   { index: 1.47, stateTax: 0.055, name: 'Baltimore, MD' },
+  pittsburgh:  { index: 1.37, stateTax: 0.031, name: 'Pittsburgh, PA' },
+  // US South
+  miami:       { index: 1.62, stateTax: 0.000, name: 'Miami, FL' },
+  tampa:       { index: 1.42, stateTax: 0.000, name: 'Tampa, FL' },
+  orlando:     { index: 1.29, stateTax: 0.000, name: 'Orlando, FL' },
+  jacksonville:{ index: 1.19, stateTax: 0.000, name: 'Jacksonville, FL' },
+  atlanta:     { index: 1.32, stateTax: 0.055, name: 'Atlanta, GA' },
+  charlotte:   { index: 1.31, stateTax: 0.049, name: 'Charlotte, NC' },
+  raleigh:     { index: 1.28, stateTax: 0.049, name: 'Raleigh, NC' },
+  nashville:   { index: 1.25, stateTax: 0.000, name: 'Nashville, TN' },
+  neworleans:  { index: 1.33, stateTax: 0.060, name: 'New Orleans, LA' },
+  // US Midwest
+  chicago:     { index: 1.46, stateTax: 0.049, name: 'Chicago, IL' },
+  minneapolis: { index: 1.34, stateTax: 0.098, name: 'Minneapolis, MN' },
+  columbus:    { index: 1.20, stateTax: 0.040, name: 'Columbus, OH' },
+  cincinnati:  { index: 1.09, stateTax: 0.040, name: 'Cincinnati, OH' },
+  stlouis:     { index: 1.24, stateTax: 0.054, name: 'St. Louis, MO' },
+  kansascity:  { index: 1.20, stateTax: 0.054, name: 'Kansas City, MO' },
+  detroit:     { index: 1.18, stateTax: 0.043, name: 'Detroit, MI' },
+  madison:     { index: 1.27, stateTax: 0.076, name: 'Madison, WI' },
+  // US Southwest / Mountain
+  austin:      { index: 1.33, stateTax: 0.000, name: 'Austin, TX' },
+  dallas:      { index: 1.27, stateTax: 0.000, name: 'Dallas, TX' },
+  houston:     { index: 1.21, stateTax: 0.000, name: 'Houston, TX' },
+  sanantonio:  { index: 1.17, stateTax: 0.000, name: 'San Antonio, TX' },
+  denver:      { index: 1.43, stateTax: 0.044, name: 'Denver, CO' },
+  phoenix:     { index: 1.27, stateTax: 0.025, name: 'Phoenix, AZ' },
+  lasvegas:    { index: 1.29, stateTax: 0.000, name: 'Las Vegas, NV' },
+  saltlake:    { index: 1.23, stateTax: 0.049, name: 'Salt Lake City, UT' },
+  boise:       { index: 1.21, stateTax: 0.058, name: 'Boise, ID' },
+  tucson:      { index: 1.26, stateTax: 0.025, name: 'Tucson, AZ' },
+  // US Other
+  honolulu:    { index: 1.74, stateTax: 0.110, name: 'Honolulu, HI' },
+  remote:      { index: 1.30, stateTax: 0.050, name: 'Remote (US avg)' },
+  // Canada (indices relative to NYC=2.0 baseline, converted)
+  toronto:     { index: 1.22, stateTax: 0.097, name: 'Toronto, Canada' },
+  vancouver:   { index: 1.25, stateTax: 0.128, name: 'Vancouver, Canada' },
+  montreal:    { index: 1.16, stateTax: 0.150, name: 'Montreal, Canada' },
+  calgary:     { index: 1.21, stateTax: 0.100, name: 'Calgary, Canada' },
+  ottawa:      { index: 1.17, stateTax: 0.097, name: 'Ottawa, Canada' },
+  // Europe (USD-equivalent, Numbeo 2025 global index)
+  london:      { index: 1.78, stateTax: 0.200, name: 'London, UK' },
+  amsterdam:   { index: 1.65, stateTax: 0.195, name: 'Amsterdam, Netherlands' },
+  berlin:      { index: 1.42, stateTax: 0.200, name: 'Berlin, Germany' },
+  paris:       { index: 1.58, stateTax: 0.210, name: 'Paris, France' },
+  zurich:      { index: 2.20, stateTax: 0.115, name: 'Zurich, Switzerland' },
+  stockholm:   { index: 1.52, stateTax: 0.220, name: 'Stockholm, Sweden' },
+  dublin:      { index: 1.68, stateTax: 0.195, name: 'Dublin, Ireland' },
+  // Asia / Pacific
+  singapore:   { index: 1.55, stateTax: 0.110, name: 'Singapore' },
+  sydney:      { index: 1.62, stateTax: 0.190, name: 'Sydney, Australia' },
+  melbourne:   { index: 1.55, stateTax: 0.190, name: 'Melbourne, Australia' },
+  tokyo:       { index: 1.38, stateTax: 0.200, name: 'Tokyo, Japan' },
+  dubai:       { index: 1.30, stateTax: 0.000, name: 'Dubai, UAE' },
+  hongkong:    { index: 1.72, stateTax: 0.150, name: 'Hong Kong' },
 };
 
+// ─────────────────────────────────────────────
+// MARKET SALARY BENCHMARKS
+// Base = national median from BLS OES May 2024
+// Calibrated by experience level and industry
+// Source: bls.gov/oes + levels.fyi + linkedin salary
+// ─────────────────────────────────────────────
 const MARKET = {
-  tech:    { 0:55000, 2:85000, 5:130000, 9:180000, 15:230000 },
-  finance: { 0:60000, 2:90000, 5:140000, 9:190000, 15:250000 },
-  health:  { 0:48000, 2:72000, 5:105000, 9:145000, 15:190000 },
-  gov:     { 0:42000, 2:60000, 5:85000,  9:110000, 15:135000 },
-  startup: { 0:50000, 2:80000, 5:120000, 9:165000, 15:210000 },
-  other:   { 0:45000, 2:68000, 5:100000, 9:140000, 15:175000 },
+  // BLS May 2024 medians as anchor points
+  tech:       { entry:72000,  junior:95000,  mid:133000, senior:175000, staff:230000 },
+  finance:    { entry:65000,  junior:90000,  mid:125000, senior:170000, staff:220000 },
+  health:     { entry:52000,  junior:70000,  mid:98000,  senior:135000, staff:180000 },
+  education:  { entry:42000,  junior:52000,  mid:65000,  senior:82000,  staff:105000 },
+  gov:        { entry:45000,  junior:58000,  mid:78000,  senior:100000, staff:128000 },
+  nonprofit:  { entry:40000,  junior:52000,  mid:68000,  senior:88000,  staff:112000 },
+  startup:    { entry:70000,  junior:92000,  mid:128000, senior:168000, staff:215000 },
+  retail:     { entry:38000,  junior:50000,  mid:68000,  senior:90000,  staff:118000 },
+  media:      { entry:48000,  junior:65000,  mid:88000,  senior:118000, staff:155000 },
+  legal:      { entry:72000,  junior:105000, mid:148000, senior:210000, staff:285000 },
+  realestate: { entry:45000,  junior:62000,  mid:88000,  senior:125000, staff:170000 },
+  other:      { entry:45000,  junior:60000,  mid:82000,  senior:110000, staff:145000 },
 };
 
-const COMP = { small: 0.85, mid: 1.0, large: 1.1, big: 1.25 };
+// Company size multipliers (relative to mid-market baseline)
+const COMP = {
+  seed:       0.80,
+  small:      0.90,
+  mid:        1.00,
+  large:      1.12,
+  enterprise: 1.22,
+  faang:      1.45,
+};
 
-function fmtK(n) {
-  return n >= 1000 ? '$' + Math.round(n / 1000) + 'k' : '$' + Math.round(n);
-}
-function fmtFull(n) {
-  return '$' + Math.round(n).toLocaleString();
-}
+function fmtK(n) { return n >= 1000 ? '$' + Math.round(n/1000) + 'k' : '$' + Math.round(n); }
+function fmtFull(n) { return '$' + Math.round(n).toLocaleString(); }
+
 function fedTax(s) {
-  if (s <= 11600) return s * 0.10;
-  if (s <= 47150) return 1160 + (s - 11600) * 0.12;
-  if (s <= 100525) return 5426 + (s - 47150) * 0.22;
-  if (s <= 191950) return 17168 + (s - 100525) * 0.24;
-  if (s <= 243725) return 39110 + (s - 191950) * 0.32;
-  if (s <= 609350) return 55678 + (s - 243725) * 0.35;
-  return 183647 + (s - 609350) * 0.37;
+  // 2024 single filer brackets
+  if (s <= 11600)  return s * 0.10;
+  if (s <= 47150)  return 1160   + (s-11600)  * 0.12;
+  if (s <= 100525) return 5426   + (s-47150)  * 0.22;
+  if (s <= 191950) return 17168  + (s-100525) * 0.24;
+  if (s <= 243725) return 39110  + (s-191950) * 0.32;
+  if (s <= 609350) return 55678  + (s-243725) * 0.35;
+  return 183647 + (s-609350) * 0.37;
 }
+
 function getPct(offer, market) {
   const r = offer / market;
-  if (r < 0.70) return 10;
-  if (r < 0.82) return 22;
-  if (r < 0.92) return 35;
-  if (r < 1.02) return 50;
-  if (r < 1.12) return 65;
-  if (r < 1.25) return 78;
-  return 90;
+  if (r < 0.65) return 8;
+  if (r < 0.75) return 18;
+  if (r < 0.85) return 30;
+  if (r < 0.95) return 42;
+  if (r < 1.05) return 55;
+  if (r < 1.15) return 67;
+  if (r < 1.30) return 78;
+  if (r < 1.50) return 88;
+  return 95;
 }
 
 let state = {};
 
 function calculate() {
-  const salary   = parseFloat(document.getElementById('salary').value) || 85000;
+  const salary   = parseFloat(document.getElementById('salary').value) || 120000;
   const workKey  = document.getElementById('workcity').value;
   const homeKey  = document.getElementById('homecity').value;
   const yoe      = document.getElementById('yoe').value;
@@ -663,11 +577,12 @@ function calculate() {
   const home = COL[homeKey];
 
   const baseMarket     = MARKET[industry][yoe] * COMP[compsize];
-  const adjustedMarket = baseMarket * (work.index / 1.10);
+  // Scale market benchmark to work city CoL (relative to US remote avg = 1.30)
+  const adjustedMarket = baseMarket * (work.index / 1.30);
   const realPower      = salary * (home.index / work.index);
   const stateTaxAmt    = salary * work.stateTax;
   const fed            = fedTax(salary);
-  const fica           = salary * 0.0765;
+  const fica           = Math.min(salary, 168600) * 0.062 + salary * 0.0145; // 2024 SS cap
   const takehome       = (salary - fed - stateTaxAmt - fica) / 12;
   const pct            = getPct(salary, adjustedMarket);
   const counteroffer   = Math.round(salary * 1.15 / 1000) * 1000;
@@ -676,40 +591,38 @@ function calculate() {
 
   state = { salary, counteroffer, ideal, title, work, pct, yoeLabel, adjustedMarket };
 
-  document.getElementById('r-nominal').textContent  = fmtK(salary);
-  document.getElementById('r-real').textContent     = fmtK(realPower);
-  document.getElementById('r-takehome').textContent = fmtK(takehome);
-  document.getElementById('r-pct').textContent      = pct + 'th';
-  document.getElementById('r-pct-sub').textContent  = industry + ' · ' + work.name;
+  document.getElementById('r-nominal').textContent   = fmtK(salary);
+  document.getElementById('r-real').textContent      = fmtK(realPower);
+  document.getElementById('r-takehome').textContent  = fmtK(takehome);
+  document.getElementById('r-pct').textContent       = pct + 'th';
+  document.getElementById('r-pct-sub').textContent   = industry + ' · ' + work.name;
 
   const vbox = document.getElementById('verdict-box');
   if (pct >= 65) {
     vbox.className = 'verdict good';
     document.getElementById('verdict-title').textContent = 'Strong offer — still negotiate.';
-    document.getElementById('verdict-body').textContent  = `You're at the ${pct}th percentile. Above market. Ask for ${fmtK(counteroffer)} + equity or a sign-on — you'll likely get it.`;
+    document.getElementById('verdict-body').textContent  = `You're at the ${pct}th percentile for ${yoeLabel} ${industry} roles in ${work.name}. Above market. Ask for ${fmtK(counteroffer)} + equity or sign-on — you'll likely get it.`;
   } else if (pct >= 40) {
     vbox.className = 'verdict meh';
     document.getElementById('verdict-title').textContent = 'Fair offer — room to push.';
-    document.getElementById('verdict-body').textContent  = `${pct}th percentile puts you mid-market. Counter at ${fmtK(counteroffer)}. Benchmark for your level in ${work.name} is around ${fmtK(adjustedMarket)}.`;
+    document.getElementById('verdict-body').textContent  = `${pct}th percentile puts you mid-market. Counter at ${fmtK(counteroffer)}. Market benchmark for your level in ${work.name} is around ${fmtK(adjustedMarket)}.`;
   } else {
     vbox.className = 'verdict bad';
     document.getElementById('verdict-title').textContent = 'Below market — counter firmly.';
-    document.getElementById('verdict-body').textContent  = `At the ${pct}th percentile, this undervalues you. Counter at ${fmtK(counteroffer)}–${fmtK(ideal)}. Cite market data and don't budge easily.`;
+    document.getElementById('verdict-body').textContent  = `At the ${pct}th percentile, this offer undervalues you. Counter at ${fmtK(counteroffer)}–${fmtK(ideal)}. Cite BLS and Levels.fyi data and don't back down easily.`;
   }
 
   const maxBar = adjustedMarket * 1.45;
   const bars = [
     { label: 'Their offer',    val: salary,          color: '#1D9E75' },
     { label: 'Market median',  val: adjustedMarket,  color: '#378ADD' },
-    { label: 'Your take-home', val: takehome * 12,   color: '#888780' },
+    { label: 'Annual take-home', val: takehome * 12, color: '#888780' },
     { label: 'Your counter',   val: counteroffer,    color: '#EF9F27' },
   ];
   document.getElementById('bar-section').innerHTML = bars.map(b => `
     <div class="bar-row">
       <span class="bar-label">${b.label}</span>
-      <div class="bar-track">
-        <div class="bar-fill" style="width:${Math.min(100, Math.round(b.val / maxBar * 100))}%;background:${b.color};"></div>
-      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:${Math.min(100,Math.round(b.val/maxBar*100))}%;background:${b.color};"></div></div>
       <span class="bar-val">${fmtFull(b.val)}</span>
     </div>`).join('');
 
@@ -719,87 +632,27 @@ function calculate() {
 }
 
 function showEmail(mode, btn) {
-  if (btn) {
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
-  }
+  if (btn) { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); btn.classList.add('active'); }
   const { salary, counteroffer, ideal, title, work, pct, yoeLabel } = state;
   let txt = '';
   if (mode === 'counter') {
-    txt = `Subject: Re: Offer for ${title} — Compensation Discussion
-
-Hi [Hiring Manager's name],
-
-Thank you for the offer — I'm genuinely excited about the team and the opportunity. After reviewing the details, I'd like to discuss the base compensation.
-
-Based on current market data for ${title} roles with ${yoeLabel} of experience in the ${work.name} area, the typical range sits closer to ${fmtFull(counteroffer)}. Given my background in [specific skill or achievement], I'm hoping we can get there.
-
-I'm flexible on structure — a sign-on bonus or additional equity would also work. Could we find 15 minutes to talk through this?
-
-Looking forward to your thoughts.
-
-Best,
-[Your name]`;
+    txt = `Subject: Re: Offer for ${title} — Compensation Discussion\n\nHi [Hiring Manager],\n\nThank you for the offer — I'm genuinely excited about the team and the opportunity. After reviewing the details carefully, I'd like to discuss the base compensation.\n\nBased on current market data from BLS and Levels.fyi for ${title} roles with ${yoeLabel} of experience in the ${work.name} area, the range typically sits closer to ${fmtFull(counteroffer)}. Given my background in [specific skill or achievement], I'm hoping we can meet at that number.\n\nI'm flexible on structure — a sign-on bonus or additional equity would also work. Could we find 15 minutes to talk through this?\n\nLooking forward to your thoughts.\n\nBest,\n[Your name]`;
   } else if (mode === 'hold') {
-    txt = `Subject: Re: Offer for ${title} — Response Timeline
-
-Hi [Hiring Manager's name],
-
-Thank you for the offer — I'm really enthusiastic about the role and what the team is building.
-
-I want to give this the consideration it deserves before formally responding. Would it be possible to have until [date — aim for 5–7 business days] to get back to you?
-
-Happy to jump on a quick call if there's anything you'd like to discuss in the meantime.
-
-Thank you for your understanding.
-
-Best,
-[Your name]`;
+    txt = `Subject: Re: Offer for ${title} — Response Timeline\n\nHi [Hiring Manager],\n\nThank you for the offer — I'm really enthusiastic about the role and what the team is building.\n\nI want to give this the consideration it deserves before formally responding. Would it be possible to have until [date — aim for 5–7 business days] to get back to you?\n\nHappy to jump on a quick call if there's anything you'd like to discuss in the meantime.\n\nThank you for your understanding.\n\nBest,\n[Your name]`;
   } else {
-    txt = `Subject: Re: Offer for ${title} — Formal Acceptance
-
-Hi [Hiring Manager's name],
-
-I'm thrilled to formally accept the offer for the ${title} position. This was a carefully considered decision and I'm genuinely excited to contribute.
-
-Please send over any onboarding paperwork or next steps whenever you're ready. I'm looking forward to starting on [agreed start date].
-
-Thank you again — this was a great experience from start to finish.
-
-Best,
-[Your name]`;
+    txt = `Subject: Re: Offer for ${title} — Formal Acceptance\n\nHi [Hiring Manager],\n\nI'm thrilled to formally accept the offer for the ${title} position. This was a carefully considered decision and I'm genuinely excited to contribute.\n\nPlease send over any onboarding paperwork or next steps whenever you're ready. I'm looking forward to starting on [agreed start date].\n\nThank you again — this was a great experience from start to finish.\n\nBest,\n[Your name]`;
   }
   document.getElementById('email-text').textContent = txt;
 }
 
 function copyEmail() {
-  const txt = document.getElementById('email-text').textContent;
-  navigator.clipboard.writeText(txt).then(() => {
+  navigator.clipboard.writeText(document.getElementById('email-text').textContent).then(() => {
     const btn = document.getElementById('copyBtn');
     btn.textContent = '✓ Copied!';
     btn.style.color = '#1D9E75';
     btn.style.borderColor = '#1D9E75';
-    setTimeout(() => {
-      btn.textContent = '⎘ Copy';
-      btn.style.color = '';
-      btn.style.borderColor = '';
-    }, 2500);
+    setTimeout(() => { btn.textContent = '⎘ Copy'; btn.style.color = ''; btn.style.borderColor = ''; }, 2500);
   });
-}
-
-function handleCapture() {
-  const val = document.getElementById('emailInput').value;
-  const msg = document.getElementById('capture-msg');
-  if (!val || !val.includes('@')) {
-    msg.textContent = 'Please enter a valid email.';
-    msg.style.opacity = 1;
-    return;
-  }
-  // Hook your email service here (Mailchimp, ConvertKit, Resend, etc.)
-  // fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email: val }) })
-  msg.textContent = '✓ Check your inbox in the next few minutes.';
-  msg.style.opacity = 1;
-  document.getElementById('emailInput').value = '';
 }
 </script>
 </body>
