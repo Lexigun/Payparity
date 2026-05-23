@@ -6,6 +6,7 @@
     { "src": "/freelance-rate", "dest": "/freelance-rate.html" },
     { "src": "/last-day", "dest": "/last-day.html" },
     { "src": "/llc-vs-sole", "dest": "/llc-vs-sole.html" },
+    { "src": "/contract-scanner", "dest": "/contract-scanner.html" },
     { "src": "/sitemap.xml", "dest": "/sitemap.xml" },
     { "src": "/robots.txt", "dest": "/robots.txt" },
     { "src": "/ads.txt", "dest": "/ads.txt" },
