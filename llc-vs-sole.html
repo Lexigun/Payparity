@@ -3,391 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LLC vs Sole Proprietor Tax Calculator — Which Is Better?</title>
-<meta name="description" content="Free LLC vs sole proprietor tax calculator. Enter your income and state — see the exact tax difference and which structure saves you more money.">
-<meta name="keywords" content="LLC vs sole proprietor tax calculator, should I form an LLC, LLC vs sole proprietor taxes, LLC tax savings calculator, sole proprietor vs LLC which is better">
-<meta property="og:title" content="LLC vs Sole Proprietor Tax Calculator — Which Structure Saves You More?">
-<meta property="og:description" content="Enter your income and state. See exact taxes for both structures side by side. Free, no signup.">
+<title>LLC vs Sole Proprietor Tax Calculator — Which Saves More?</title>
+<meta name="description" content="Free LLC vs sole proprietor tax calculator. Enter your income and state to see the exact tax difference between business structures and which one saves you more money.">
+<meta name="keywords" content="LLC vs sole proprietor tax calculator, should I form an LLC, LLC tax savings, sole proprietor vs LLC, S-Corp election savings, business structure comparison">
+<meta property="og:title" content="LLC vs Sole Proprietor — Which Business Structure Saves You More?">
+<meta property="og:description" content="Side-by-side tax comparison for sole proprietor vs LLC (default and S-Corp election). See exact numbers for your income. Free.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://salaryparity.com/llc-vs-sole">
 <link rel="canonical" href="https://salaryparity.com/llc-vs-sole">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7330952168261894" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --green:#1D9E75;--green-dark:#0F6E56;--green-light:#E1F5EE;--green-text:#085041;
-    --amber:#EF9F27;--amber-light:#FAEEDA;--amber-text:#633806;
-    --blue:#378ADD;--blue-light:#E6F1FB;--blue-text:#0C447C;
-    --red:#E24B4A;--red-light:#FCEBEB;--red-text:#501313;
-    --gray-50:#F8F8F7;--gray-100:#F1F0EC;--gray-200:#E0DED8;
-    --text:#1A1A18;--text-muted:#5F5E5A;--text-faint:#9B9A95;
-    --border:rgba(0,0,0,0.08);--radius:10px;--radius-sm:6px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:'DM Sans',sans-serif;background:var(--gray-50);color:var(--text);min-height:100vh;}
-  nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
-  .nav-logo{font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}
-  .nav-logo span{color:var(--green);}
-  .nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}
-  .nav-back:hover{color:var(--text);}
-  .hero{text-align:center;padding:56px 24px 40px;max-width:580px;margin:0 auto;}
-  .hero-badge{display:inline-block;font-size:11px;font-weight:500;background:var(--green-light);color:var(--green-text);padding:4px 12px;border-radius:999px;margin-bottom:18px;}
-  h1{font-size:clamp(24px,5vw,36px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;margin-bottom:14px;}
-  h1 em{font-style:normal;color:var(--green);}
-  .hero-sub{font-size:15px;color:var(--text-muted);max-width:420px;margin:0 auto;line-height:1.6;}
-  .ad-slot{max-width:728px;margin:0 auto 28px;padding:0 24px;text-align:center;}
-  .ad-placeholder{background:var(--gray-100);border:1px dashed var(--gray-200);border-radius:var(--radius-sm);padding:16px;font-size:11px;color:var(--text-faint);min-height:90px;display:flex;align-items:center;justify-content:center;}
-  main{max-width:760px;margin:0 auto;padding:0 16px 80px;}
-  .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,0.05);}
-  .section-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--text-faint);margin-bottom:14px;}
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-  @media(max-width:560px){.grid2,.grid3,.compare-grid{grid-template-columns:1fr!important;}}
-  .field{display:flex;flex-direction:column;gap:6px;}
-  .field label{font-size:12px;color:var(--text-muted);font-weight:500;}
-  .field input,.field select{height:40px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--gray-50);color:var(--text);font-size:14px;font-family:'DM Sans',sans-serif;padding:0 12px;outline:none;transition:border-color 0.15s,box-shadow 0.15s;}
-  .field input:focus,.field select:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(29,158,117,0.12);background:#fff;}
-  .field .hint{font-size:11px;color:var(--text-faint);}
-  .run-btn{width:100%;height:48px;background:var(--green);color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background 0.15s,transform 0.1s;margin-bottom:14px;}
-  .run-btn:hover{background:var(--green-dark);}
-  .run-btn:active{transform:scale(0.99);}
-  .results{display:none;}
-  .results.show{display:block;}
-  .verdict{border-radius:var(--radius-sm);padding:16px 18px;margin-bottom:14px;font-size:14px;}
-  .verdict.good{background:var(--green-light);color:var(--green-text);border:1px solid #9FE1CB;}
-  .verdict.meh{background:var(--amber-light);color:var(--amber-text);border:1px solid #FAC775;}
-  .verdict strong{font-weight:600;display:block;margin-bottom:4px;font-size:16px;}
-  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
-  .compare-card{border-radius:var(--radius);padding:20px;border:2px solid var(--border);}
-  .compare-card.winner{border-color:var(--green);}
-  .compare-card.loser{border-color:var(--border);opacity:0.85;}
-  .cc-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
-  .cc-title{font-size:15px;font-weight:600;}
-  .cc-badge{font-size:10px;font-weight:600;padding:3px 10px;border-radius:999px;}
-  .badge-winner{background:var(--green-light);color:var(--green-text);}
-  .badge-loser{background:var(--gray-100);color:var(--text-faint);}
-  .cc-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;}
-  .cc-row:last-child{border-bottom:none;font-weight:600;font-size:15px;padding-top:12px;}
-  .cc-row .label{color:var(--text-muted);}
-  .cc-row .val{font-family:'DM Mono',monospace;font-weight:500;}
-  .cc-row.total .val{color:var(--green);font-size:17px;}
-  .savings-banner{background:var(--green);color:#fff;border-radius:var(--radius);padding:20px 24px;text-align:center;margin-bottom:14px;}
-  .savings-banner .sb-label{font-size:12px;opacity:0.8;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
-  .savings-banner .sb-amount{font-size:36px;font-weight:600;font-family:'DM Mono',monospace;}
-  .savings-banner .sb-sub{font-size:13px;opacity:0.8;margin-top:4px;}
-  .pros-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
-  .pros-card{border-radius:var(--radius-sm);padding:16px;border:1px solid var(--border);background:#fff;}
-  .pros-card h3{font-size:13px;font-weight:600;margin-bottom:10px;color:var(--text);}
-  .pros-list{list-style:none;}
-  .pros-list li{font-size:12px;color:var(--text-muted);padding:4px 0;display:flex;gap:6px;align-items:flex-start;}
-  .pros-list li::before{content:'✓';color:var(--green);font-weight:600;flex-shrink:0;}
-  .cons-list li::before{content:'✗';color:var(--red);font-weight:600;flex-shrink:0;}
-  .section-heading{font-size:14px;font-weight:600;color:var(--text);margin-bottom:12px;}
-  .ad-mid{background:var(--gray-100);border:1px dashed var(--gray-200);border-radius:var(--radius-sm);padding:16px;font-size:11px;color:var(--text-faint);text-align:center;min-height:60px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
-  .faq{max-width:760px;margin:0 auto 48px;padding:0 16px;}
-  .faq h2{font-size:20px;font-weight:600;margin-bottom:20px;}
-  details{border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:8px;background:#fff;}
-  summary{padding:14px 16px;cursor:pointer;font-size:14px;font-weight:500;list-style:none;display:flex;justify-content:space-between;}
-  summary::after{content:'+';font-size:18px;color:var(--text-faint);}
-  details[open] summary::after{content:'−';}
-  details p{padding:0 16px 14px;font-size:13px;color:var(--text-muted);line-height:1.7;}
-  footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text-faint);border-top:1px solid var(--border);background:#fff;}
-  footer a{color:var(--text-faint);text-decoration:none;}
+:root{--green:#1D9E75;--green-dark:#0F6E56;--green-light:#E1F5EE;--green-text:#085041;--amber:#EF9F27;--amber-light:#FAEEDA;--amber-text:#633806;--red:#E24B4A;--red-light:#FCEBEB;--red-text:#501313;--blue:#378ADD;--blue-light:#E6F1FB;--blue-text:#0C447C;--gray-50:#F8F8F7;--gray-100:#F1F0EC;--gray-200:#E0DED8;--text:#1A1A18;--text-muted:#5F5E5A;--text-faint:#9B9A95;--border:rgba(0,0,0,0.08);--radius:10px;--radius-sm:6px;}
+*{box-sizing:border-box;margin:0;padding:0;}body{font-family:'DM Sans',sans-serif;background:#F8F8F7;color:#1A1A18;min-height:100vh;}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.nav-logo{font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}.nav-logo span{color:var(--green);}
+.nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}.nav-back:hover{color:var(--text);}
+.hero{text-align:center;padding:56px 24px 40px;max-width:600px;margin:0 auto;}
+.hero-badge{display:inline-block;font-size:11px;font-weight:500;background:var(--green-light);color:var(--green-text);padding:4px 12px;border-radius:999px;margin-bottom:18px;}
+h1{font-size:clamp(24px,5vw,36px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;margin-bottom:14px;}h1 em{font-style:normal;color:var(--green);}
+.hero-sub{font-size:15px;color:var(--text-muted);max-width:460px;margin:0 auto;line-height:1.6;}
+.ad-slot{max-width:728px;margin:0 auto 28px;padding:0 24px;text-align:center;}
+.ad-placeholder{background:var(--gray-100);border:1px dashed var(--gray-200);border-radius:var(--radius-sm);padding:16px;font-size:11px;color:var(--text-faint);min-height:90px;display:flex;align-items:center;justify-content:center;}
+main{max-width:780px;margin:0 auto;padding:0 16px 60px;}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,0.05);}
+.section-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--text-faint);margin-bottom:14px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:560px){.grid2,.grid3,.compare-grid,.pros-grid{grid-template-columns:1fr!important;}}
+.field{display:flex;flex-direction:column;gap:6px;}.field label{font-size:12px;color:var(--text-muted);font-weight:500;}
+.field input,.field select{height:40px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--gray-50);color:var(--text);font-size:14px;font-family:'DM Sans',sans-serif;padding:0 12px;outline:none;transition:border-color 0.15s;}
+.field input:focus,.field select:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(29,158,117,0.12);background:#fff;}
+.field .hint{font-size:11px;color:var(--text-faint);}
+.run-btn{width:100%;height:48px;background:var(--green);color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background 0.15s;margin-bottom:14px;}
+.run-btn:hover{background:var(--green-dark);}
+.results{display:none;}.results.show{display:block;}
+.verdict{border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:14px;font-size:14px;}
+.verdict.good{background:var(--green-light);color:var(--green-text);border:1px solid #9FE1CB;}
+.verdict.meh{background:var(--amber-light);color:var(--amber-text);border:1px solid #FAC775;}
+.verdict strong{font-weight:600;display:block;margin-bottom:4px;font-size:16px;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.compare-card{border-radius:var(--radius);padding:20px;border:2px solid var(--border);}
+.compare-card.winner{border-color:var(--green);}.compare-card.loser{border-color:var(--border);opacity:0.85;}
+.cc-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.cc-title{font-size:15px;font-weight:600;}
+.cc-badge{font-size:10px;font-weight:600;padding:3px 10px;border-radius:999px;}
+.badge-winner{background:var(--green-light);color:var(--green-text);}.badge-loser{background:var(--gray-100);color:var(--text-faint);}
+.cc-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.cc-row:last-child{border-bottom:none;font-weight:600;font-size:15px;padding-top:12px;}
+.cc-row .label{color:var(--text-muted);}.cc-row .val{font-family:'DM Mono',monospace;font-weight:500;}
+.cc-row.total .val{color:var(--green);font-size:17px;}
+.savings-banner{background:var(--green);color:#fff;border-radius:var(--radius);padding:20px 24px;text-align:center;margin-bottom:14px;}
+.savings-banner .sb-label{font-size:12px;opacity:0.8;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+.savings-banner .sb-amount{font-size:36px;font-weight:600;font-family:'DM Mono',monospace;}
+.savings-banner .sb-sub{font-size:13px;opacity:0.8;margin-top:4px;}
+.pros-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.pros-card{border-radius:var(--radius-sm);padding:16px;border:1px solid var(--border);background:#fff;}
+.pros-card h3{font-size:13px;font-weight:600;margin-bottom:10px;}
+.pros-list{list-style:none;}.pros-list li{font-size:12px;color:var(--text-muted);padding:4px 0;display:flex;gap:6px;align-items:flex-start;}
+.pros-list li::before{content:'✓';color:var(--green);font-weight:600;flex-shrink:0;}
+.cons-list li::before{content:'✗';color:var(--red);font-weight:600;flex-shrink:0;}
+.section-heading{font-size:14px;font-weight:600;color:var(--text);margin-bottom:12px;}
+.ad-mid{background:var(--gray-100);border:1px dashed var(--gray-200);border-radius:var(--radius-sm);padding:16px;font-size:11px;color:var(--text-faint);text-align:center;min-height:60px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.content-section{max-width:780px;margin:0 auto;padding:0 16px 48px;}
+.content-section h2{font-size:22px;font-weight:600;margin-bottom:16px;}
+.content-section h3{font-size:16px;font-weight:600;margin:24px 0 10px;}
+.content-section p{font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:14px;}
+.content-section ul{padding-left:20px;margin-bottom:14px;}
+.content-section ul li{font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:6px;}
+.faq{max-width:780px;margin:0 auto 48px;padding:0 16px;}
+.faq h2{font-size:22px;font-weight:600;margin-bottom:20px;}
+details{border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:8px;background:#fff;}
+summary{padding:14px 16px;cursor:pointer;font-size:14px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+summary::after{content:'+';font-size:18px;color:var(--text-faint);}details[open] summary::after{content:'−';}
+details p{padding:0 16px 14px;font-size:13px;color:var(--text-muted);line-height:1.8;}
+footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text-faint);border-top:1px solid var(--border);background:#fff;}
+footer a{color:var(--text-faint);text-decoration:none;}
 </style>
 </head>
 <body>
-
-<nav>
-  <a class="nav-logo" href="/"><span>Salary</span>Parity</a>
-  <a class="nav-back" href="/">← All tools</a>
-</nav>
-
+<nav><a class="nav-logo" href="/"><span>Salary</span>Parity</a><a class="nav-back" href="/">← All tools</a></nav>
 <section class="hero">
-  <div class="hero-badge">Free · No signup · Side-by-side comparison</div>
+  <div class="hero-badge">Free · Side-by-side comparison · No signup</div>
   <h1>LLC vs Sole Proprietor —<br><em>which saves you more?</em></h1>
-  <p class="hero-sub">Enter your income and expenses. Get an exact side-by-side tax comparison and a clear recommendation for your situation.</p>
+  <p class="hero-sub">Enter your income and state. Get an exact side-by-side tax comparison between sole proprietor, default LLC, and LLC with S-Corp election — and a clear recommendation for your situation.</p>
 </section>
-
-<div class="ad-slot">
-  <div class="ad-placeholder">Advertisement · 728×90</div>
-</div>
-
+<div class="ad-slot"><div class="ad-placeholder">Advertisement</div></div>
 <main>
   <div class="card">
     <div class="section-label">Your business</div>
     <div class="grid2" style="margin-bottom:14px;">
-      <div class="field">
-        <label for="gross">Gross annual revenue (USD)</label>
-        <input type="number" id="gross" value="120000" min="0">
-        <span class="hint">Total income before any deductions</span>
-      </div>
-      <div class="field">
-        <label for="biz-expenses">Business expenses (USD)</label>
-        <input type="number" id="biz-expenses" value="20000" min="0">
-        <span class="hint">Software, equipment, office, travel, etc.</span>
-      </div>
+      <div class="field"><label for="gross">Gross annual revenue (USD)</label><input type="number" id="gross" value="120000" min="0"><span class="hint">Total income before any deductions</span></div>
+      <div class="field"><label for="biz-expenses">Business expenses (USD)</label><input type="number" id="biz-expenses" value="20000" min="0"><span class="hint">Software, equipment, office, travel, etc.</span></div>
     </div>
     <div class="grid3">
-      <div class="field">
-        <label for="biz-state">Your state</label>
-        <select id="biz-state">
-          <option value="0.00">No state income tax</option>
-          <option value="0.0455">~4.5% state tax</option>
-          <option value="0.065" selected>~6.5% state tax</option>
-          <option value="0.093">~9.3% state tax</option>
-          <option value="0.133">~13.3% state tax</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="s-corp-salary">S-Corp reasonable salary</label>
-        <input type="number" id="s-corp-salary" value="60000" min="0">
-        <span class="hint">Only relevant for LLC taxed as S-Corp</span>
-      </div>
-      <div class="field">
-        <label for="llc-type">LLC tax election</label>
-        <select id="llc-type">
-          <option value="disregarded" selected>Default (disregarded entity)</option>
-          <option value="scorp">S-Corporation election</option>
-        </select>
-      </div>
+      <div class="field"><label for="biz-state">Your state tax rate</label>
+        <select id="biz-state"><option value="0.00">No state income tax</option><option value="0.0455">~4.5% state tax</option><option value="0.065" selected>~6.5% state tax</option><option value="0.093">~9.3% state tax</option><option value="0.133">~13.3% state tax</option></select></div>
+      <div class="field"><label for="s-corp-salary">S-Corp reasonable salary</label><input type="number" id="s-corp-salary" value="60000" min="0"><span class="hint">Only relevant for S-Corp election</span></div>
+      <div class="field"><label for="llc-type">LLC tax election</label>
+        <select id="llc-type"><option value="disregarded" selected>Default (disregarded entity)</option><option value="scorp">S-Corporation election</option></select></div>
     </div>
   </div>
-
   <button class="run-btn" onclick="calculate()">Compare my tax liability →</button>
-
   <div class="results" id="results">
-
-    <div id="savings-banner" class="savings-banner">
-      <div class="sb-label">Potential annual savings</div>
-      <div class="sb-amount" id="savings-amount">—</div>
-      <div class="sb-sub" id="savings-sub">—</div>
-    </div>
-
-    <div id="verdict-box" class="verdict good">
-      <strong id="verdict-title">—</strong>
-      <span id="verdict-body">—</span>
-    </div>
-
+    <div id="savings-banner" class="savings-banner"><div class="sb-label">Potential annual savings</div><div class="sb-amount" id="savings-amount">—</div><div class="sb-sub" id="savings-sub">—</div></div>
+    <div id="verdict-box" class="verdict good"><strong id="verdict-title">—</strong><span id="verdict-body">—</span></div>
     <div class="compare-grid">
       <div class="compare-card" id="sp-card">
-        <div class="cc-header">
-          <div class="cc-title">Sole Proprietor</div>
-          <span class="cc-badge" id="sp-badge">—</span>
-        </div>
+        <div class="cc-header"><div class="cc-title">Sole Proprietor</div><span class="cc-badge" id="sp-badge">—</span></div>
         <div id="sp-rows"></div>
       </div>
       <div class="compare-card" id="llc-card">
-        <div class="cc-header">
-          <div class="cc-title" id="llc-title">LLC (Default)</div>
-          <span class="cc-badge" id="llc-badge">—</span>
-        </div>
+        <div class="cc-header"><div class="cc-title" id="llc-title">LLC (Default)</div><span class="cc-badge" id="llc-badge">—</span></div>
         <div id="llc-rows"></div>
       </div>
     </div>
-
-    <div class="ad-mid">Advertisement · 336×280</div>
-
+    <div class="ad-mid">Advertisement</div>
     <div class="card">
       <div class="section-heading">Pros & cons at a glance</div>
       <div class="pros-grid">
         <div class="pros-card">
           <h3>✅ Sole Proprietor</h3>
-          <ul class="pros-list">
-            <li>Zero setup cost or paperwork</li>
-            <li>Simplest tax filing (Schedule C)</li>
-            <li>No annual state fees</li>
-            <li>Easy to dissolve</li>
-          </ul>
-          <br>
-          <h3 style="color:var(--red-text)">⚠️ Watch out</h3>
-          <ul class="pros-list cons-list">
-            <li>Personal liability for business debts</li>
-            <li>Full self-employment tax on all profit</li>
-            <li>Harder to raise investment</li>
-          </ul>
+          <ul class="pros-list"><li>Zero setup cost or paperwork</li><li>Simplest tax filing (Schedule C)</li><li>No annual state fees</li><li>Easy to dissolve</li></ul>
+          <br><h3 style="color:var(--red-text)">⚠️ Watch out</h3>
+          <ul class="pros-list cons-list"><li>Personal liability for all business debts</li><li>Full self-employment tax on all profit</li><li>Harder to open business bank accounts</li></ul>
         </div>
         <div class="pros-card">
           <h3>✅ LLC</h3>
-          <ul class="pros-list">
-            <li>Personal liability protection</li>
-            <li>More credible to clients & banks</li>
-            <li>S-Corp election can reduce SE tax</li>
-            <li>Flexible profit distribution</li>
-          </ul>
-          <br>
-          <h3 style="color:var(--red-text)">⚠️ Watch out</h3>
-          <ul class="pros-list cons-list">
-            <li>State filing fees ($50–$800/yr)</li>
-            <li>More complex bookkeeping</li>
-            <li>S-Corp requires payroll setup</li>
-          </ul>
+          <ul class="pros-list"><li>Personal liability protection</li><li>More credible to clients and banks</li><li>S-Corp election can reduce SE tax significantly</li><li>Flexible profit distribution</li></ul>
+          <br><h3 style="color:var(--red-text)">⚠️ Watch out</h3>
+          <ul class="pros-list cons-list"><li>State filing fees ($50–$800/yr, varies by state)</li><li>More complex bookkeeping required</li><li>S-Corp election requires payroll setup</li></ul>
         </div>
       </div>
     </div>
-
   </div>
 </main>
 
-<section class="faq">
-  <h2>Common questions</h2>
-  <details>
-    <summary>When does an LLC actually save money on taxes?</summary>
-    <p>A default LLC (disregarded entity) saves nothing on taxes versus a sole proprietor — they're taxed identically. The savings come when you elect S-Corporation status, which lets you split income between a salary and distributions. You only pay self-employment tax (15.3%) on the salary, not the distributions. This typically becomes worthwhile around $60–80k+ in net profit.</p>
-  </details>
-  <details>
-    <summary>What's a "reasonable salary" for S-Corp purposes?</summary>
-    <p>The IRS requires S-Corp owners to pay themselves a "reasonable salary" for the work they do — similar to what they'd pay someone else in that role. There's no fixed formula, but it should be defensible if audited. Most accountants suggest 40–60% of net profit as a starting point. Too low a salary is a red flag for IRS audits.</p>
-  </details>
-  <details>
-    <summary>Do I need a lawyer to form an LLC?</summary>
-    <p>No. You can file directly with your state's Secretary of State website for $50–$500 depending on the state. Wyoming and Delaware are popular for favorable laws and low fees. However, an accountant or CPA is worth consulting before making the S-Corp election — the payroll setup has ongoing costs that need to exceed the tax savings.</p>
-  </details>
-  <details>
-    <summary>Is this comparison accurate for my state?</summary>
-    <p>This calculator uses federal tax rates plus an approximate state income tax rate. It doesn't account for state-specific LLC fees (California charges $800/year minimum, for example), franchise taxes, or local taxes. Treat it as a directional estimate and verify with a local accountant for your specific situation.</p>
-  </details>
+<section class="content-section">
+  <h2>Understanding the real difference between LLC and sole proprietor</h2>
+  <p>One of the most common misconceptions among freelancers and small business owners is that forming an LLC automatically saves money on taxes. It doesn't — at least not by default. A single-member LLC that hasn't made a tax election is treated as a "disregarded entity" by the IRS, meaning it's taxed identically to a sole proprietorship. The profit flows through to your personal tax return on Schedule C, and you pay self-employment tax (15.3%) on the full amount.</p>
+  <p>The tax savings that LLC proponents talk about come from a specific action: electing to be taxed as an S-Corporation. This is separate from forming the LLC itself and requires filing Form 2553 with the IRS. Under S-Corp taxation, you split your business income into two parts: a salary you pay yourself (subject to payroll and self-employment taxes) and distributions (not subject to self-employment tax). This split can generate significant tax savings at higher income levels.</p>
+
+  <h3>When the S-Corp election actually makes sense</h3>
+  <p>The S-Corp election comes with real costs and administrative requirements: you need to run payroll (which requires payroll software or a service, typically $500–$2,000/year), you'll likely want an accountant to handle the more complex tax return ($1,000–$3,000/year compared to $300–$800 for a Schedule C), and some states have additional franchise taxes or minimum fees for S-Corps. The tax savings need to exceed these costs to make it worthwhile.</p>
+  <p>As a general rule of thumb, the S-Corp election starts to make financial sense when your net profit exceeds roughly $60,000–$80,000 per year. Below that threshold, the compliance costs and complexity typically outweigh the tax savings. Above that threshold, the savings can be substantial — often $5,000–$15,000 per year or more depending on your income and state.</p>
+
+  <h3>California's special situation</h3>
+  <p>California is a notable exception to the general rules above. California imposes an $800 annual minimum franchise tax on all LLCs, plus an additional gross receipts fee on LLCs earning over $250,000. This significantly raises the cost of operating an LLC in California and means the financial calculus is different there than in most other states. California-based business owners should factor in these additional costs when comparing structures.</p>
+
+  <h3>The liability protection question</h3>
+  <p>Even if the tax savings don't justify an LLC, the liability protection often does. As a sole proprietor, there is no legal separation between you and your business — your personal assets (home, car, savings) are all at risk if your business faces a lawsuit or can't pay its debts. An LLC creates a legal separation, so in most cases only your business assets are at risk.</p>
+  <p>How important this is depends entirely on what you do. A freelance writer faces different liability risks than a freelance software developer working on safety-critical systems. A consultant who occasionally handles sensitive data faces different risks than a retail store owner. Talk to an attorney about your specific situation — this is one area where getting professional advice is genuinely worth the cost.</p>
 </section>
 
-<footer>
-  <p>© 2025 SalaryParity · <a href="/">All tools</a> · <a href="/privacy">Privacy</a></p>
-  <p style="margin-top:6px;">Estimates only. Not tax or legal advice. Consult a CPA for your specific situation.</p>
-</footer>
-
+<section class="faq">
+  <h2>Frequently asked questions</h2>
+  <details><summary>Does forming an LLC save money on taxes automatically?</summary><p>No. A single-member LLC is treated as a "disregarded entity" by the IRS by default, meaning it's taxed identically to a sole proprietorship. The tax savings require an additional step: electing to be taxed as an S-Corporation by filing Form 2553. Forming the LLC itself provides liability protection but no immediate tax benefit.</p></details>
+  <details><summary>When does the S-Corp election make financial sense?</summary><p>Generally when your net self-employment profit exceeds $60,000–$80,000 per year. Below that, the compliance costs (payroll service, more complex tax return, additional accounting) typically outweigh the self-employment tax savings. The break-even point varies by state and individual situation — this calculator shows you the math for your specific numbers.</p></details>
+  <details><summary>What is a "reasonable salary" for S-Corp purposes?</summary><p>The IRS requires S-Corp owner-employees to pay themselves a "reasonable salary" — comparable to what you'd pay someone else to do the same work. There's no exact formula, but it should be defensible if audited. Most accountants suggest 40–60% of net profit as a starting point for service businesses. Too low a salary is a significant red flag for IRS audits and can result in penalties and back taxes.</p></details>
+  <details><summary>Do I need a lawyer to form an LLC?</summary><p>No — you can file directly with your state's Secretary of State website for $50–$500 depending on the state. Wyoming, Delaware, and Nevada are popular for their favorable LLC laws and low fees. However, consulting an accountant or CPA before making the S-Corp election is genuinely worthwhile — the payroll setup has ongoing costs that need to be weighed against your projected tax savings.</p></details>
+  <details><summary>What states have the highest LLC fees?</summary><p>California charges an $800 annual minimum franchise tax plus a gross receipts fee for LLCs over $250,000 in revenue. Massachusetts charges $500/year. Illinois charges $75/year. Wyoming, New Mexico, and Montana are among the cheapest states to maintain an LLC. If you form an LLC in a different state than where you live and work, you'll typically also need to register as a "foreign LLC" in your home state — effectively paying twice.</p></details>
+  <details><summary>Can a sole proprietor open a business bank account?</summary><p>Yes, but it's harder. Most banks will open a business account for a sole proprietor using a DBA (Doing Business As) name, but some larger banks require an EIN and formal business registration. An LLC makes banking easier and also creates a cleaner paper trail separating personal and business finances, which is important both for liability protection and for tax purposes.</p></details>
+  <details><summary>Is this calculator accurate for my specific state?</summary><p>The calculator uses federal tax rates plus an approximate state income tax rate. It doesn't account for state-specific LLC fees (like California's $800 minimum), franchise taxes, or local taxes. Treat it as a directional estimate — the federal tax math is accurate, but the state-level numbers need verification with a local accountant for your specific situation.</p></details>
+  <details><summary>What's the difference between an LLC and an S-Corp?</summary><p>An LLC is a legal business structure that provides liability protection. An S-Corp is a tax designation — not a separate legal entity. You can have an LLC that is taxed as an S-Corp (by filing Form 2553), which is the most common structure for self-employed people who want both liability protection and the tax benefits of S-Corp taxation. You can also have a standard C-Corporation elect S-Corp status, but that's a separate scenario.</p></details>
+</section>
+<footer><p>© 2025 SalaryParity · <a href="/">All tools</a> · <a href="/privacy">Privacy</a></p><p style="margin-top:6px;">Estimates only. Not tax or legal advice. Consult a CPA for your specific situation.</p></footer>
 <script>
-function fmtMoney(n) { return '$' + Math.round(Math.abs(n)).toLocaleString(); }
-
-function fedTax(income) {
-  if (income <= 0) return 0;
-  if (income <= 11600) return income * 0.10;
-  if (income <= 47150) return 1160 + (income-11600)*0.12;
-  if (income <= 100525) return 5426 + (income-47150)*0.22;
-  if (income <= 191950) return 17168 + (income-100525)*0.24;
-  if (income <= 243725) return 39110 + (income-191950)*0.32;
-  return 55678 + (income-243725)*0.35;
-}
-
-function buildRows(rows) {
-  return rows.map(r => `
-    <div class="cc-row ${r.total ? 'total' : ''}">
-      <span class="label">${r.label}</span>
-      <span class="val">${r.val}</span>
-    </div>`).join('');
-}
-
-function calculate() {
-  const gross = parseFloat(document.getElementById('gross').value) || 0;
-  const expenses = parseFloat(document.getElementById('biz-expenses').value) || 0;
-  const stateRate = parseFloat(document.getElementById('biz-state').value);
-  const llcType = document.getElementById('llc-type').value;
-  const sCropSalary = parseFloat(document.getElementById('s-corp-salary').value) || 0;
-
-  const netProfit = gross - expenses;
-  if (netProfit <= 0) { alert('Net profit must be positive.'); return; }
-
-  // SOLE PROPRIETOR
-  const sp_seBase = netProfit * 0.9235;
-  const sp_seTax = sp_seBase * 0.153;
-  const sp_deduction = sp_seTax / 2;
-  const sp_taxableIncome = netProfit - sp_deduction;
-  const sp_fed = fedTax(sp_taxableIncome);
-  const sp_state = sp_taxableIncome * stateRate;
-  const sp_total = sp_seTax + sp_fed + sp_state;
-  const sp_takeHome = netProfit - sp_total;
-
-  // LLC DEFAULT (same as SP)
-  let llc_total, llc_takeHome, llc_rows, llcLabel;
-  if (llcType === 'disregarded') {
-    llc_total = sp_total;
-    llc_takeHome = sp_takeHome;
-    llcLabel = 'LLC (Default)';
-    llc_rows = buildRows([
-      { label: 'Net profit', val: fmtMoney(netProfit) },
-      { label: 'Self-employment tax', val: fmtMoney(sp_seTax) },
-      { label: 'Federal income tax', val: fmtMoney(sp_fed) },
-      { label: 'State income tax', val: fmtMoney(sp_state) },
-      { label: 'Total tax', val: fmtMoney(llc_total), total: true },
-    ]);
-  } else {
-    // S-CORP
-    const salary = Math.min(sCropSalary, netProfit);
-    const distribution = Math.max(netProfit - salary, 0);
-    const sc_seTax = salary * 0.153;
-    const sc_employerSE = salary * 0.0765;
-    const sc_taxableIncome = salary - sc_employerSE + distribution;
-    const sc_fed = fedTax(sc_taxableIncome);
-    const sc_state = sc_taxableIncome * stateRate;
-    const sc_payroll = salary * 0.0765;
-    llc_total = sc_seTax + sc_fed + sc_state + 1500; // ~$1500 payroll/accounting cost
-    llc_takeHome = netProfit - llc_total;
-    llcLabel = 'LLC (S-Corp)';
-    llc_rows = buildRows([
-      { label: 'Owner salary', val: fmtMoney(salary) },
-      { label: 'Distributions', val: fmtMoney(distribution) },
-      { label: 'Payroll/SE tax', val: fmtMoney(sc_seTax) },
-      { label: 'Federal income tax', val: fmtMoney(sc_fed) },
-      { label: 'State income tax', val: fmtMoney(sc_state) },
-      { label: 'Est. payroll/accounting fees', val: '~$1,500' },
-      { label: 'Total tax + fees', val: fmtMoney(llc_total), total: true },
-    ]);
-  }
-
-  const savings = sp_total - llc_total;
-  const winner = savings > 500 ? 'llc' : savings < -500 ? 'sp' : 'tie';
-
-  document.getElementById('savings-amount').textContent = savings > 0 ? fmtMoney(savings) : '$0';
-  document.getElementById('savings-sub').textContent = savings > 500
-    ? `with ${llcLabel} vs Sole Proprietor`
-    : savings < -500 ? 'Sole Proprietor is cheaper in your case'
-    : 'Minimal difference — other factors matter more';
-
-  const vbox = document.getElementById('verdict-box');
-  if (winner === 'llc') {
-    vbox.className = 'verdict good';
-    document.getElementById('verdict-title').textContent = `${llcLabel} saves you ${fmtMoney(savings)}/year.`;
-    document.getElementById('verdict-body').textContent = llcType === 'scorp'
-      ? `By splitting income between a ${fmtMoney(sCropSalary)} salary and distributions, you avoid self-employment tax on the distribution portion. At your income level, the S-Corp election makes clear financial sense — just budget for payroll setup costs (~$500 one-time) and ongoing accounting.`
-      : `A default LLC is taxed identically to a sole proprietorship — the savings come from liability protection, not tax reduction. Consider electing S-Corporation status if your net profit consistently exceeds $60k.`;
-  } else if (winner === 'sp') {
-    vbox.className = 'verdict meh';
-    document.getElementById('verdict-title').textContent = 'Sole Proprietor is the better choice right now.';
-    document.getElementById('verdict-body').textContent = `At your current income level, the accounting and payroll costs of an S-Corp election outweigh the tax savings. Revisit this comparison when your net profit consistently exceeds $60–80k/year.`;
-  } else {
-    vbox.className = 'verdict meh';
-    document.getElementById('verdict-title').textContent = 'The tax difference is minimal — decide on other factors.';
-    document.getElementById('verdict-body').textContent = `Your tax liability is nearly identical under both structures. Choose based on liability protection needs, business credibility, and long-term plans rather than tax savings alone.`;
-  }
-
-  // Render cards
-  document.getElementById('llc-title').textContent = llcLabel;
-  document.getElementById('sp-rows').innerHTML = buildRows([
-    { label: 'Net profit', val: fmtMoney(netProfit) },
-    { label: 'Self-employment tax', val: fmtMoney(sp_seTax) },
-    { label: 'Federal income tax', val: fmtMoney(sp_fed) },
-    { label: 'State income tax', val: fmtMoney(sp_state) },
-    { label: 'Total tax', val: fmtMoney(sp_total), total: true },
-  ]);
-  document.getElementById('llc-rows').innerHTML = llc_rows;
-
-  const spCard = document.getElementById('sp-card');
-  const llcCard = document.getElementById('llc-card');
-  const spBadge = document.getElementById('sp-badge');
-  const llcBadge = document.getElementById('llc-badge');
-
-  if (winner === 'sp') {
-    spCard.className = 'compare-card winner'; spBadge.className = 'cc-badge badge-winner'; spBadge.textContent = '✓ Saves more';
-    llcCard.className = 'compare-card loser'; llcBadge.className = 'cc-badge badge-loser'; llcBadge.textContent = 'Higher cost';
-  } else if (winner === 'llc') {
-    llcCard.className = 'compare-card winner'; llcBadge.className = 'cc-badge badge-winner'; llcBadge.textContent = '✓ Saves more';
-    spCard.className = 'compare-card loser'; spBadge.className = 'cc-badge badge-loser'; spBadge.textContent = 'Higher cost';
-  } else {
-    spCard.className = 'compare-card'; spBadge.className = 'cc-badge badge-loser'; spBadge.textContent = 'Similar';
-    llcCard.className = 'compare-card'; llcBadge.className = 'cc-badge badge-loser'; llcBadge.textContent = 'Similar';
-  }
-
-  document.getElementById('results').className = 'results show';
-  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+function fmtMoney(n){return '$'+Math.round(Math.abs(n)).toLocaleString();}
+function fedTax(income){if(income<=0)return 0;if(income<=11600)return income*0.10;if(income<=47150)return 1160+(income-11600)*0.12;if(income<=100525)return 5426+(income-47150)*0.22;if(income<=191950)return 17168+(income-100525)*0.24;if(income<=243725)return 39110+(income-191950)*0.32;return 55678+(income-243725)*0.35;}
+function buildRows(rows){return rows.map(r=>`<div class="cc-row ${r.total?'total':''}"><span class="label">${r.label}</span><span class="val">${r.val}</span></div>`).join('');}
+function calculate(){
+  const gross=parseFloat(document.getElementById('gross').value)||0;
+  const expenses=parseFloat(document.getElementById('biz-expenses').value)||0;
+  const stateRate=parseFloat(document.getElementById('biz-state').value);
+  const llcType=document.getElementById('llc-type').value;
+  const sCropSalary=parseFloat(document.getElementById('s-corp-salary').value)||0;
+  const netProfit=gross-expenses;
+  if(netProfit<=0){alert('Net profit must be positive.');return;}
+  const sp_seBase=netProfit*0.9235;const sp_seTax=sp_seBase*0.153;const sp_deduction=sp_seTax/2;
+  const sp_taxableIncome=netProfit-sp_deduction;const sp_fed=fedTax(sp_taxableIncome);const sp_state=sp_taxableIncome*stateRate;const sp_total=sp_seTax+sp_fed+sp_state;
+  let llc_total,llcLabel,llc_rows;
+  if(llcType==='disregarded'){llc_total=sp_total;llcLabel='LLC (Default)';llc_rows=buildRows([{label:'Net profit',val:fmtMoney(netProfit)},{label:'Self-employment tax',val:fmtMoney(sp_seTax)},{label:'Federal income tax',val:fmtMoney(sp_fed)},{label:'State income tax',val:fmtMoney(sp_state)},{label:'Total tax',val:fmtMoney(llc_total),total:true}]);}
+  else{const salary=Math.min(sCropSalary,netProfit);const distribution=Math.max(netProfit-salary,0);const sc_seTax=salary*0.153;const sc_employerSE=salary*0.0765;const sc_taxableIncome=salary-sc_employerSE+distribution;const sc_fed=fedTax(sc_taxableIncome);const sc_state=sc_taxableIncome*stateRate;llc_total=sc_seTax+sc_fed+sc_state+1500;llcLabel='LLC (S-Corp)';llc_rows=buildRows([{label:'Owner salary',val:fmtMoney(salary)},{label:'Distributions',val:fmtMoney(distribution)},{label:'Payroll/SE tax',val:fmtMoney(sc_seTax)},{label:'Federal income tax',val:fmtMoney(sc_fed)},{label:'State income tax',val:fmtMoney(sc_state)},{label:'Est. payroll/accounting fees',val:'~$1,500'},{label:'Total tax + fees',val:fmtMoney(llc_total),total:true}]);}
+  const savings=sp_total-llc_total;const winner=savings>500?'llc':savings<-500?'sp':'tie';
+  document.getElementById('savings-amount').textContent=savings>0?fmtMoney(savings):'$0';
+  document.getElementById('savings-sub').textContent=savings>500?`with ${llcLabel} vs Sole Proprietor`:savings<-500?'Sole Proprietor is cheaper in your case':'Minimal difference — other factors matter more';
+  const vbox=document.getElementById('verdict-box');
+  if(winner==='llc'){vbox.className='verdict good';document.getElementById('verdict-title').textContent=`${llcLabel} saves you ${fmtMoney(savings)}/year.`;document.getElementById('verdict-body').textContent=llcType==='scorp'?`By splitting income between a ${fmtMoney(sCropSalary)} salary and distributions, you avoid self-employment tax on the distribution portion. The S-Corp election makes clear financial sense at your income level.`:`A default LLC is taxed identically to a sole proprietorship — no tax savings from the LLC alone. Consider S-Corporation election if net profit consistently exceeds $60k.`;}
+  else if(winner==='sp'){vbox.className='verdict meh';document.getElementById('verdict-title').textContent='Sole Proprietor is the better choice right now.';document.getElementById('verdict-body').textContent='At your current income level, the accounting and payroll costs of an S-Corp election outweigh the tax savings. Revisit when net profit consistently exceeds $60–80k/year.';}
+  else{vbox.className='verdict meh';document.getElementById('verdict-title').textContent='The tax difference is minimal — decide on other factors.';document.getElementById('verdict-body').textContent='Your tax liability is nearly identical under both structures. Choose based on liability protection needs and long-term business plans rather than tax savings.';}
+  document.getElementById('llc-title').textContent=llcLabel;
+  document.getElementById('sp-rows').innerHTML=buildRows([{label:'Net profit',val:fmtMoney(netProfit)},{label:'Self-employment tax',val:fmtMoney(sp_seTax)},{label:'Federal income tax',val:fmtMoney(sp_fed)},{label:'State income tax',val:fmtMoney(sp_state)},{label:'Total tax',val:fmtMoney(sp_total),total:true}]);
+  document.getElementById('llc-rows').innerHTML=llc_rows;
+  const spCard=document.getElementById('sp-card');const llcCard=document.getElementById('llc-card');const spBadge=document.getElementById('sp-badge');const llcBadge=document.getElementById('llc-badge');
+  if(winner==='sp'){spCard.className='compare-card winner';spBadge.className='cc-badge badge-winner';spBadge.textContent='✓ Saves more';llcCard.className='compare-card loser';llcBadge.className='cc-badge badge-loser';llcBadge.textContent='Higher cost';}
+  else if(winner==='llc'){llcCard.className='compare-card winner';llcBadge.className='cc-badge badge-winner';llcBadge.textContent='✓ Saves more';spCard.className='compare-card loser';spBadge.className='cc-badge badge-loser';spBadge.textContent='Higher cost';}
+  else{spCard.className='compare-card';spBadge.className='cc-badge badge-loser';spBadge.textContent='Similar';llcCard.className='compare-card';llcBadge.className='cc-badge badge-loser';llcBadge.textContent='Similar';}
+  document.getElementById('results').className='results show';
+  document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
 </script>
 </body>
