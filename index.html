@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salary Reality Check — Is This Offer Actually Good?</title>
-<meta name="description" content="Free salary comparison calculator. Adjust for cost of living, taxes, and market benchmarks across 50+ cities worldwide — get a negotiation email in 30 seconds.">
-<meta name="keywords" content="salary comparison, cost of living calculator, salary negotiation, is my salary good, salary by city, real salary calculator">
-<meta property="og:title" content="Salary Reality Check — Is This Offer Actually Good?">
-<meta property="og:description" content="Adjust for cost of living, taxes & market data across 50+ cities. Get a negotiation email in 30 seconds. Free.">
+<title>Salary Reality Check — Is This Job Offer Actually Good?</title>
+<meta name="description" content="Free salary comparison calculator. Adjust for cost of living, taxes, and market benchmarks across 50+ cities worldwide. Get a ready-to-send negotiation email in 30 seconds.">
+<meta name="keywords" content="salary comparison calculator, cost of living salary adjustment, is my salary good, salary negotiation tool, real salary after taxes, salary by city comparison">
+<meta property="og:title" content="Salary Reality Check — Is This Job Offer Actually Good?">
+<meta property="og:description" content="Adjust for cost of living, taxes and market data across 50+ cities. Get a negotiation email in 30 seconds. Free.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://salaryparity.com/salary-calculator">
 <link rel="canonical" href="https://salaryparity.com/salary-calculator">
@@ -20,7 +20,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Salary Reality Check",
-  "description": "Salary comparison calculator with cost of living adjustment, tax estimation, and negotiation email generator.",
+  "description": "Free salary comparison calculator with cost of living adjustment, tax estimation, and negotiation email generator.",
   "url": "https://salaryparity.com/salary-calculator",
   "applicationCategory": "FinanceApplication",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -33,38 +33,36 @@
     --red:#E24B4A;--red-light:#FCEBEB;--red-text:#501313;
     --blue:#378ADD;--blue-light:#E6F1FB;
     --gray-50:#F8F8F7;--gray-100:#F1F0EC;--gray-200:#E0DED8;
-    --gray-400:#9B9A95;--gray-600:#5F5E5A;--gray-900:#1A1A18;
     --text:#1A1A18;--text-muted:#5F5E5A;--text-faint:#9B9A95;
     --border:rgba(0,0,0,0.08);--radius:10px;--radius-sm:6px;
-    --shadow:0 1px 3px rgba(0,0,0,0.06);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
-  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--gray-50);color:var(--text);line-height:1.6;min-height:100vh;}
+  body{font-family:'DM Sans',sans-serif;background:#F8F8F7;color:#1A1A18;line-height:1.6;min-height:100vh;}
   nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
   .nav-logo{font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}
   .nav-logo span{color:var(--green);}
   .nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}
   .nav-back:hover{color:var(--text);}
-  .hero{text-align:center;padding:56px 24px 40px;max-width:600px;margin:0 auto;}
-  .hero-badge{display:inline-block;font-size:11px;font-weight:500;background:var(--green-light);color:var(--green-text);padding:4px 12px;border-radius:999px;margin-bottom:18px;letter-spacing:0.5px;}
-  h1{font-size:clamp(26px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;color:var(--text);margin-bottom:14px;}
+  .hero{text-align:center;padding:56px 24px 40px;max-width:640px;margin:0 auto;}
+  .hero-badge{display:inline-block;font-size:11px;font-weight:500;background:var(--green-light);color:var(--green-text);padding:4px 12px;border-radius:999px;margin-bottom:18px;}
+  h1{font-size:clamp(26px,5vw,40px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;margin-bottom:14px;}
   h1 em{font-style:normal;color:var(--green);}
-  .hero-sub{font-size:15px;color:var(--text-muted);max-width:440px;margin:0 auto 10px;line-height:1.6;}
+  .hero-sub{font-size:16px;color:var(--text-muted);max-width:480px;margin:0 auto 10px;line-height:1.6;}
   .hero-proof{font-size:12px;color:var(--text-faint);}
   .ad-slot{max-width:728px;margin:0 auto 28px;padding:0 24px;text-align:center;}
   .ad-placeholder{background:var(--gray-100);border:1px dashed var(--gray-200);border-radius:var(--radius-sm);padding:16px;font-size:11px;color:var(--text-faint);min-height:90px;display:flex;align-items:center;justify-content:center;}
-  main{max-width:720px;margin:0 auto;padding:0 16px 80px;}
-  .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:14px;box-shadow:var(--shadow);}
+  main{max-width:760px;margin:0 auto;padding:0 16px 60px;}
+  .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,0.05);}
   .section-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--text-faint);margin-bottom:14px;}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-  @media(max-width:520px){.grid2,.grid3{grid-template-columns:1fr;}.metrics{grid-template-columns:repeat(2,1fr)!important;}}
+  @media(max-width:560px){.grid2,.grid3{grid-template-columns:1fr;}.metrics{grid-template-columns:repeat(2,1fr)!important;}}
   .field{display:flex;flex-direction:column;gap:6px;}
   .field label{font-size:12px;color:var(--text-muted);font-weight:500;}
   .field input,.field select{height:40px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--gray-50);color:var(--text);font-size:14px;font-family:'DM Sans',sans-serif;padding:0 12px;outline:none;transition:border-color 0.15s,box-shadow 0.15s;}
   .field input:focus,.field select:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(29,158,117,0.12);background:#fff;}
-  .run-btn{width:100%;height:48px;background:var(--green);color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background 0.15s,transform 0.1s;letter-spacing:-0.1px;margin-bottom:14px;}
+  .run-btn{width:100%;height:48px;background:var(--green);color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background 0.15s,transform 0.1s;margin-bottom:14px;}
   .run-btn:hover{background:var(--green-dark);}
   .run-btn:active{transform:scale(0.99);}
   .results{display:none;}
@@ -80,10 +78,10 @@
   .verdict.bad{background:var(--red-light);color:var(--red-text);border:1px solid #F09595;}
   .verdict strong{font-weight:600;display:block;margin-bottom:3px;font-size:15px;}
   .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-  .bar-label{font-size:12px;color:var(--text-muted);width:110px;flex-shrink:0;}
+  .bar-label{font-size:12px;color:var(--text-muted);width:120px;flex-shrink:0;}
   .bar-track{flex:1;height:8px;background:var(--gray-100);border-radius:4px;overflow:hidden;}
   .bar-fill{height:100%;border-radius:4px;transition:width 0.7s cubic-bezier(.4,0,.2,1);}
-  .bar-val{font-size:12px;font-weight:600;width:72px;text-align:right;color:var(--text);font-family:'DM Mono',monospace;}
+  .bar-val{font-size:12px;font-weight:600;width:80px;text-align:right;color:var(--text);font-family:'DM Mono',monospace;}
   .tab-row{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;}
   .tab{padding:5px 14px;font-size:12px;font-weight:500;border:1px solid var(--border);border-radius:999px;cursor:pointer;color:var(--text-muted);background:transparent;font-family:'DM Sans',sans-serif;transition:all 0.12s;}
   .tab:hover{border-color:var(--green);color:var(--green);}
@@ -97,17 +95,28 @@
   .badge-pill{font-size:10px;background:var(--green-light);color:var(--green-text);padding:2px 8px;border-radius:999px;font-weight:600;}
   .data-source{font-size:11px;color:var(--text-faint);margin-top:10px;padding-top:10px;border-top:1px solid var(--border);}
   .data-source a{color:var(--text-faint);text-decoration:underline;}
-  .faq{max-width:720px;margin:0 auto 48px;padding:0 16px;}
-  .faq h2{font-size:20px;font-weight:600;margin-bottom:20px;}
+  /* Content sections */
+  .content-section{max-width:760px;margin:0 auto;padding:0 16px 48px;}
+  .content-section h2{font-size:22px;font-weight:600;margin-bottom:16px;color:var(--text);}
+  .content-section h3{font-size:16px;font-weight:600;margin:24px 0 10px;color:var(--text);}
+  .content-section p{font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:14px;}
+  .content-section ul{padding-left:20px;margin-bottom:14px;}
+  .content-section ul li{font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:6px;}
+  .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:20px 0;}
+  .info-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);}
+  .info-card .ic-icon{font-size:24px;margin-bottom:8px;}
+  .info-card .ic-title{font-size:14px;font-weight:600;margin-bottom:6px;}
+  .info-card .ic-desc{font-size:13px;color:var(--text-muted);line-height:1.6;}
+  .faq{max-width:760px;margin:0 auto 48px;padding:0 16px;}
+  .faq h2{font-size:22px;font-weight:600;margin-bottom:20px;}
   details{border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:8px;background:#fff;}
-  summary{padding:14px 16px;cursor:pointer;font-size:14px;font-weight:500;list-style:none;display:flex;justify-content:space-between;}
+  summary{padding:14px 16px;cursor:pointer;font-size:14px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;}
   summary::after{content:'+';font-size:18px;color:var(--text-faint);}
   details[open] summary::after{content:'−';}
-  details p{padding:0 16px 14px;font-size:13px;color:var(--text-muted);line-height:1.7;}
+  details p{padding:0 16px 14px;font-size:13px;color:var(--text-muted);line-height:1.8;}
   footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text-faint);border-top:1px solid var(--border);background:#fff;}
   footer a{color:var(--text-faint);text-decoration:none;}
   footer a:hover{color:var(--text);}
-  .optgroup-label{font-weight:600;color:var(--text-faint);}
 </style>
 </head>
 <body>
@@ -118,14 +127,14 @@
 </nav>
 
 <section class="hero">
-  <div class="hero-badge">50+ cities · 2025 data · free forever</div>
+  <div class="hero-badge">50+ cities · Numbeo 2025 data · BLS May 2024 · Free</div>
   <h1>Is that salary offer <em>actually</em> good?</h1>
-  <p class="hero-sub">Adjust for cost of living, taxes, and market benchmarks across 50+ cities worldwide — get a negotiation email in 30 seconds.</p>
-  <p class="hero-proof">Data: Numbeo 2025 CoL Index · BLS May 2024 · Levels.fyi</p>
+  <p class="hero-sub">Most people accept or reject job offers without knowing their real value. This tool tells you exactly where you stand — after cost of living, after taxes, versus the real market — in 30 seconds.</p>
+  <p class="hero-proof">Data sources: Numbeo 2025 CoL Index · BLS Occupational Employment Stats May 2024 · Levels.fyi</p>
 </section>
 
 <div class="ad-slot">
-  <div class="ad-placeholder">Advertisement · 728×90</div>
+  <div class="ad-placeholder">Advertisement</div>
 </div>
 
 <main id="calculator">
@@ -353,7 +362,7 @@
     </div>
   </div>
 
-  <button class="run-btn" id="calcBtn" onclick="calculate()">Calculate my real salary →</button>
+  <button class="run-btn" onclick="calculate()">Calculate my real salary →</button>
 
   <div class="results" id="results">
     <div class="card">
@@ -368,20 +377,13 @@
         <strong id="verdict-title">—</strong>
         <span id="verdict-body">—</span>
       </div>
-      <div class="data-source">
-        CoL data: <a href="https://www.numbeo.com/cost-of-living/" target="_blank">Numbeo 2025</a> ·
-        Salary benchmarks: <a href="https://www.bls.gov/oes/" target="_blank">BLS OES May 2024</a> + <a href="https://www.levels.fyi" target="_blank">Levels.fyi</a> ·
-        Tax: 2024 federal brackets + state estimates
-      </div>
+      <div class="data-source">CoL data: <a href="https://www.numbeo.com/cost-of-living/" target="_blank" rel="noopener">Numbeo 2025</a> · Salary benchmarks: <a href="https://www.bls.gov/oes/" target="_blank" rel="noopener">BLS OES May 2024</a> + <a href="https://www.levels.fyi" target="_blank" rel="noopener">Levels.fyi</a> · Tax: 2024 federal brackets + state estimates</div>
     </div>
-
-    <div class="ad-mid">Advertisement · 336×280</div>
-
+    <div class="ad-mid">Advertisement</div>
     <div class="card">
       <div class="section-heading">Salary breakdown <span class="badge-pill">vs market</span></div>
       <div id="bar-section"></div>
     </div>
-
     <div class="card">
       <div class="section-heading">Negotiation email <span class="badge-pill">copy & send</span></div>
       <div class="tab-row">
@@ -397,27 +399,102 @@
   </div>
 </main>
 
-<section class="faq" id="faq">
-  <h2>Common questions</h2>
+<!-- RICH CONTENT FOR GOOGLE -->
+<section class="content-section">
+  <h2>Why your salary number is almost never your real salary</h2>
+  <p>When a company offers you $100,000 a year, that number is just the beginning of the calculation. Before you can understand what the offer is actually worth, you need to account for three major factors that most job seekers ignore entirely: cost of living differences, income taxes, and how the offer stacks up against what other people in your field are actually being paid.</p>
+  <p>Cost of living varies dramatically across cities. A $100,000 salary in San Francisco, where the cost of living index is among the highest in the country, gives you far less real purchasing power than the same salary in a city like Pittsburgh or Cincinnati. According to Numbeo's 2025 data, basic expenses in San Francisco run about 35% higher than the national average — meaning that $100k in San Francisco is worth roughly the same as $74,000 in a mid-cost city. That's a $26,000 difference on the same nominal salary.</p>
+  <p>Taxes compound the problem. A $100,000 salary in California comes with a 9.3% state income tax on top of federal taxes. The same salary in Texas comes with zero state income tax. That single difference can be worth $7,000–$9,000 per year in take-home pay — a bigger raise than most people get in an average year.</p>
+  <p>And then there's market positioning. Without knowing where your offer sits relative to what other people with your experience level, in your industry, at companies of similar size are actually being paid, you have no idea whether to negotiate or not — or how hard.</p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="ic-icon">📍</div>
+      <div class="ic-title">Cost of Living</div>
+      <div class="ic-desc">The same salary can feel like a raise or a pay cut depending on where you live. We use Numbeo's 2025 data across 50+ cities to calculate your real purchasing power.</div>
+    </div>
+    <div class="info-card">
+      <div class="ic-icon">🏛️</div>
+      <div class="ic-title">Tax Estimation</div>
+      <div class="ic-desc">Federal brackets, state income tax, and FICA (Social Security + Medicare) are all factored in. We use 2024 rates and the actual Social Security wage cap.</div>
+    </div>
+    <div class="info-card">
+      <div class="ic-icon">📊</div>
+      <div class="ic-title">Market Benchmarks</div>
+      <div class="ic-desc">Salary medians from BLS Occupational Employment Statistics (May 2024) and Levels.fyi, calibrated by industry, experience level, and company size.</div>
+    </div>
+    <div class="info-card">
+      <div class="ic-icon">✉️</div>
+      <div class="ic-title">Negotiation Email</div>
+      <div class="ic-desc">Once you know where you stand, we generate a professional counter-offer email ready to copy and send. Studies show over 70% of employers have flexibility to negotiate.</div>
+    </div>
+  </div>
+
+  <h3>How cost of living adjustments work</h3>
+  <p>Cost of living indices compare the relative cost of a basket of goods and services — housing, food, transportation, utilities, healthcare — across cities. We use Numbeo's 2025 Cost of Living Plus Rent Index, which is one of the most comprehensive and frequently updated databases available, covering thousands of data points contributed by users worldwide.</p>
+  <p>In this calculator, New York City serves as the baseline (index of 2.00). Cities with lower indices are cheaper — for example, Austin has an index of 1.33, meaning it's about 33% cheaper than New York on a combined cost-of-living-plus-rent basis. When we calculate your "real purchasing power," we're showing you what your salary would need to be in your home city to give you the equivalent lifestyle to what the offer would provide in the work city.</p>
+
+  <h3>Understanding market percentiles</h3>
+  <p>The market percentile tells you where your offer lands relative to what other people in your field are actually earning. A 50th percentile offer means half of people in comparable roles earn more, and half earn less. A 75th percentile offer means you'd be earning more than 75% of your peers.</p>
+  <p>Our benchmarks come from the Bureau of Labor Statistics Occupational Employment and Wage Statistics program (May 2024 release), the largest employer survey in the United States covering approximately 1.1 million business establishments. We supplement tech roles with Levels.fyi compensation data, which tracks total compensation including base, bonus, and equity at major technology companies.</p>
+  <p>The benchmarks are further adjusted by company size, because compensation varies significantly between a 10-person startup and a 50,000-person enterprise. FAANG and top-tier tech companies typically pay 40–50% above market median for equivalent roles, reflecting their ability to attract top talent.</p>
+
+  <h3>Who this tool is for</h3>
+  <p>This salary calculator is designed for anyone who has received a job offer and wants to understand its real value before responding. It's particularly useful for people who are comparing offers from companies in different cities, people who work remotely for a company headquartered in a high-cost city, people making their first major career move, and anyone who suspects their current salary may be below market but doesn't know by how much.</p>
+  <p>It's also useful for freelancers and consultants benchmarking an hourly rate against what full-time employees in their field are earning — you can compare what a $100/hour consulting rate implies about annual earnings versus typical full-time salaries for equivalent work.</p>
+</section>
+
+<section class="faq">
+  <h2>Frequently asked questions</h2>
+
   <details>
     <summary>How accurate is the cost of living adjustment?</summary>
-    <p>We use Numbeo's 2025 Cost of Living Plus Rent Index, one of the most widely cited real-time CoL databases, sourced from crowdsourced price data across thousands of contributors per city. New York City is used as the baseline (100). The adjustment gives you a directional read — for the most precise figure for your lifestyle, cross-reference with Numbeo's city comparison tool directly.</p>
+    <p>We use Numbeo's 2025 Cost of Living Plus Rent Index, one of the most widely cited real-time cost of living databases, updated continuously from crowdsourced price data across thousands of contributors per city. New York City serves as the 2.00 baseline. The adjustment gives you a directional read — for lifestyle-specific precision, cross-reference Numbeo's city comparison tool with your actual spending patterns.</p>
   </details>
+
   <details>
     <summary>Where does the market benchmark data come from?</summary>
-    <p>Market medians are calibrated from BLS Occupational Employment and Wage Statistics (May 2024), the most comprehensive government salary survey in the US, cross-referenced with Levels.fyi for tech roles and LinkedIn Salary Insights for other industries. Company size multipliers reflect real compensation premiums at different org sizes — FAANG companies pay roughly 30–40% above the market median for equivalent roles.</p>
+    <p>Market medians are anchored to BLS Occupational Employment and Wage Statistics from May 2024 — the most comprehensive government salary survey in the United States, covering approximately 1.1 million business establishments. For technology roles, we supplement with Levels.fyi compensation data. Company size multipliers reflect documented compensation premiums at different organization sizes: FAANG and top-tier tech companies typically pay 40–50% above market median for equivalent roles.</p>
   </details>
+
   <details>
     <summary>How is the take-home estimate calculated?</summary>
-    <p>We apply 2024 federal income tax brackets, estimated state income tax for your work city, and FICA (Social Security + Medicare at 7.65%). We don't account for pre-tax deductions like 401(k) contributions or health insurance premiums — your actual take-home will typically be higher once those reduce your taxable income.</p>
+    <p>We apply 2024 federal income tax brackets, estimated state income tax for your work city, and FICA contributions (Social Security at 6.2% up to the 2024 wage cap of $168,600, plus Medicare at 1.45% on all earnings). We don't account for pre-tax deductions like 401(k) contributions or health insurance premiums — your actual take-home will typically be higher once those reduce your taxable income.</p>
   </details>
+
   <details>
-    <summary>Does this work for international salaries?</summary>
-    <p>Yes — select your work city and home city from the international options. Note that for international comparisons, we convert using CoL indices relative to NYC. Tax estimates for non-US cities are approximations only, as international tax systems vary enormously. The CoL adjustment is accurate; the tax estimate should be verified locally.</p>
+    <summary>Does the calculator work for remote jobs?</summary>
+    <p>Yes — select "Remote (US avg)" as the work location. Note that some companies now pay based on your home city's cost of living rather than a single flat rate, so check your offer letter carefully for any geographic pay adjustment clauses. If your company uses location-based pay, select your home city as both the work and home location for the most accurate calculation.</p>
   </details>
+
   <details>
-    <summary>Is it always worth negotiating?</summary>
-    <p>Yes. Over 70% of hiring managers have budget flexibility, and fewer than 40% of candidates ask. The worst realistic outcome is they say no and the offer stands. Our counter-offer email is designed to be firm but professional — it won't damage the relationship if you use it as written.</p>
+    <summary>Does this work for international salary comparisons?</summary>
+    <p>Yes — we cover 12 international cities across Canada, Europe, and Asia-Pacific. For international comparisons, we convert using CoL indices relative to NYC. Tax estimates for non-US cities are approximations only, as international tax systems vary enormously by country, filing status, and deductions available. The CoL purchasing power adjustment is accurate; the tax estimate should be verified with a local tax professional.</p>
+  </details>
+
+  <details>
+    <summary>Should I always negotiate salary?</summary>
+    <p>Yes. Research consistently shows that over 70% of hiring managers have some budget flexibility, and fewer than 40% of candidates ask. The worst realistic outcome is they say no and the offer stands. Use the counter-offer email we generate as a starting point — it's designed to be firm but professional, citing market data rather than personal need, which is the framing that works best in salary negotiations.</p>
+  </details>
+
+  <details>
+    <summary>What's the difference between nominal salary and real purchasing power?</summary>
+    <p>Your nominal salary is the number on the offer letter. Your real purchasing power is what that money can actually buy, adjusted for where you live. If you're offered $120,000 to work in San Francisco but you live in Austin, your real purchasing power is lower than $120,000 because San Francisco's cost of living is significantly higher than Austin's. The calculator shows you both numbers so you understand what the offer is actually worth in terms of your day-to-day life.</p>
+  </details>
+
+  <details>
+    <summary>How do company size multipliers affect the market benchmark?</summary>
+    <p>Compensation varies significantly by company size. Seed-stage startups typically pay 15–20% below market median (compensating with equity upside). Mid-size companies sit near the median. FAANG and top-tier tech companies pay 40–50% above median. Our benchmarks apply these multipliers to the BLS national medians so your comparison reflects what people at companies similar to yours are actually earning — not a blended average that includes everyone from tiny startups to trillion-dollar corporations.</p>
+  </details>
+
+  <details>
+    <summary>How often is the data updated?</summary>
+    <p>Cost of living data is sourced from Numbeo's 2025 annual dataset. Salary benchmarks use BLS OES May 2024 figures, which are the most recent available at time of publication. We review and update all data annually. For the most current figures, cross-reference with BLS directly at bls.gov/oes and Numbeo at numbeo.com.</p>
+  </details>
+
+  <details>
+    <summary>Can I use this to evaluate my current salary, not just a new offer?</summary>
+    <p>Absolutely. Enter your current salary and city exactly as you would for a new offer. The market percentile will tell you where you currently stand. If you're below the 40th percentile, you have a strong case for asking for a raise — use the counter-offer email as a template for that conversation too, adjusted to address your current employer rather than a new one.</p>
   </details>
 </section>
 
@@ -427,233 +504,100 @@
 </footer>
 
 <script>
-// ─────────────────────────────────────────────
-// COST OF LIVING DATA — Numbeo 2025 CoL+Rent Index (NYC = 100 baseline)
-// Source: numbeo.com/cost-of-living/region_rankings.jsp?title=2025
-// stateTax = estimated effective state income tax rate
-// ─────────────────────────────────────────────
 const COL = {
-  // US West Coast
-  sf:          { index: 1.85, stateTax: 0.093, name: 'San Francisco, CA' },
-  la:          { index: 1.70, stateTax: 0.093, name: 'Los Angeles, CA' },
-  sandiego:    { index: 1.73, stateTax: 0.093, name: 'San Diego, CA' },
-  sacramento:  { index: 1.64, stateTax: 0.093, name: 'Sacramento, CA' },
-  seattle:     { index: 1.70, stateTax: 0.000, name: 'Seattle, WA' },
-  portland:    { index: 1.60, stateTax: 0.099, name: 'Portland, OR' },
-  // US Northeast
-  ny:          { index: 2.00, stateTax: 0.109, name: 'New York, NY' },
-  boston:      { index: 1.80, stateTax: 0.090, name: 'Boston, MA' },
-  dc:          { index: 1.74, stateTax: 0.085, name: 'Washington, DC' },
-  philadelphia:{ index: 1.65, stateTax: 0.031, name: 'Philadelphia, PA' },
-  baltimore:   { index: 1.47, stateTax: 0.055, name: 'Baltimore, MD' },
-  pittsburgh:  { index: 1.37, stateTax: 0.031, name: 'Pittsburgh, PA' },
-  // US South
-  miami:       { index: 1.62, stateTax: 0.000, name: 'Miami, FL' },
-  tampa:       { index: 1.42, stateTax: 0.000, name: 'Tampa, FL' },
-  orlando:     { index: 1.29, stateTax: 0.000, name: 'Orlando, FL' },
-  jacksonville:{ index: 1.19, stateTax: 0.000, name: 'Jacksonville, FL' },
-  atlanta:     { index: 1.32, stateTax: 0.055, name: 'Atlanta, GA' },
-  charlotte:   { index: 1.31, stateTax: 0.049, name: 'Charlotte, NC' },
-  raleigh:     { index: 1.28, stateTax: 0.049, name: 'Raleigh, NC' },
-  nashville:   { index: 1.25, stateTax: 0.000, name: 'Nashville, TN' },
-  neworleans:  { index: 1.33, stateTax: 0.060, name: 'New Orleans, LA' },
-  // US Midwest
-  chicago:     { index: 1.46, stateTax: 0.049, name: 'Chicago, IL' },
-  minneapolis: { index: 1.34, stateTax: 0.098, name: 'Minneapolis, MN' },
-  columbus:    { index: 1.20, stateTax: 0.040, name: 'Columbus, OH' },
-  cincinnati:  { index: 1.09, stateTax: 0.040, name: 'Cincinnati, OH' },
-  stlouis:     { index: 1.24, stateTax: 0.054, name: 'St. Louis, MO' },
-  kansascity:  { index: 1.20, stateTax: 0.054, name: 'Kansas City, MO' },
-  detroit:     { index: 1.18, stateTax: 0.043, name: 'Detroit, MI' },
-  madison:     { index: 1.27, stateTax: 0.076, name: 'Madison, WI' },
-  // US Southwest / Mountain
-  austin:      { index: 1.33, stateTax: 0.000, name: 'Austin, TX' },
-  dallas:      { index: 1.27, stateTax: 0.000, name: 'Dallas, TX' },
-  houston:     { index: 1.21, stateTax: 0.000, name: 'Houston, TX' },
-  sanantonio:  { index: 1.17, stateTax: 0.000, name: 'San Antonio, TX' },
-  denver:      { index: 1.43, stateTax: 0.044, name: 'Denver, CO' },
-  phoenix:     { index: 1.27, stateTax: 0.025, name: 'Phoenix, AZ' },
-  lasvegas:    { index: 1.29, stateTax: 0.000, name: 'Las Vegas, NV' },
-  saltlake:    { index: 1.23, stateTax: 0.049, name: 'Salt Lake City, UT' },
-  boise:       { index: 1.21, stateTax: 0.058, name: 'Boise, ID' },
-  tucson:      { index: 1.26, stateTax: 0.025, name: 'Tucson, AZ' },
-  // US Other
-  honolulu:    { index: 1.74, stateTax: 0.110, name: 'Honolulu, HI' },
-  remote:      { index: 1.30, stateTax: 0.050, name: 'Remote (US avg)' },
-  // Canada (indices relative to NYC=2.0 baseline, converted)
-  toronto:     { index: 1.22, stateTax: 0.097, name: 'Toronto, Canada' },
-  vancouver:   { index: 1.25, stateTax: 0.128, name: 'Vancouver, Canada' },
-  montreal:    { index: 1.16, stateTax: 0.150, name: 'Montreal, Canada' },
-  calgary:     { index: 1.21, stateTax: 0.100, name: 'Calgary, Canada' },
-  ottawa:      { index: 1.17, stateTax: 0.097, name: 'Ottawa, Canada' },
-  // Europe (USD-equivalent, Numbeo 2025 global index)
-  london:      { index: 1.78, stateTax: 0.200, name: 'London, UK' },
-  amsterdam:   { index: 1.65, stateTax: 0.195, name: 'Amsterdam, Netherlands' },
-  berlin:      { index: 1.42, stateTax: 0.200, name: 'Berlin, Germany' },
-  paris:       { index: 1.58, stateTax: 0.210, name: 'Paris, France' },
-  zurich:      { index: 2.20, stateTax: 0.115, name: 'Zurich, Switzerland' },
-  stockholm:   { index: 1.52, stateTax: 0.220, name: 'Stockholm, Sweden' },
-  dublin:      { index: 1.68, stateTax: 0.195, name: 'Dublin, Ireland' },
-  // Asia / Pacific
-  singapore:   { index: 1.55, stateTax: 0.110, name: 'Singapore' },
-  sydney:      { index: 1.62, stateTax: 0.190, name: 'Sydney, Australia' },
-  melbourne:   { index: 1.55, stateTax: 0.190, name: 'Melbourne, Australia' },
-  tokyo:       { index: 1.38, stateTax: 0.200, name: 'Tokyo, Japan' },
-  dubai:       { index: 1.30, stateTax: 0.000, name: 'Dubai, UAE' },
-  hongkong:    { index: 1.72, stateTax: 0.150, name: 'Hong Kong' },
+  sf:{index:1.85,stateTax:0.093,name:'San Francisco, CA'},la:{index:1.70,stateTax:0.093,name:'Los Angeles, CA'},sandiego:{index:1.73,stateTax:0.093,name:'San Diego, CA'},sacramento:{index:1.64,stateTax:0.093,name:'Sacramento, CA'},seattle:{index:1.70,stateTax:0.000,name:'Seattle, WA'},portland:{index:1.60,stateTax:0.099,name:'Portland, OR'},
+  ny:{index:2.00,stateTax:0.109,name:'New York, NY'},boston:{index:1.80,stateTax:0.090,name:'Boston, MA'},dc:{index:1.74,stateTax:0.085,name:'Washington, DC'},philadelphia:{index:1.65,stateTax:0.031,name:'Philadelphia, PA'},baltimore:{index:1.47,stateTax:0.055,name:'Baltimore, MD'},pittsburgh:{index:1.37,stateTax:0.031,name:'Pittsburgh, PA'},
+  miami:{index:1.62,stateTax:0.000,name:'Miami, FL'},tampa:{index:1.42,stateTax:0.000,name:'Tampa, FL'},orlando:{index:1.29,stateTax:0.000,name:'Orlando, FL'},jacksonville:{index:1.19,stateTax:0.000,name:'Jacksonville, FL'},atlanta:{index:1.32,stateTax:0.055,name:'Atlanta, GA'},charlotte:{index:1.31,stateTax:0.049,name:'Charlotte, NC'},raleigh:{index:1.28,stateTax:0.049,name:'Raleigh, NC'},nashville:{index:1.25,stateTax:0.000,name:'Nashville, TN'},neworleans:{index:1.33,stateTax:0.060,name:'New Orleans, LA'},
+  chicago:{index:1.46,stateTax:0.049,name:'Chicago, IL'},minneapolis:{index:1.34,stateTax:0.098,name:'Minneapolis, MN'},columbus:{index:1.20,stateTax:0.040,name:'Columbus, OH'},cincinnati:{index:1.09,stateTax:0.040,name:'Cincinnati, OH'},stlouis:{index:1.24,stateTax:0.054,name:'St. Louis, MO'},kansascity:{index:1.20,stateTax:0.054,name:'Kansas City, MO'},detroit:{index:1.18,stateTax:0.043,name:'Detroit, MI'},madison:{index:1.27,stateTax:0.076,name:'Madison, WI'},
+  austin:{index:1.33,stateTax:0.000,name:'Austin, TX'},dallas:{index:1.27,stateTax:0.000,name:'Dallas, TX'},houston:{index:1.21,stateTax:0.000,name:'Houston, TX'},sanantonio:{index:1.17,stateTax:0.000,name:'San Antonio, TX'},denver:{index:1.43,stateTax:0.044,name:'Denver, CO'},phoenix:{index:1.27,stateTax:0.025,name:'Phoenix, AZ'},lasvegas:{index:1.29,stateTax:0.000,name:'Las Vegas, NV'},saltlake:{index:1.23,stateTax:0.049,name:'Salt Lake City, UT'},boise:{index:1.21,stateTax:0.058,name:'Boise, ID'},tucson:{index:1.26,stateTax:0.025,name:'Tucson, AZ'},
+  honolulu:{index:1.74,stateTax:0.110,name:'Honolulu, HI'},remote:{index:1.30,stateTax:0.050,name:'Remote (US avg)'},
+  toronto:{index:1.22,stateTax:0.097,name:'Toronto, Canada'},vancouver:{index:1.25,stateTax:0.128,name:'Vancouver, Canada'},montreal:{index:1.16,stateTax:0.150,name:'Montreal, Canada'},calgary:{index:1.21,stateTax:0.100,name:'Calgary, Canada'},ottawa:{index:1.17,stateTax:0.097,name:'Ottawa, Canada'},
+  london:{index:1.78,stateTax:0.200,name:'London, UK'},amsterdam:{index:1.65,stateTax:0.195,name:'Amsterdam, Netherlands'},berlin:{index:1.42,stateTax:0.200,name:'Berlin, Germany'},paris:{index:1.58,stateTax:0.210,name:'Paris, France'},zurich:{index:2.20,stateTax:0.115,name:'Zurich, Switzerland'},stockholm:{index:1.52,stateTax:0.220,name:'Stockholm, Sweden'},dublin:{index:1.68,stateTax:0.195,name:'Dublin, Ireland'},
+  singapore:{index:1.55,stateTax:0.110,name:'Singapore'},sydney:{index:1.62,stateTax:0.190,name:'Sydney, Australia'},melbourne:{index:1.55,stateTax:0.190,name:'Melbourne, Australia'},tokyo:{index:1.38,stateTax:0.200,name:'Tokyo, Japan'},dubai:{index:1.30,stateTax:0.000,name:'Dubai, UAE'},hongkong:{index:1.72,stateTax:0.150,name:'Hong Kong'},
 };
-
-// ─────────────────────────────────────────────
-// MARKET SALARY BENCHMARKS
-// Base = national median from BLS OES May 2024
-// Calibrated by experience level and industry
-// Source: bls.gov/oes + levels.fyi + linkedin salary
-// ─────────────────────────────────────────────
 const MARKET = {
-  // BLS May 2024 medians as anchor points
-  tech:       { entry:72000,  junior:95000,  mid:133000, senior:175000, staff:230000 },
-  finance:    { entry:65000,  junior:90000,  mid:125000, senior:170000, staff:220000 },
-  health:     { entry:52000,  junior:70000,  mid:98000,  senior:135000, staff:180000 },
-  education:  { entry:42000,  junior:52000,  mid:65000,  senior:82000,  staff:105000 },
-  gov:        { entry:45000,  junior:58000,  mid:78000,  senior:100000, staff:128000 },
-  nonprofit:  { entry:40000,  junior:52000,  mid:68000,  senior:88000,  staff:112000 },
-  startup:    { entry:70000,  junior:92000,  mid:128000, senior:168000, staff:215000 },
-  retail:     { entry:38000,  junior:50000,  mid:68000,  senior:90000,  staff:118000 },
-  media:      { entry:48000,  junior:65000,  mid:88000,  senior:118000, staff:155000 },
-  legal:      { entry:72000,  junior:105000, mid:148000, senior:210000, staff:285000 },
-  realestate: { entry:45000,  junior:62000,  mid:88000,  senior:125000, staff:170000 },
-  other:      { entry:45000,  junior:60000,  mid:82000,  senior:110000, staff:145000 },
+  tech:{entry:72000,junior:95000,mid:133000,senior:175000,staff:230000},
+  finance:{entry:65000,junior:90000,mid:125000,senior:170000,staff:220000},
+  health:{entry:52000,junior:70000,mid:98000,senior:135000,staff:180000},
+  education:{entry:42000,junior:52000,mid:65000,senior:82000,staff:105000},
+  gov:{entry:45000,junior:58000,mid:78000,senior:100000,staff:128000},
+  nonprofit:{entry:40000,junior:52000,mid:68000,senior:88000,staff:112000},
+  startup:{entry:70000,junior:92000,mid:128000,senior:168000,staff:215000},
+  retail:{entry:38000,junior:50000,mid:68000,senior:90000,staff:118000},
+  media:{entry:48000,junior:65000,mid:88000,senior:118000,staff:155000},
+  legal:{entry:72000,junior:105000,mid:148000,senior:210000,staff:285000},
+  realestate:{entry:45000,junior:62000,mid:88000,senior:125000,staff:170000},
+  other:{entry:45000,junior:60000,mid:82000,senior:110000,staff:145000},
 };
+const COMP={seed:0.80,small:0.90,mid:1.00,large:1.12,enterprise:1.22,faang:1.45};
 
-// Company size multipliers (relative to mid-market baseline)
-const COMP = {
-  seed:       0.80,
-  small:      0.90,
-  mid:        1.00,
-  large:      1.12,
-  enterprise: 1.22,
-  faang:      1.45,
-};
-
-function fmtK(n) { return n >= 1000 ? '$' + Math.round(n/1000) + 'k' : '$' + Math.round(n); }
-function fmtFull(n) { return '$' + Math.round(n).toLocaleString(); }
-
-function fedTax(s) {
-  // 2024 single filer brackets
-  if (s <= 11600)  return s * 0.10;
-  if (s <= 47150)  return 1160   + (s-11600)  * 0.12;
-  if (s <= 100525) return 5426   + (s-47150)  * 0.22;
-  if (s <= 191950) return 17168  + (s-100525) * 0.24;
-  if (s <= 243725) return 39110  + (s-191950) * 0.32;
-  if (s <= 609350) return 55678  + (s-243725) * 0.35;
-  return 183647 + (s-609350) * 0.37;
+function fmtK(n){return n>=1000?'$'+Math.round(n/1000)+'k':'$'+Math.round(n);}
+function fmtFull(n){return '$'+Math.round(n).toLocaleString();}
+function fedTax(s){
+  if(s<=11600)return s*0.10;if(s<=47150)return 1160+(s-11600)*0.12;
+  if(s<=100525)return 5426+(s-47150)*0.22;if(s<=191950)return 17168+(s-100525)*0.24;
+  if(s<=243725)return 39110+(s-191950)*0.32;if(s<=609350)return 55678+(s-243725)*0.35;
+  return 183647+(s-609350)*0.37;
 }
-
-function getPct(offer, market) {
-  const r = offer / market;
-  if (r < 0.65) return 8;
-  if (r < 0.75) return 18;
-  if (r < 0.85) return 30;
-  if (r < 0.95) return 42;
-  if (r < 1.05) return 55;
-  if (r < 1.15) return 67;
-  if (r < 1.30) return 78;
-  if (r < 1.50) return 88;
-  return 95;
+function getPct(offer,market){
+  const r=offer/market;
+  if(r<0.65)return 8;if(r<0.75)return 18;if(r<0.85)return 30;if(r<0.95)return 42;
+  if(r<1.05)return 55;if(r<1.15)return 67;if(r<1.30)return 78;if(r<1.50)return 88;return 95;
 }
-
-let state = {};
-
-function calculate() {
-  const salary   = parseFloat(document.getElementById('salary').value) || 120000;
-  const workKey  = document.getElementById('workcity').value;
-  const homeKey  = document.getElementById('homecity').value;
-  const yoe      = document.getElementById('yoe').value;
-  const industry = document.getElementById('industry').value;
-  const compsize = document.getElementById('compsize').value;
-  const title    = document.getElementById('jobtitle').value || 'this role';
-
-  const work = COL[workKey];
-  const home = COL[homeKey];
-
-  const baseMarket     = MARKET[industry][yoe] * COMP[compsize];
-  // Scale market benchmark to work city CoL (relative to US remote avg = 1.30)
-  const adjustedMarket = baseMarket * (work.index / 1.30);
-  const realPower      = salary * (home.index / work.index);
-  const stateTaxAmt    = salary * work.stateTax;
-  const fed            = fedTax(salary);
-  const fica           = Math.min(salary, 168600) * 0.062 + salary * 0.0145; // 2024 SS cap
-  const takehome       = (salary - fed - stateTaxAmt - fica) / 12;
-  const pct            = getPct(salary, adjustedMarket);
-  const counteroffer   = Math.round(salary * 1.15 / 1000) * 1000;
-  const ideal          = Math.round(adjustedMarket * 1.05 / 1000) * 1000;
-  const yoeLabel       = document.getElementById('yoe').options[document.getElementById('yoe').selectedIndex].text;
-
-  state = { salary, counteroffer, ideal, title, work, pct, yoeLabel, adjustedMarket };
-
-  document.getElementById('r-nominal').textContent   = fmtK(salary);
-  document.getElementById('r-real').textContent      = fmtK(realPower);
-  document.getElementById('r-takehome').textContent  = fmtK(takehome);
-  document.getElementById('r-pct').textContent       = pct + 'th';
-  document.getElementById('r-pct-sub').textContent   = industry + ' · ' + work.name;
-
-  const vbox = document.getElementById('verdict-box');
-  if (pct >= 65) {
-    vbox.className = 'verdict good';
-    document.getElementById('verdict-title').textContent = 'Strong offer — still negotiate.';
-    document.getElementById('verdict-body').textContent  = `You're at the ${pct}th percentile for ${yoeLabel} ${industry} roles in ${work.name}. Above market. Ask for ${fmtK(counteroffer)} + equity or sign-on — you'll likely get it.`;
-  } else if (pct >= 40) {
-    vbox.className = 'verdict meh';
-    document.getElementById('verdict-title').textContent = 'Fair offer — room to push.';
-    document.getElementById('verdict-body').textContent  = `${pct}th percentile puts you mid-market. Counter at ${fmtK(counteroffer)}. Market benchmark for your level in ${work.name} is around ${fmtK(adjustedMarket)}.`;
-  } else {
-    vbox.className = 'verdict bad';
-    document.getElementById('verdict-title').textContent = 'Below market — counter firmly.';
-    document.getElementById('verdict-body').textContent  = `At the ${pct}th percentile, this offer undervalues you. Counter at ${fmtK(counteroffer)}–${fmtK(ideal)}. Cite BLS and Levels.fyi data and don't back down easily.`;
-  }
-
-  const maxBar = adjustedMarket * 1.45;
-  const bars = [
-    { label: 'Their offer',    val: salary,          color: '#1D9E75' },
-    { label: 'Market median',  val: adjustedMarket,  color: '#378ADD' },
-    { label: 'Annual take-home', val: takehome * 12, color: '#888780' },
-    { label: 'Your counter',   val: counteroffer,    color: '#EF9F27' },
-  ];
-  document.getElementById('bar-section').innerHTML = bars.map(b => `
-    <div class="bar-row">
-      <span class="bar-label">${b.label}</span>
-      <div class="bar-track"><div class="bar-fill" style="width:${Math.min(100,Math.round(b.val/maxBar*100))}%;background:${b.color};"></div></div>
-      <span class="bar-val">${fmtFull(b.val)}</span>
-    </div>`).join('');
-
-  showEmail('counter', document.querySelector('.tab'));
-  document.getElementById('results').className = 'results show';
-  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+let state={};
+function calculate(){
+  const salary=parseFloat(document.getElementById('salary').value)||120000;
+  const workKey=document.getElementById('workcity').value;
+  const homeKey=document.getElementById('homecity').value;
+  const yoe=document.getElementById('yoe').value;
+  const industry=document.getElementById('industry').value;
+  const compsize=document.getElementById('compsize').value;
+  const title=document.getElementById('jobtitle').value||'this role';
+  const work=COL[workKey];const home=COL[homeKey];
+  const baseMarket=MARKET[industry][yoe]*COMP[compsize];
+  const adjustedMarket=baseMarket*(work.index/1.30);
+  const realPower=salary*(home.index/work.index);
+  const stateTaxAmt=salary*work.stateTax;
+  const fed=fedTax(salary);
+  const fica=Math.min(salary,168600)*0.062+salary*0.0145;
+  const takehome=(salary-fed-stateTaxAmt-fica)/12;
+  const pct=getPct(salary,adjustedMarket);
+  const counteroffer=Math.round(salary*1.15/1000)*1000;
+  const ideal=Math.round(adjustedMarket*1.05/1000)*1000;
+  const yoeLabel=document.getElementById('yoe').options[document.getElementById('yoe').selectedIndex].text;
+  state={salary,counteroffer,ideal,title,work,pct,yoeLabel,adjustedMarket};
+  document.getElementById('r-nominal').textContent=fmtK(salary);
+  document.getElementById('r-real').textContent=fmtK(realPower);
+  document.getElementById('r-takehome').textContent=fmtK(takehome);
+  document.getElementById('r-pct').textContent=pct+'th';
+  document.getElementById('r-pct-sub').textContent=industry+' · '+work.name;
+  const vbox=document.getElementById('verdict-box');
+  if(pct>=65){vbox.className='verdict good';document.getElementById('verdict-title').textContent='Strong offer — still negotiate.';document.getElementById('verdict-body').textContent=`You're at the ${pct}th percentile for ${yoeLabel} ${industry} roles in ${work.name}. Above market. Ask for ${fmtK(counteroffer)} + equity or sign-on — you'll likely get it.`;}
+  else if(pct>=40){vbox.className='verdict meh';document.getElementById('verdict-title').textContent='Fair offer — room to push.';document.getElementById('verdict-body').textContent=`${pct}th percentile puts you mid-market. Counter at ${fmtK(counteroffer)}. Market benchmark for your level in ${work.name} is around ${fmtK(adjustedMarket)}.`;}
+  else{vbox.className='verdict bad';document.getElementById('verdict-title').textContent='Below market — counter firmly.';document.getElementById('verdict-body').textContent=`At the ${pct}th percentile, this offer undervalues you. Counter at ${fmtK(counteroffer)}–${fmtK(ideal)}. Cite BLS and Levels.fyi data and don't back down easily.`;}
+  const maxBar=adjustedMarket*1.45;
+  const bars=[{label:'Their offer',val:salary,color:'#1D9E75'},{label:'Market median',val:adjustedMarket,color:'#378ADD'},{label:'Annual take-home',val:takehome*12,color:'#888780'},{label:'Your counter',val:counteroffer,color:'#EF9F27'}];
+  document.getElementById('bar-section').innerHTML=bars.map(b=>`<div class="bar-row"><span class="bar-label">${b.label}</span><div class="bar-track"><div class="bar-fill" style="width:${Math.min(100,Math.round(b.val/maxBar*100))}%;background:${b.color};"></div></div><span class="bar-val">${fmtFull(b.val)}</span></div>`).join('');
+  showEmail('counter',document.querySelector('.tab'));
+  document.getElementById('results').className='results show';
+  document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
-
-function showEmail(mode, btn) {
-  if (btn) { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); btn.classList.add('active'); }
-  const { salary, counteroffer, ideal, title, work, pct, yoeLabel } = state;
-  let txt = '';
-  if (mode === 'counter') {
-    txt = `Subject: Re: Offer for ${title} — Compensation Discussion\n\nHi [Hiring Manager],\n\nThank you for the offer — I'm genuinely excited about the team and the opportunity. After reviewing the details carefully, I'd like to discuss the base compensation.\n\nBased on current market data from BLS and Levels.fyi for ${title} roles with ${yoeLabel} of experience in the ${work.name} area, the range typically sits closer to ${fmtFull(counteroffer)}. Given my background in [specific skill or achievement], I'm hoping we can meet at that number.\n\nI'm flexible on structure — a sign-on bonus or additional equity would also work. Could we find 15 minutes to talk through this?\n\nLooking forward to your thoughts.\n\nBest,\n[Your name]`;
-  } else if (mode === 'hold') {
-    txt = `Subject: Re: Offer for ${title} — Response Timeline\n\nHi [Hiring Manager],\n\nThank you for the offer — I'm really enthusiastic about the role and what the team is building.\n\nI want to give this the consideration it deserves before formally responding. Would it be possible to have until [date — aim for 5–7 business days] to get back to you?\n\nHappy to jump on a quick call if there's anything you'd like to discuss in the meantime.\n\nThank you for your understanding.\n\nBest,\n[Your name]`;
-  } else {
-    txt = `Subject: Re: Offer for ${title} — Formal Acceptance\n\nHi [Hiring Manager],\n\nI'm thrilled to formally accept the offer for the ${title} position. This was a carefully considered decision and I'm genuinely excited to contribute.\n\nPlease send over any onboarding paperwork or next steps whenever you're ready. I'm looking forward to starting on [agreed start date].\n\nThank you again — this was a great experience from start to finish.\n\nBest,\n[Your name]`;
-  }
-  document.getElementById('email-text').textContent = txt;
+function showEmail(mode,btn){
+  if(btn){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');}
+  const{salary,counteroffer,ideal,title,work,pct,yoeLabel}=state;
+  let txt='';
+  if(mode==='counter'){txt=`Subject: Re: Offer for ${title} — Compensation Discussion\n\nHi [Hiring Manager],\n\nThank you for the offer — I'm genuinely excited about the team and the opportunity. After reviewing the details carefully, I'd like to discuss the base compensation.\n\nBased on current market data from BLS and Levels.fyi for ${title} roles with ${yoeLabel} of experience in the ${work.name} area, the range typically sits closer to ${fmtFull(counteroffer)}. Given my background in [specific skill or achievement], I'm hoping we can meet at that number.\n\nI'm flexible on structure — a sign-on bonus or additional equity would also work. Could we find 15 minutes to talk through this?\n\nLooking forward to your thoughts.\n\nBest,\n[Your name]`;}
+  else if(mode==='hold'){txt=`Subject: Re: Offer for ${title} — Response Timeline\n\nHi [Hiring Manager],\n\nThank you for the offer — I'm really enthusiastic about the role and what the team is building.\n\nI want to give this the consideration it deserves before formally responding. Would it be possible to have until [date — aim for 5–7 business days] to get back to you?\n\nHappy to jump on a quick call if there's anything you'd like to discuss in the meantime.\n\nThank you for your understanding.\n\nBest,\n[Your name]`;}
+  else{txt=`Subject: Re: Offer for ${title} — Formal Acceptance\n\nHi [Hiring Manager],\n\nI'm thrilled to formally accept the offer for the ${title} position. This was a carefully considered decision and I'm genuinely excited to contribute.\n\nPlease send over any onboarding paperwork or next steps whenever you're ready. I'm looking forward to starting on [agreed start date].\n\nThank you again — this was a great experience from start to finish.\n\nBest,\n[Your name]`;}
+  document.getElementById('email-text').textContent=txt;
 }
-
-function copyEmail() {
-  navigator.clipboard.writeText(document.getElementById('email-text').textContent).then(() => {
-    const btn = document.getElementById('copyBtn');
-    btn.textContent = '✓ Copied!';
-    btn.style.color = '#1D9E75';
-    btn.style.borderColor = '#1D9E75';
-    setTimeout(() => { btn.textContent = '⎘ Copy'; btn.style.color = ''; btn.style.borderColor = ''; }, 2500);
+function copyEmail(){
+  navigator.clipboard.writeText(document.getElementById('email-text').textContent).then(()=>{
+    const btn=document.getElementById('copyBtn');btn.textContent='✓ Copied!';btn.style.color='#1D9E75';btn.style.borderColor='#1D9E75';
+    setTimeout(()=>{btn.textContent='⎘ Copy';btn.style.color='';btn.style.borderColor='';},2500);
   });
 }
 </script>
 </body>
 </html>
+<!-- end of file marker -->
