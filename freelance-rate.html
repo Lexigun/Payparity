@@ -4,495 +4,238 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Freelance Rate Calculator — What Should I Charge Per Hour?</title>
-<meta name="description" content="Free freelance rate calculator. Find your minimum hourly rate based on your target income, expenses, taxes, and billable hours. Never underprice your work again.">
-<meta name="keywords" content="freelance rate calculator, what should I charge per hour, freelance hourly rate, freelance pricing calculator, consulting rate calculator">
+<meta name="description" content="Free freelance rate calculator. Find your minimum hourly rate based on your target income, expenses, taxes, and billable hours. Stop underpricing your work.">
+<meta name="keywords" content="freelance rate calculator, what should I charge per hour, freelance hourly rate, consulting rate calculator, freelance pricing, self employed tax calculator">
 <meta property="og:title" content="Freelance Rate Calculator — What Should I Charge Per Hour?">
-<meta property="og:description" content="Enter your target income, expenses, and taxes. Get your minimum viable rate and a client proposal in 30 seconds. Free.">
+<meta property="og:description" content="Calculate your minimum viable freelance rate based on income goals, taxes, and expenses. Get a client proposal email too. Free.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://salaryparity.com/freelance-rate">
 <link rel="canonical" href="https://salaryparity.com/freelance-rate">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7330952168261894" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Freelance Rate Calculator",
-  "description": "Calculate your minimum freelance hourly rate based on income goals, expenses, taxes, and billable hours.",
-  "url": "https://salaryparity.com/freelance-rate",
-  "applicationCategory": "FinanceApplication",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-}
-</script>
 <style>
-  :root {
-    --green: #1D9E75; --green-dark: #0F6E56; --green-light: #E1F5EE; --green-text: #085041;
-    --amber: #EF9F27; --amber-light: #FAEEDA; --amber-text: #633806;
-    --red: #E24B4A; --red-light: #FCEBEB; --red-text: #501313;
-    --blue: #378ADD; --blue-light: #E6F1FB;
-    --gray-50: #F8F8F7; --gray-100: #F1F0EC; --gray-200: #E0DED8;
-    --gray-400: #9B9A95; --gray-600: #5F5E5A; --gray-900: #1A1A18;
-    --text: #1A1A18; --text-muted: #5F5E5A; --text-faint: #9B9A95;
-    --border: rgba(0,0,0,0.08); --radius: 10px; --radius-sm: 6px;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--gray-50); color: var(--text); min-height: 100vh; }
-
-  nav {
-    background: #fff; border-bottom: 1px solid var(--border);
-    padding: 0 24px; display: flex; align-items: center; justify-content: space-between;
-    height: 56px; position: sticky; top: 0; z-index: 100;
-  }
-  .nav-logo { font-size: 18px; font-weight: 600; color: var(--text); text-decoration: none; }
-  .nav-logo span { color: var(--green); }
-  .nav-back { font-size: 13px; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; gap: 6px; }
-  .nav-back:hover { color: var(--text); }
-
-  .hero { text-align: center; padding: 56px 24px 40px; max-width: 580px; margin: 0 auto; }
-  .hero-badge { display: inline-block; font-size: 11px; font-weight: 500; background: var(--green-light); color: var(--green-text); padding: 4px 12px; border-radius: 999px; margin-bottom: 18px; letter-spacing: 0.5px; }
-  h1 { font-size: clamp(26px, 5vw, 38px); font-weight: 600; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 14px; }
-  h1 em { font-style: normal; color: var(--green); }
-  .hero-sub { font-size: 15px; color: var(--text-muted); max-width: 420px; margin: 0 auto; line-height: 1.6; }
-
-  .ad-slot { max-width: 728px; margin: 0 auto 28px; padding: 0 24px; text-align: center; }
-  .ad-placeholder { background: var(--gray-100); border: 1px dashed var(--gray-200); border-radius: var(--radius-sm); padding: 16px; font-size: 11px; color: var(--text-faint); min-height: 90px; display: flex; align-items: center; justify-content: center; }
-
-  main { max-width: 720px; margin: 0 auto; padding: 0 16px 80px; }
-  .card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; margin-bottom: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-  .section-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-faint); margin-bottom: 14px; }
-  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .grid3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
-  @media (max-width: 520px) { .grid2, .grid3 { grid-template-columns: 1fr; } .metrics { grid-template-columns: repeat(2,1fr) !important; } }
-  .field { display: flex; flex-direction: column; gap: 6px; }
-  .field label { font-size: 12px; color: var(--text-muted); font-weight: 500; }
-  .field input, .field select { height: 40px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--gray-50); color: var(--text); font-size: 14px; font-family: 'DM Sans', sans-serif; padding: 0 12px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
-  .field input:focus, .field select:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(29,158,117,0.12); background: #fff; }
-  .field .hint { font-size: 11px; color: var(--text-faint); }
-
-  .run-btn { width: 100%; height: 48px; background: var(--green); color: #fff; border: none; border-radius: var(--radius); font-size: 15px; font-weight: 600; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: background 0.15s, transform 0.1s; margin-bottom: 14px; }
-  .run-btn:hover { background: var(--green-dark); }
-  .run-btn:active { transform: scale(0.99); }
-
-  .results { display: none; }
-  .results.show { display: block; }
-
-  .metrics { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 14px; }
-  .metric { background: var(--gray-50); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 12px; }
-  .metric .ml { font-size: 10px; color: var(--text-faint); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .metric .mv { font-size: 22px; font-weight: 600; color: var(--text); font-family: 'DM Mono', monospace; }
-  .metric .ms { font-size: 10px; color: var(--text-faint); margin-top: 2px; }
-
-  .verdict { border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 14px; font-size: 14px; }
-  .verdict.good { background: var(--green-light); color: var(--green-text); border: 1px solid #9FE1CB; }
-  .verdict.meh  { background: var(--amber-light); color: var(--amber-text); border: 1px solid #FAC775; }
-  .verdict strong { font-weight: 600; display: block; margin-bottom: 3px; font-size: 15px; }
-
-  .breakdown-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
-  .breakdown-row:last-child { border-bottom: none; }
-  .breakdown-row .br-label { color: var(--text-muted); }
-  .breakdown-row .br-val { font-weight: 600; font-family: 'DM Mono', monospace; }
-  .breakdown-row.total { font-weight: 600; font-size: 16px; }
-  .breakdown-row.total .br-val { color: var(--green); font-size: 18px; }
-
-  .rate-tiers { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 14px; }
-  @media (max-width: 520px) { .rate-tiers { grid-template-columns: 1fr; } }
-  .tier { border-radius: var(--radius-sm); padding: 16px; text-align: center; border: 1px solid var(--border); }
-  .tier.min { background: var(--red-light); border-color: #F09595; }
-  .tier.target { background: var(--green-light); border-color: #9FE1CB; }
-  .tier.premium { background: var(--blue-light); border-color: #A8CFEF; }
-  .tier-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-  .tier.min .tier-label { color: var(--red-text); }
-  .tier.target .tier-label { color: var(--green-text); }
-  .tier.premium .tier-label { color: #0C447C; }
-  .tier-rate { font-size: 28px; font-weight: 600; font-family: 'DM Mono', monospace; color: var(--text); }
-  .tier-desc { font-size: 11px; color: var(--text-faint); margin-top: 4px; }
-
-  .section-heading { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-  .badge-pill { font-size: 10px; background: var(--green-light); color: var(--green-text); padding: 2px 8px; border-radius: 999px; font-weight: 600; }
-
-  .tab-row { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
-  .tab { padding: 5px 14px; font-size: 12px; font-weight: 500; border: 1px solid var(--border); border-radius: 999px; cursor: pointer; color: var(--text-muted); background: transparent; font-family: 'DM Sans', sans-serif; transition: all 0.12s; }
-  .tab:hover { border-color: var(--green); color: var(--green); }
-  .tab.active { background: var(--green); color: #fff; border-color: var(--green); }
-  .email-wrap { position: relative; }
-  .email-body { background: var(--gray-50); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px; font-size: 13px; line-height: 1.75; color: var(--text); white-space: pre-wrap; font-family: 'DM Mono', monospace; }
-  .copy-btn { position: absolute; top: 10px; right: 10px; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 5px 12px; font-size: 12px; font-weight: 500; cursor: pointer; color: var(--text-muted); font-family: 'DM Sans', sans-serif; transition: all 0.12s; }
-  .copy-btn:hover { border-color: var(--green); color: var(--green); }
-
-  .ad-mid { background: var(--gray-100); border: 1px dashed var(--gray-200); border-radius: var(--radius-sm); padding: 16px; font-size: 11px; color: var(--text-faint); text-align: center; min-height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
-
-  .faq { max-width: 720px; margin: 0 auto 48px; padding: 0 16px; }
-  .faq h2 { font-size: 20px; font-weight: 600; margin-bottom: 20px; }
-  details { border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 8px; background: #fff; }
-  summary { padding: 14px 16px; cursor: pointer; font-size: 14px; font-weight: 500; list-style: none; display: flex; justify-content: space-between; }
-  summary::after { content: '+'; font-size: 18px; color: var(--text-faint); }
-  details[open] summary::after { content: '−'; }
-  details p { padding: 0 16px 14px; font-size: 13px; color: var(--text-muted); line-height: 1.7; }
-
-  footer { text-align: center; padding: 32px 24px; font-size: 12px; color: var(--text-faint); border-top: 1px solid var(--border); background: #fff; }
-  footer a { color: var(--text-faint); text-decoration: none; }
-  footer a:hover { color: var(--text); }
+:root{--green:#1D9E75;--green-dark:#0F6E56;--green-light:#E1F5EE;--green-text:#085041;--amber:#EF9F27;--amber-light:#FAEEDA;--amber-text:#633806;--red:#E24B4A;--red-light:#FCEBEB;--red-text:#501313;--blue:#378ADD;--blue-light:#E6F1FB;--gray-50:#F8F8F7;--gray-100:#F1F0EC;--gray-200:#E0DED8;--text:#1A1A18;--text-muted:#5F5E5A;--text-faint:#9B9A95;--border:rgba(0,0,0,0.08);--radius:10px;--radius-sm:6px;}
+*{box-sizing:border-box;margin:0;padding:0;}body{font-family:'DM Sans',sans-serif;background:#F8F8F7;color:#1A1A18;min-height:100vh;}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.nav-logo{font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}.nav-logo span{color:var(--green);}
+.nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}.nav-back:hover{color:var(--text);}
+.hero{text-align:center;padding:56px 24px 40px;max-width:620px;margin:0 auto;}
+.hero-badge{display:inline-block;font-size:11px;font-weight:500;background:var(--green-light);color:var(--green-text);padding:4px 12px;border-radius:999px;margin-bottom:18px;}
+h1{font-size:clamp(26px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;margin-bottom:14px;}
+h1 em{font-style:normal;color:var(--green);}
+.hero-sub{font-size:15px;color:var(--text-muted);max-width:460px;margin:0 auto;line-height:1.6;}
+.ad-slot{max-width:728px;margin:0 auto 28px;padding:0 24px;text-align:center;}
+.ad-placeholder{background:var(--gray-100);border:1px dashed var(--gray-200);border-radius:var(--radius-sm);padding:16px;font-size:11px;color:var(--text-faint);min-height:90px;display:flex;align-items:center;justify-content:center;}
+main{max-width:760px;margin:0 auto;padding:0 16px 60px;}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,0.05);}
+.section-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--text-faint);margin-bottom:14px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:560px){.grid2,.grid3{grid-template-columns:1fr;}.metrics{grid-template-columns:repeat(2,1fr)!important;}.rate-tiers{grid-template-columns:1fr!important;}}
+.field{display:flex;flex-direction:column;gap:6px;}.field label{font-size:12px;color:var(--text-muted);font-weight:500;}
+.field input,.field select{height:40px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--gray-50);color:var(--text);font-size:14px;font-family:'DM Sans',sans-serif;padding:0 12px;outline:none;transition:border-color 0.15s;}
+.field input:focus,.field select:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(29,158,117,0.12);background:#fff;}
+.field .hint{font-size:11px;color:var(--text-faint);}
+.run-btn{width:100%;height:48px;background:var(--green);color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background 0.15s;margin-bottom:14px;}
+.run-btn:hover{background:var(--green-dark);}
+.results{display:none;}.results.show{display:block;}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;}
+.metric{background:var(--gray-50);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 12px;}
+.metric .ml{font-size:10px;color:var(--text-faint);font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
+.metric .mv{font-size:22px;font-weight:600;color:var(--text);font-family:'DM Mono',monospace;}
+.metric .ms{font-size:10px;color:var(--text-faint);margin-top:2px;}
+.verdict{border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:14px;font-size:14px;}
+.verdict.good{background:var(--green-light);color:var(--green-text);border:1px solid #9FE1CB;}
+.verdict.meh{background:var(--amber-light);color:var(--amber-text);border:1px solid #FAC775;}
+.verdict strong{font-weight:600;display:block;margin-bottom:3px;font-size:15px;}
+.breakdown-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;}
+.breakdown-row:last-child{border-bottom:none;font-weight:600;font-size:16px;}
+.breakdown-row .label{color:var(--text-muted);}.breakdown-row .val{font-weight:600;font-family:'DM Mono',monospace;}
+.breakdown-row.total .val{color:var(--green);font-size:18px;}
+.rate-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px;}
+.tier{border-radius:var(--radius-sm);padding:16px;text-align:center;border:1px solid var(--border);}
+.tier.min{background:var(--red-light);border-color:#F09595;}.tier.target{background:var(--green-light);border-color:#9FE1CB;}.tier.premium{background:var(--blue-light);border-color:#A8CFEF;}
+.tier-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}
+.tier.min .tier-label{color:var(--red-text);}.tier.target .tier-label{color:var(--green-text);}.tier.premium .tier-label{color:#0C447C;}
+.tier-rate{font-size:28px;font-weight:600;font-family:'DM Mono',monospace;color:var(--text);}
+.tier-desc{font-size:11px;color:var(--text-faint);margin-top:4px;}
+.section-heading{font-size:14px;font-weight:600;color:var(--text);margin-bottom:12px;}
+.badge-pill{font-size:10px;background:var(--green-light);color:var(--green-text);padding:2px 8px;border-radius:999px;font-weight:600;}
+.tab-row{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;}
+.tab{padding:5px 14px;font-size:12px;font-weight:500;border:1px solid var(--border);border-radius:999px;cursor:pointer;color:var(--text-muted);background:transparent;font-family:'DM Sans',sans-serif;transition:all 0.12s;}
+.tab:hover{border-color:var(--green);color:var(--green);}.tab.active{background:var(--green);color:#fff;border-color:var(--green);}
+.email-wrap{position:relative;}
+.email-body{background:var(--gray-50);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;font-size:13px;line-height:1.75;color:var(--text);white-space:pre-wrap;font-family:'DM Mono',monospace;}
+.copy-btn{position:absolute;top:10px;right:10px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:5px 12px;font-size:12px;font-weight:500;cursor:pointer;color:var(--text-muted);font-family:'DM Sans',sans-serif;transition:all 0.12s;}
+.copy-btn:hover{border-color:var(--green);color:var(--green);}
+.ad-mid{background:var(--gray-100);border:1px dashed var(--gray-200);border-radius:var(--radius-sm);padding:16px;font-size:11px;color:var(--text-faint);text-align:center;min-height:60px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.content-section{max-width:760px;margin:0 auto;padding:0 16px 48px;}
+.content-section h2{font-size:22px;font-weight:600;margin-bottom:16px;}
+.content-section h3{font-size:16px;font-weight:600;margin:24px 0 10px;}
+.content-section p{font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:14px;}
+.content-section ul{padding-left:20px;margin-bottom:14px;}
+.content-section ul li{font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:6px;}
+.faq{max-width:760px;margin:0 auto 48px;padding:0 16px;}
+.faq h2{font-size:22px;font-weight:600;margin-bottom:20px;}
+details{border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:8px;background:#fff;}
+summary{padding:14px 16px;cursor:pointer;font-size:14px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+summary::after{content:'+';font-size:18px;color:var(--text-faint);}details[open] summary::after{content:'−';}
+details p{padding:0 16px 14px;font-size:13px;color:var(--text-muted);line-height:1.8;}
+footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text-faint);border-top:1px solid var(--border);background:#fff;}
+footer a{color:var(--text-faint);text-decoration:none;}
 </style>
 </head>
 <body>
-
-<nav>
-  <a class="nav-logo" href="/"><span>Salary</span>Parity</a>
-  <a class="nav-back" href="/">← All tools</a>
-</nav>
-
+<nav><a class="nav-logo" href="/"><span>Salary</span>Parity</a><a class="nav-back" href="/">← All tools</a></nav>
 <section class="hero">
-  <div class="hero-badge">Free · No signup · 30 seconds</div>
-  <h1>What should you charge<br><em>per hour?</em></h1>
-  <p class="hero-sub">Stop guessing. Enter your income goal, expenses, and taxes — get your minimum viable rate and a client proposal ready to send.</p>
+  <div class="hero-badge">Free · No signup · Instant results</div>
+  <h1>What should you charge <em>per hour?</em></h1>
+  <p class="hero-sub">Most freelancers underprice themselves by 20–40%. This calculator shows you the exact minimum rate you need to hit your income goal — after taxes, expenses, and realistic billable hours.</p>
 </section>
-
-<div class="ad-slot">
-  <div class="ad-placeholder">Advertisement · 728×90</div>
-</div>
-
+<div class="ad-slot"><div class="ad-placeholder">Advertisement</div></div>
 <main>
   <div class="card">
     <div class="section-label">Your income goal</div>
     <div class="grid2" style="margin-bottom:14px;">
-      <div class="field">
-        <label for="target">Target annual income (USD)</label>
-        <input type="number" id="target" value="80000" min="0">
-        <span class="hint">What you want to take home after expenses</span>
-      </div>
-      <div class="field">
-        <label for="expenses">Annual business expenses (USD)</label>
-        <input type="number" id="expenses" value="6000" min="0">
-        <span class="hint">Software, equipment, insurance, workspace</span>
-      </div>
+      <div class="field"><label for="target">Target annual income (USD)</label><input type="number" id="target" value="80000" min="0"><span class="hint">What you want to take home after expenses</span></div>
+      <div class="field"><label for="expenses">Annual business expenses (USD)</label><input type="number" id="expenses" value="6000" min="0"><span class="hint">Software, equipment, insurance, workspace</span></div>
     </div>
     <div class="grid2">
-      <div class="field">
-        <label for="weeks">Weeks worked per year</label>
-        <select id="weeks">
-          <option value="48">48 weeks (4 weeks off)</option>
-          <option value="46" selected>46 weeks (6 weeks off)</option>
-          <option value="44">44 weeks (8 weeks off)</option>
-          <option value="40">40 weeks (12 weeks off)</option>
-          <option value="36">36 weeks (16 weeks off)</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="billable">Billable hours per week</label>
-        <select id="billable">
-          <option value="15">15 hrs (very part-time)</option>
-          <option value="20">20 hrs (part-time)</option>
-          <option value="25" selected>25 hrs (realistic full-time)</option>
-          <option value="30">30 hrs (busy)</option>
-          <option value="35">35 hrs (very busy)</option>
-        </select>
-      </div>
+      <div class="field"><label for="weeks">Weeks worked per year</label>
+        <select id="weeks"><option value="48">48 weeks (4 weeks off)</option><option value="46" selected>46 weeks (6 weeks off)</option><option value="44">44 weeks (8 weeks off)</option><option value="40">40 weeks (12 weeks off)</option><option value="36">36 weeks (16 weeks off)</option></select></div>
+      <div class="field"><label for="billable">Billable hours per week</label>
+        <select id="billable"><option value="15">15 hrs (very part-time)</option><option value="20">20 hrs (part-time)</option><option value="25" selected>25 hrs (realistic full-time)</option><option value="30">30 hrs (busy)</option><option value="35">35 hrs (very busy)</option></select></div>
     </div>
   </div>
-
   <div class="card">
     <div class="section-label">Your situation</div>
     <div class="grid3">
-      <div class="field">
-        <label for="state">State / tax situation</label>
-        <select id="state">
-          <option value="0.00">No state tax (TX, FL, WA...)</option>
-          <option value="0.0455">Low state tax (~4.5%)</option>
-          <option value="0.065" selected>Mid state tax (~6.5%)</option>
-          <option value="0.093">High state tax (~9.3%)</option>
-          <option value="0.133">Highest state tax (~13.3%)</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="field">Your field</label>
-        <select id="field">
-          <option value="tech" selected>Tech / Development</option>
-          <option value="design">Design / Creative</option>
-          <option value="writing">Writing / Content</option>
-          <option value="marketing">Marketing / SEO</option>
-          <option value="consulting">Consulting / Strategy</option>
-          <option value="finance">Finance / Accounting</option>
-          <option value="legal">Legal / Compliance</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="experience">Experience level</label>
-        <select id="experience">
-          <option value="entry">Entry (0–2 years)</option>
-          <option value="mid" selected>Mid (3–6 years)</option>
-          <option value="senior">Senior (7–12 years)</option>
-          <option value="expert">Expert (12+ years)</option>
-        </select>
-      </div>
+      <div class="field"><label for="state">Tax situation</label>
+        <select id="state"><option value="0.00">No state tax (TX, FL, WA...)</option><option value="0.0455">Low state tax (~4.5%)</option><option value="0.065" selected>Mid state tax (~6.5%)</option><option value="0.093">High state tax (~9.3%)</option><option value="0.133">Highest state tax (~13.3%)</option></select></div>
+      <div class="field"><label for="field">Your field</label>
+        <select id="field"><option value="tech" selected>Tech / Development</option><option value="design">Design / Creative</option><option value="writing">Writing / Content</option><option value="marketing">Marketing / SEO</option><option value="consulting">Consulting / Strategy</option><option value="finance">Finance / Accounting</option><option value="legal">Legal / Compliance</option><option value="other">Other</option></select></div>
+      <div class="field"><label for="experience">Experience level</label>
+        <select id="experience"><option value="entry">Entry (0–2 years)</option><option value="mid" selected>Mid (3–6 years)</option><option value="senior">Senior (7–12 years)</option><option value="expert">Expert (12+ years)</option></select></div>
     </div>
   </div>
-
   <button class="run-btn" onclick="calculate()">Calculate my freelance rate →</button>
-
   <div class="results" id="results">
-
     <div class="card">
       <div class="section-label">Your rate breakdown</div>
       <div class="metrics">
-        <div class="metric">
-          <div class="ml">Min. viable rate</div>
-          <div class="mv" id="r-min">—</div>
-          <div class="ms">per hour</div>
-        </div>
-        <div class="metric">
-          <div class="ml">Target rate</div>
-          <div class="mv" id="r-target">—</div>
-          <div class="ms">per hour</div>
-        </div>
-        <div class="metric">
-          <div class="ml">Billable hrs/yr</div>
-          <div class="mv" id="r-hours">—</div>
-          <div class="ms">hours</div>
-        </div>
-        <div class="metric">
-          <div class="ml">Effective tax rate</div>
-          <div class="mv" id="r-tax">—</div>
-          <div class="ms">est. total</div>
-        </div>
+        <div class="metric"><div class="ml">Min. viable rate</div><div class="mv" id="r-min">—</div><div class="ms">per hour</div></div>
+        <div class="metric"><div class="ml">Target rate</div><div class="mv" id="r-target">—</div><div class="ms">per hour</div></div>
+        <div class="metric"><div class="ml">Billable hrs/yr</div><div class="mv" id="r-hours">—</div><div class="ms">hours</div></div>
+        <div class="metric"><div class="ml">Effective tax rate</div><div class="mv" id="r-tax">—</div><div class="ms">est. total</div></div>
       </div>
-
-      <div id="verdict-box" class="verdict good">
-        <strong id="verdict-title">—</strong>
-        <span id="verdict-body">—</span>
-      </div>
+      <div id="verdict-box" class="verdict good"><strong id="verdict-title">—</strong><span id="verdict-body">—</span></div>
     </div>
-
     <div class="card">
       <div class="section-heading">Your three rates</div>
       <div class="rate-tiers">
-        <div class="tier min">
-          <div class="tier-label">🚨 Minimum</div>
-          <div class="tier-rate" id="t-min">—</div>
-          <div class="tier-desc">Never go below this. You'll lose money.</div>
-        </div>
-        <div class="tier target">
-          <div class="tier-label">✅ Target</div>
-          <div class="tier-rate" id="t-target">—</div>
-          <div class="tier-desc">This is your opening number. Start here.</div>
-        </div>
-        <div class="tier premium">
-          <div class="tier-label">🚀 Premium</div>
-          <div class="tier-rate" id="t-premium">—</div>
-          <div class="tier-desc">For rush work, difficult clients, or top expertise.</div>
-        </div>
+        <div class="tier min"><div class="tier-label">🚨 Minimum</div><div class="tier-rate" id="t-min">—</div><div class="tier-desc">Never go below this. You'll lose money.</div></div>
+        <div class="tier target"><div class="tier-label">✅ Target</div><div class="tier-rate" id="t-target">—</div><div class="tier-desc">This is your opening number. Start here.</div></div>
+        <div class="tier premium"><div class="tier-label">🚀 Premium</div><div class="tier-rate" id="t-premium">—</div><div class="tier-desc">For rush work, difficult clients, top expertise.</div></div>
       </div>
     </div>
-
     <div class="card">
       <div class="section-heading">How we got there</div>
       <div id="breakdown"></div>
     </div>
-
-    <div class="ad-mid">Advertisement · 336×280</div>
-
+    <div class="ad-mid">Advertisement</div>
     <div class="card">
       <div class="section-heading">Client proposal email <span class="badge-pill">copy & send</span></div>
       <div class="tab-row">
-        <button class="tab active" onclick="showEmail('new', this)">New client</button>
-        <button class="tab" onclick="showEmail('raise', this)">Rate increase</button>
-        <button class="tab" onclick="showEmail('pushback', this)">Handle pushback</button>
+        <button class="tab active" onclick="showEmail('new',this)">New client</button>
+        <button class="tab" onclick="showEmail('raise',this)">Rate increase</button>
+        <button class="tab" onclick="showEmail('pushback',this)">Handle pushback</button>
       </div>
-      <div class="email-wrap">
-        <div class="email-body" id="email-text"></div>
-        <button class="copy-btn" id="copyBtn" onclick="copyEmail()">⎘ Copy</button>
-      </div>
+      <div class="email-wrap"><div class="email-body" id="email-text"></div><button class="copy-btn" id="copyBtn" onclick="copyEmail()">⎘ Copy</button></div>
     </div>
-
   </div>
 </main>
 
-<section class="faq" id="faq">
-  <h2>Common questions</h2>
-  <details>
-    <summary>Why only 25 billable hours per week?</summary>
-    <p>Most freelancers overestimate how many hours they can actually bill. The rest of your time goes to admin, sales, client calls, revisions, and business development. 25 billable hours out of a 40-hour week is realistic for most fields — some bill more, many bill less.</p>
-  </details>
-  <details>
-    <summary>Should I charge hourly or by project?</summary>
-    <p>Project-based pricing is almost always better once you're experienced — it rewards your efficiency and removes the ceiling on your earnings. Use your hourly rate as the foundation to estimate project quotes, then add a buffer for scope creep. Start hourly, switch to project pricing when you can predict how long things take.</p>
-  </details>
-  <details>
-    <summary>What's the self-employment tax?</summary>
-    <p>As a freelancer, you pay both the employer and employee sides of Social Security and Medicare — about 15.3% on top of income tax. This calculator accounts for that. It's the single biggest shock for new freelancers coming from employment.</p>
-  </details>
-  <details>
-    <summary>My rate seems high — is that normal?</summary>
-    <p>Yes. Clients aren't just paying for your time — they're paying for your expertise, availability, no benefits cost, no hiring overhead, and the risk you carry. A freelancer at $100/hr costs a company less than an employee at $60/hr once you factor in benefits, taxes, and overhead. Your rate isn't high. Most freelancers are underpriced.</p>
-  </details>
+<section class="content-section">
+  <h2>Why most freelancers underprice themselves — and how to fix it</h2>
+  <p>The most common mistake freelancers make when setting rates is starting from an hourly wage they're comfortable with, or looking at what competitors charge, without first calculating the actual minimum they need to earn to survive and thrive as a self-employed person. This approach almost always leads to underpricing.</p>
+  <p>Here's the math that most freelancers miss: when you're employed, your employer pays half your Social Security and Medicare taxes (7.65%), provides benefits like health insurance and paid time off, and you get paid for every hour including sick days, holidays, and internal meetings. When you're self-employed, you pay the full 15.3% self-employment tax, you pay for your own benefits and equipment, and you only get paid for the hours you actually bill. Not the hours you spend on admin, sales, proposals, revisions, or client management.</p>
+  <p>This calculator forces you to confront all of those costs explicitly. By entering your target income, your actual business expenses, how many weeks you realistically work, and how many of those hours are actually billable, you get a rate that reflects your real economic situation — not an optimistic fiction.</p>
+
+  <h3>The 25-hour billable week reality</h3>
+  <p>One of the most important defaults in this calculator is 25 billable hours per week out of a 40-hour work week. This isn't pessimistic — it's realistic. Research on freelancer productivity consistently shows that roughly 60–65% of a freelancer's time is actually billable at steady state. The rest goes to: writing proposals and quotes (which often don't convert), handling revisions and scope changes, administrative tasks like invoicing and bookkeeping, business development and networking, and the inevitable dead time between projects.</p>
+  <p>If you're just starting out, 20 billable hours per week is more realistic. As you build a client base and referral network, you might push to 30. Very few freelancers sustain 35+ billable hours per week without burning out.</p>
+
+  <h3>Understanding self-employment tax</h3>
+  <p>Self-employment tax is the single biggest financial shock for new freelancers coming from employment. As an employee, you pay 7.65% in FICA taxes (Social Security + Medicare) and your employer pays an equal amount. As a freelancer, you pay both sides — the full 15.3% on your net self-employment income. This means a freelancer earning $100,000 in revenue owes roughly $14,130 in self-employment tax alone, before federal or state income tax.</p>
+  <p>The IRS does allow you to deduct half of your self-employment tax from your gross income (reducing your income tax burden), and you can deduct legitimate business expenses. But the bottom line is that a freelancer needs to earn roughly 25–35% more than an equivalent salaried employee to end up with the same take-home pay.</p>
+
+  <h3>Market rates by field</h3>
+  <p>Our market rate benchmarks are sourced from industry compensation surveys, Upwork's freelancer rate reports, and Levels.fyi data for technical roles. These give you a reality check on where your calculated minimum rate sits relative to what clients in your market are actually paying. If your minimum viable rate is above market, that's a signal that your income goals may need adjustment, or that you need to move into higher-value niches. If your minimum is well below market, you have room to price competitively while still hitting your goals.</p>
 </section>
 
-<footer>
-  <p>© 2025 SalaryParity · <a href="/">All tools</a> · <a href="/privacy">Privacy</a></p>
-  <p style="margin-top:6px;">Estimates only. Consult a tax professional for advice specific to your situation.</p>
-</footer>
-
+<section class="faq">
+  <h2>Frequently asked questions</h2>
+  <details><summary>Why only 25 billable hours per week?</summary><p>Most freelancers overestimate how many hours they can actually bill. The rest of your time goes to admin, sales, client calls, revisions, and business development. 25 billable hours out of a 40-hour week is realistic for most fields — some bill more, many bill less. If you consistently bill 30+ hours per week, you can adjust the input to reflect that.</p></details>
+  <details><summary>Should I charge hourly or by project?</summary><p>Project-based pricing is almost always better once you're experienced — it rewards your efficiency and removes the ceiling on your earnings. Use your hourly rate as the foundation to estimate project quotes, then add a 20–30% buffer for scope creep. Start hourly when you're new, switch to project pricing when you can predict how long things take with confidence.</p></details>
+  <details><summary>What is self-employment tax and how is it calculated?</summary><p>Self-employment tax covers Social Security (12.4%) and Medicare (2.9%) — a total of 15.3% — on your net self-employment income. As an employee, your employer pays half. As a freelancer, you pay the full amount. However, you can deduct half of the self-employment tax from your gross income when calculating income taxes, which partially offsets the burden. This calculator includes the full self-employment tax in your rate calculation.</p></details>
+  <details><summary>My calculated rate seems high — is that normal?</summary><p>Yes, and it's usually correct. Clients aren't just paying for your time — they're paying for your expertise, availability, no benefits cost on their end, no hiring overhead, and the flexibility of not having a permanent employee. A freelancer at $100/hr often costs a company less than an employee at $60/hr when you factor in employer payroll taxes, benefits, office space, equipment, and management overhead. Your rate isn't high. Most freelancers are underpriced.</p></details>
+  <details><summary>How do I handle clients who push back on my rate?</summary><p>First, don't immediately lower your rate — try adjusting the scope instead. Offer to do a smaller initial project at your full rate so they can experience your value. If they still push back, you can offer a small discount on the first engagement framed as a "new client" rate that returns to standard on the second project. Never discount more than 15–20% and never explain the discount as a response to pressure — only offer it proactively as a strategic choice.</p></details>
+  <details><summary>What business expenses should I include?</summary><p>Common freelance business expenses include: software subscriptions (design tools, project management, accounting), professional liability insurance (especially important for consultants and developers), home office costs if you work from home, equipment depreciation, professional development and courses, marketing and website costs, and any subcontractors you pay. Keep receipts — these are tax-deductible and reduce your self-employment tax burden.</p></details>
+  <details><summary>How do I raise my rates with existing clients?</summary><p>Give at least 30 days notice, ideally 60. Frame the increase around the value you've delivered and market rate changes — not your personal financial needs. Use the "Rate Increase" email template in this calculator as a starting point. Most long-term clients will accept a 10–20% increase if you give adequate notice and have delivered consistent value. Clients who balk at any increase are often not your best clients anyway.</p></details>
+  <details><summary>Should I charge the same rate for all clients?</summary><p>Not necessarily. It's legitimate to charge more for industries with higher margins (finance, legal, enterprise tech) and less for nonprofits or startups where the work might build your portfolio or relationships. Some freelancers charge a premium for rush turnarounds, weekend work, or particularly difficult projects. The key is that your minimum rate should never drop below the minimum calculated here — that's the floor below which you're literally losing money.</p></details>
+</section>
+<footer><p>© 2025 SalaryParity · <a href="/">All tools</a> · <a href="/privacy">Privacy</a></p><p style="margin-top:6px;">Estimates only. Consult a tax professional for advice specific to your situation.</p></footer>
 <script>
-const MARKET_RATES = {
-  tech:        { entry: 65,  mid: 100, senior: 150, expert: 220 },
-  design:      { entry: 45,  mid: 80,  senior: 120, expert: 175 },
-  writing:     { entry: 35,  mid: 65,  senior: 95,  expert: 140 },
-  marketing:   { entry: 40,  mid: 75,  senior: 110, expert: 160 },
-  consulting:  { entry: 75,  mid: 120, senior: 180, expert: 280 },
-  finance:     { entry: 60,  mid: 100, senior: 150, expert: 220 },
-  legal:       { entry: 80,  mid: 150, senior: 250, expert: 400 },
-  other:       { entry: 45,  mid: 75,  senior: 110, expert: 160 },
-};
-
-function fmtK(n) { return n >= 1000 ? '$' + Math.round(n/1000) + 'k' : '$' + Math.round(n); }
-function fmtFull(n) { return '$' + Math.round(n).toLocaleString(); }
-function fmtRate(n) { return '$' + Math.round(n); }
-
-function fedTax(s) {
-  if (s <= 11600) return s * 0.10;
-  if (s <= 47150) return 1160 + (s-11600)*0.12;
-  if (s <= 100525) return 5426 + (s-47150)*0.22;
-  if (s <= 191950) return 17168 + (s-100525)*0.24;
-  if (s <= 243725) return 39110 + (s-191950)*0.32;
-  return 55678 + (s-243725)*0.35;
+const MARKET_RATES={tech:{entry:65,mid:100,senior:150,expert:220},design:{entry:45,mid:80,senior:120,expert:175},writing:{entry:35,mid:65,senior:95,expert:140},marketing:{entry:40,mid:75,senior:110,expert:160},consulting:{entry:75,mid:120,senior:180,expert:280},finance:{entry:60,mid:100,senior:150,expert:220},legal:{entry:80,mid:150,senior:250,expert:400},other:{entry:45,mid:75,senior:110,expert:160}};
+function fmtFull(n){return '$'+Math.round(n).toLocaleString();}function fmtRate(n){return '$'+Math.round(n);}
+function fedTax(s){if(s<=11600)return s*0.10;if(s<=47150)return 1160+(s-11600)*0.12;if(s<=100525)return 5426+(s-47150)*0.22;if(s<=191950)return 17168+(s-100525)*0.24;if(s<=243725)return 39110+(s-191950)*0.32;return 55678+(s-243725)*0.35;}
+let emailState={};
+function calculate(){
+  const target=parseFloat(document.getElementById('target').value)||80000;
+  const expenses=parseFloat(document.getElementById('expenses').value)||6000;
+  const weeks=parseInt(document.getElementById('weeks').value);
+  const billable=parseInt(document.getElementById('billable').value);
+  const stateTaxR=parseFloat(document.getElementById('state').value);
+  const field=document.getElementById('field').value;
+  const exp=document.getElementById('experience').value;
+  const totalHours=weeks*billable;
+  const selfEmpTax=0.9235*0.153;
+  const grossNeeded=(target+expenses)/(1-selfEmpTax-stateTaxR-0.22);
+  const minRate=grossNeeded/totalHours;
+  const targetRate=minRate*1.25;
+  const premiumRate=minRate*1.65;
+  const marketRate=MARKET_RATES[field][exp];
+  const effectiveTax=Math.round((selfEmpTax+stateTaxR+0.22)*100);
+  document.getElementById('r-min').textContent=fmtRate(minRate)+'/hr';
+  document.getElementById('r-target').textContent=fmtRate(targetRate)+'/hr';
+  document.getElementById('r-hours').textContent=totalHours.toLocaleString();
+  document.getElementById('r-tax').textContent=effectiveTax+'%';
+  document.getElementById('t-min').textContent=fmtRate(minRate)+'/hr';
+  document.getElementById('t-target').textContent=fmtRate(targetRate)+'/hr';
+  document.getElementById('t-premium').textContent=fmtRate(premiumRate)+'/hr';
+  const vbox=document.getElementById('verdict-box');
+  if(targetRate<marketRate*0.85){vbox.className='verdict good';document.getElementById('verdict-title').textContent='You\'re priced below market — good news for clients, bad for you.';document.getElementById('verdict-body').textContent=`Market rate for ${exp} ${field} freelancers is around ${fmtRate(marketRate)}/hr. Your target of ${fmtRate(targetRate)}/hr is below that. Consider starting at ${fmtRate(marketRate)}/hr — you have room.`;}
+  else if(targetRate>marketRate*1.2){vbox.className='verdict meh';document.getElementById('verdict-title').textContent='Your rate is above market — make sure you can justify it.';document.getElementById('verdict-body').textContent=`Market rate for ${exp} ${field} freelancers is ~${fmtRate(marketRate)}/hr. At ${fmtRate(targetRate)}/hr you're premium — fine if you have a strong portfolio. Lead with results.`;}
+  else{vbox.className='verdict good';document.getElementById('verdict-title').textContent='Your rate is well-aligned with market.';document.getElementById('verdict-body').textContent=`${fmtRate(targetRate)}/hr is right in the range for ${exp} ${field} freelancers (~${fmtRate(marketRate)}/hr market rate). Start here with confidence.`;}
+  const selfEmpAmt=Math.round(grossNeeded*selfEmpTax);
+  const fedAmt=Math.round(fedTax(grossNeeded));
+  const stateAmt=Math.round(grossNeeded*stateTaxR);
+  document.getElementById('breakdown').innerHTML=`<div class="breakdown-row"><span class="label">Target take-home</span><span class="val">${fmtFull(target)}</span></div><div class="breakdown-row"><span class="label">Business expenses</span><span class="val">${fmtFull(expenses)}</span></div><div class="breakdown-row"><span class="label">Self-employment tax (15.3%)</span><span class="val">${fmtFull(selfEmpAmt)}</span></div><div class="breakdown-row"><span class="label">Federal income tax (est.)</span><span class="val">${fmtFull(fedAmt)}</span></div><div class="breakdown-row"><span class="label">State income tax (est.)</span><span class="val">${fmtFull(stateAmt)}</span></div><div class="breakdown-row"><span class="label">Total billable hours/year</span><span class="val">${totalHours.toLocaleString()} hrs</span></div><div class="breakdown-row total"><span class="label">Minimum viable hourly rate</span><span class="val">${fmtRate(minRate)}/hr</span></div>`;
+  emailState={minRate,targetRate,premiumRate,marketRate,field,exp,target};
+  showEmail('new',document.querySelector('.tab'));
+  document.getElementById('results').className='results show';
+  document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
-
-let emailState = {};
-
-function calculate() {
-  const target    = parseFloat(document.getElementById('target').value) || 80000;
-  const expenses  = parseFloat(document.getElementById('expenses').value) || 6000;
-  const weeks     = parseInt(document.getElementById('weeks').value);
-  const billable  = parseInt(document.getElementById('billable').value);
-  const stateTaxR = parseFloat(document.getElementById('state').value);
-  const field     = document.getElementById('field').value;
-  const exp       = document.getElementById('experience').value;
-
-  const totalHours = weeks * billable;
-  const selfEmpTax = 0.9235 * 0.153;
-  const grossNeeded = (target + expenses) / (1 - selfEmpTax - stateTaxR - 0.22);
-  const minRate = grossNeeded / totalHours;
-  const targetRate = minRate * 1.25;
-  const premiumRate = minRate * 1.65;
-  const marketRate = MARKET_RATES[field][exp];
-  const effectiveTax = Math.round((selfEmpTax + stateTaxR + 0.22) * 100);
-
-  document.getElementById('r-min').textContent = fmtRate(minRate) + '/hr';
-  document.getElementById('r-target').textContent = fmtRate(targetRate) + '/hr';
-  document.getElementById('r-hours').textContent = totalHours.toLocaleString();
-  document.getElementById('r-tax').textContent = effectiveTax + '%';
-
-  document.getElementById('t-min').textContent = fmtRate(minRate) + '/hr';
-  document.getElementById('t-target').textContent = fmtRate(targetRate) + '/hr';
-  document.getElementById('t-premium').textContent = fmtRate(premiumRate) + '/hr';
-
-  const vbox = document.getElementById('verdict-box');
-  if (targetRate < marketRate * 0.85) {
-    vbox.className = 'verdict good';
-    document.getElementById('verdict-title').textContent = 'You\'re priced below market — good news for clients, bad for you.';
-    document.getElementById('verdict-body').textContent = `Market rate for ${exp} ${field} freelancers is around ${fmtRate(marketRate)}/hr. Your target of ${fmtRate(targetRate)}/hr is below that. Consider starting at ${fmtRate(marketRate)}/hr — you have room.`;
-  } else if (targetRate > marketRate * 1.2) {
-    vbox.className = 'verdict meh';
-    document.getElementById('verdict-title').textContent = 'Your rate is above market — make sure you can justify it.';
-    document.getElementById('verdict-body').textContent = `Market rate for ${exp} ${field} freelancers is ~${fmtRate(marketRate)}/hr. At ${fmtRate(targetRate)}/hr you're premium — that's fine if you have a strong portfolio and niche expertise. Lead with results.`;
-  } else {
-    vbox.className = 'verdict good';
-    document.getElementById('verdict-title').textContent = 'Your rate is well-aligned with market.';
-    document.getElementById('verdict-body').textContent = `${fmtRate(targetRate)}/hr is right in the range for ${exp} ${field} freelancers (~${fmtRate(marketRate)}/hr market rate). Start here with confidence.`;
-  }
-
-  const selfEmpAmt = Math.round(grossNeeded * selfEmpTax);
-  const fedAmt = Math.round(fedTax(grossNeeded));
-  const stateAmt = Math.round(grossNeeded * stateTaxR);
-  document.getElementById('breakdown').innerHTML = `
-    <div class="breakdown-row"><span class="br-label">Target take-home</span><span class="br-val">${fmtFull(target)}</span></div>
-    <div class="breakdown-row"><span class="br-label">Business expenses</span><span class="br-val">${fmtFull(expenses)}</span></div>
-    <div class="breakdown-row"><span class="br-label">Self-employment tax (15.3%)</span><span class="br-val">${fmtFull(selfEmpAmt)}</span></div>
-    <div class="breakdown-row"><span class="br-label">Federal income tax (est.)</span><span class="br-val">${fmtFull(fedAmt)}</span></div>
-    <div class="breakdown-row"><span class="br-label">State income tax (est.)</span><span class="br-val">${fmtFull(stateAmt)}</span></div>
-    <div class="breakdown-row"><span class="br-label">Total billable hours/year</span><span class="br-val">${totalHours.toLocaleString()} hrs</span></div>
-    <div class="breakdown-row total"><span class="br-label">Minimum viable hourly rate</span><span class="br-val">${fmtRate(minRate)}/hr</span></div>
-  `;
-
-  emailState = { minRate, targetRate, premiumRate, marketRate, field, exp, target };
-  showEmail('new', document.querySelector('.tab'));
-  document.getElementById('results').className = 'results show';
-  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+function showEmail(mode,btn){
+  if(btn){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');}
+  const{targetRate,premiumRate,field,exp}=emailState;
+  let txt='';
+  if(mode==='new'){txt=`Subject: Project Proposal & Rate — [Your Name]\n\nHi [Client name],\n\nThanks for reaching out — I'd love to learn more about your project.\n\nMy rate for ${field} work at my experience level is ${fmtRate(targetRate)}/hour, or I'm happy to discuss a fixed project fee once I understand the full scope.\n\nA few things that would help me put together a proper proposal:\n- Timeline and key milestones\n- Deliverables you're expecting\n- Any existing materials or brand guidelines\n\nHappy to jump on a 20-minute call this week to discuss. What works for you?\n\nBest,\n[Your name]`;}
+  else if(mode==='raise'){txt=`Subject: Rate Update — Effective [Date]\n\nHi [Client name],\n\nI really enjoy working with you and wanted to give you as much notice as possible about an upcoming change.\n\nStarting [date — give 30 days notice], my rate will be moving to ${fmtRate(targetRate)}/hour, up from [current rate]. This reflects current market rates for ${exp} ${field} work as well as the expertise I've built over our time working together.\n\nAll work completed before [date] will be invoiced at your current rate.\n\nThanks for your understanding.\n\nBest,\n[Your name]`;}
+  else{txt=`Subject: Re: Rate Discussion\n\nHi [Client name],\n\nThanks for the feedback — I understand budget is always a consideration.\n\nI'm not able to go below ${fmtRate(emailState.minRate)}/hour as that's the floor to cover my costs and taxes as a self-employed professional. At ${fmtRate(targetRate)}/hour, you're getting ${exp}-level ${field} work without the overhead of a full-time hire.\n\nA few ways we could make this work within your budget:\n- Reduce the scope to the highest-priority deliverables\n- Phase the project across two billing periods\n- Move to a fixed-fee structure for defined deliverables\n\nI want to work with you — let's find a way to make it work.\n\nBest,\n[Your name]`;}
+  document.getElementById('email-text').textContent=txt;
 }
-
-function showEmail(mode, btn) {
-  if (btn) { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); btn.classList.add('active'); }
-  const { targetRate, premiumRate, field, exp } = emailState;
-  let txt = '';
-  if (mode === 'new') {
-    txt = `Subject: Project Proposal & Rate — [Your Name]
-
-Hi [Client name],
-
-Thanks for reaching out — I'd love to learn more about your project.
-
-My rate for ${field} work at my experience level is ${fmtRate(targetRate)}/hour, or I'm happy to discuss a fixed project fee once I understand the full scope.
-
-A few things that would help me put together a proper proposal:
-- Timeline and key milestones
-- Deliverables you're expecting
-- Any existing materials or brand guidelines
-
-Happy to jump on a 20-minute call this week to discuss. What works for you?
-
-Best,
-[Your name]`;
-  } else if (mode === 'raise') {
-    txt = `Subject: Rate Update — Effective [Date]
-
-Hi [Client name],
-
-I really enjoy working with you and wanted to give you as much notice as possible about an upcoming change.
-
-Starting [date — give 30 days notice], my rate will be moving to ${fmtRate(targetRate)}/hour, up from [current rate]. This reflects current market rates for ${exp} ${field} work as well as the expertise I've built over our time working together.
-
-All work completed before [date] will be invoiced at your current rate.
-
-I'm committed to making sure this transition is smooth and that you continue to get excellent value. Let me know if you'd like to talk through any ongoing projects.
-
-Thanks for your understanding.
-
-Best,
-[Your name]`;
-  } else {
-    txt = `Subject: Re: Rate Discussion
-
-Hi [Client name],
-
-Thanks for the feedback — I understand budget is always a consideration.
-
-I'm not able to go below ${fmtRate(emailState.minRate)}/hour as that's the floor to cover my costs and taxes as a self-employed professional. At ${fmtRate(targetRate)}/hour, you're getting ${exp}-level ${field} work without the overhead of a full-time hire (benefits, equipment, management time).
-
-A few ways we could make this work within your budget:
-- Reduce the scope to the highest-priority deliverables
-- Phase the project across two billing periods
-- Move to a fixed-fee structure for defined deliverables
-
-I want to work with you — let's find a way to make it work.
-
-Best,
-[Your name]`;
-  }
-  document.getElementById('email-text').textContent = txt;
-}
-
-function copyEmail() {
-  navigator.clipboard.writeText(document.getElementById('email-text').textContent).then(() => {
-    const btn = document.getElementById('copyBtn');
-    btn.textContent = '✓ Copied!';
-    btn.style.color = '#1D9E75';
-    btn.style.borderColor = '#1D9E75';
-    setTimeout(() => { btn.textContent = '⎘ Copy'; btn.style.color = ''; btn.style.borderColor = ''; }, 2500);
-  });
-}
-
+function copyEmail(){navigator.clipboard.writeText(document.getElementById('email-text').textContent).then(()=>{const btn=document.getElementById('copyBtn');btn.textContent='✓ Copied!';btn.style.color='#1D9E75';btn.style.borderColor='#1D9E75';setTimeout(()=>{btn.textContent='⎘ Copy';btn.style.color='';btn.style.borderColor='';},2500);});}
 calculate();
 </script>
 </body>
