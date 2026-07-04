@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — SalaryParity</title>
+<meta name="description" content="Contact SalaryParity with questions, feedback, data corrections, or partnership inquiries.">
+<link rel="canonical" href="https://salaryparity.com/contact">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7330952168261894" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1D9E75;--green-light:#E1F5EE;--green-text:#085041;--text:#1A1A18;--text-muted:#5F5E5A;--text-faint:#9B9A95;--border:rgba(0,0,0,0.08);--gray-50:#F8F8F7;--radius:10px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);line-height:1.7;}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.nav-logo{font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}.nav-logo span{color:var(--green);}
+.nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}.nav-back:hover{color:var(--text);}
+.wrap{max-width:580px;margin:0 auto;padding:48px 24px 80px;}
+.page-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--green);margin-bottom:16px;}
+h1{font-size:clamp(26px,4vw,36px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;margin-bottom:16px;}
+p{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:16px;}
+.contact-cards{display:grid;gap:14px;margin:32px 0;}
+.contact-card{background:var(--gray-50);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;}
+.cc-icon{font-size:24px;margin-bottom:10px;}
+.cc-title{font-size:15px;font-weight:600;margin-bottom:6px;}
+.cc-desc{font-size:13px;color:var(--text-muted);margin-bottom:10px;line-height:1.6;}
+.cc-link{font-size:14px;font-weight:500;color:var(--green);text-decoration:none;}
+.cc-link:hover{text-decoration:underline;}
+footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text-faint);border-top:1px solid var(--border);}
+footer a{color:var(--text-faint);text-decoration:none;}
+</style>
+</head>
+<body>
+<nav><a class="nav-logo" href="/"><span>Salary</span>Parity</a><a class="nav-back" href="/">← Home</a></nav>
+<div class="wrap">
+  <div class="page-label">Contact</div>
+  <h1>Get in touch</h1>
+  <p>We're a small team building tools that help people make better career and financial decisions. We read every message and respond to most within 1–2 business days.</p>
+
+  <div class="contact-cards">
+    <div class="contact-card">
+      <div class="cc-icon">📊</div>
+      <div class="cc-title">Data corrections & tool feedback</div>
+      <div class="cc-desc">If you notice a salary benchmark that seems off for your field or city, or a calculation that doesn't look right, we want to know. We take data accuracy seriously.</div>
+      <a class="cc-link" href="mailto:hello@salaryparity.com">hello@salaryparity.com</a>
+    </div>
+    <div class="contact-card">
+      <div class="cc-icon">💡</div>
+      <div class="cc-title">Feature requests & suggestions</div>
+      <div class="cc-desc">Have an idea for a tool or feature that would help with a career finance decision? We build based on what people actually need.</div>
+      <a class="cc-link" href="mailto:hello@salaryparity.com">hello@salaryparity.com</a>
+    </div>
+    <div class="contact-card">
+      <div class="cc-icon">🤝</div>
+      <div class="cc-title">Partnerships & press</div>
+      <div class="cc-desc">For media inquiries, partnership discussions, or embedding our tools on your platform, reach out directly.</div>
+      <a class="cc-link" href="mailto:hello@salaryparity.com">hello@salaryparity.com</a>
+    </div>
+    <div class="contact-card">
+      <div class="cc-icon">🔒</div>
+      <div class="cc-title">Privacy & data questions</div>
+      <div class="cc-desc">Questions about how we handle your data, cookie settings, or requests related to your personal information.</div>
+      <a class="cc-link" href="mailto:hello@salaryparity.com">hello@salaryparity.com</a>
+    </div>
+  </div>
+
+  <p>For general questions about how to use any of our tools, the <a href="/articles" style="color:var(--green);">articles section</a> covers most common topics in detail.</p>
+</div>
+<footer><p>© 2025 SalaryParity · <a href="/">Home</a> · <a href="/about">About</a> · <a href="/privacy">Privacy</a></p></footer>
+</body>
+</html>
