@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology — How SalaryParity's Tools Work</title>
+<meta name="description" content="How SalaryParity calculates salary adjustments, freelance rates, tax comparisons, and contract analysis. Data sources, formulas, and limitations explained transparently.">
+<link rel="canonical" href="https://salaryparity.com/methodology">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7330952168261894" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1D9E75;--green-light:#E1F5EE;--green-text:#085041;--text:#1A1A18;--text-muted:#5F5E5A;--text-faint:#9B9A95;--border:rgba(0,0,0,0.08);--gray-50:#F8F8F7;--radius:10px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--gray-50);color:var(--text);min-height:100vh;}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.nav-logo{font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}.nav-logo span{color:var(--green);}
+.nav-links{display:flex;gap:22px;align-items:center;}
+.nav-links a{font-size:13px;color:var(--text-muted);text-decoration:none;font-weight:500;}.nav-links a:hover{color:var(--green);}
+.nav-toggle{display:none;background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-muted);}
+@media(max-width:600px){.nav-toggle{display:block;}.nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;gap:14px;border-bottom:1px solid var(--border);box-shadow:0 4px 12px rgba(0,0,0,0.08);}.nav-links.open{display:flex;}}
+.hero{text-align:center;padding:56px 24px 40px;max-width:600px;margin:0 auto;}
+h1{font-size:clamp(26px,5vw,36px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;margin-bottom:14px;}
+.hero-sub{font-size:15px;color:var(--text-muted);line-height:1.6;}
+.cards{max-width:780px;margin:0 auto;padding:0 16px 80px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.meth-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-decoration:none;color:inherit;display:block;transition:border-color 0.15s,box-shadow 0.15s;}
+.meth-card:hover{border-color:var(--green);box-shadow:0 4px 16px rgba(29,158,117,0.1);}
+.mc-icon{font-size:28px;margin-bottom:12px;}
+.mc-title{font-size:17px;font-weight:600;margin-bottom:8px;}
+.mc-desc{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:12px;}
+.mc-sources{font-size:11px;color:var(--text-faint);}
+footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text-faint);border-top:1px solid var(--border);background:#fff;}
+footer a{color:var(--text-faint);text-decoration:none;}footer p+p{margin-top:6px;}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/"><span>Salary</span>Parity</a>
+  <div class="nav-links" id="navLinks">
+    <a href="/#tools">Tools</a><a href="/articles">Articles</a><a href="/methodology">Methodology</a><a href="/about">About</a><a href="/contact">Contact</a>
+  </div>
+  <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">☰</button>
+</nav>
+<section class="hero">
+  <h1>How our tools work</h1>
+  <p class="hero-sub">Every calculation on SalaryParity is built on cited public data with documented formulas. This section explains the methodology, assumptions, and limitations behind each tool.</p>
+</section>
+<div class="cards">
+  <a class="meth-card" href="/methodology/salary-calculator"><div class="mc-icon">💰</div><div class="mc-title">Salary Reality Check</div><div class="mc-desc">How we adjust for cost of living, calculate take-home pay after taxes, benchmark against market data, and generate percentile rankings.</div><div class="mc-sources">Sources: Numbeo 2025, BLS OES May 2024, Levels.fyi, IRS 2024 brackets</div></a>
+  <a class="meth-card" href="/methodology/freelance-rate"><div class="mc-icon">🧮</div><div class="mc-title">Freelance Rate Calculator</div><div class="mc-desc">How we calculate minimum viable hourly rate from income goals, business expenses, self-employment tax, and realistic billable hours.</div><div class="mc-sources">Sources: IRS self-employment tax rules, industry rate surveys</div></a>
+  <a class="meth-card" href="/methodology/llc-vs-sole"><div class="mc-icon">🏢</div><div class="mc-title">LLC vs Sole Proprietor</div><div class="mc-desc">How we calculate tax liability under each business structure, including the S-Corp election savings formula and break-even threshold.</div><div class="mc-sources">Sources: IRS Publication 334, Form 2553 guidance, state revenue publications</div></a>
+  <a class="meth-card" href="/methodology/last-day"><div class="mc-icon">📅</div><div class="mc-title">Last Day Calculator</div><div class="mc-desc">How notice periods are calculated, how we determine the last working day, and how PTO payout is estimated by state policy.</div><div class="mc-sources">Sources: State labor law summaries, IRS daily wage calculation standards</div></a>
+  <a class="meth-card" href="/methodology/contract-scanner"><div class="mc-icon">🔍</div><div class="mc-title">Contract Red Flag Scanner</div><div class="mc-desc">How the AI analysis works, what the scanner looks for, how severity levels are assigned, and the known limitations of AI contract review.</div><div class="mc-sources">Model: Anthropic Claude (claude-haiku). Input not retained after analysis.</div></a>
+</div>
+<footer>
+  <p>© 2025 SalaryParity · <a href="/">Home</a> · <a href="/articles">Articles</a> · <a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/contact">Contact</a></p>
+  <p>Created by Mahmoud Mahdali, an independent web tool builder. Not financial, legal, or tax advice.</p>
+</footer>
+</body>
+</html>
