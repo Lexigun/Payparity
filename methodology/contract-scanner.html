@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contract Scanner Methodology — How the AI Contract Analysis Works</title>
+<meta name="description" content="How SalaryParity's Contract Red Flag Scanner works: the AI model used, how severity levels are assigned, what clause categories are evaluated, data handling, and known limitations.">
+<link rel="canonical" href="https://salaryparity.com/methodology/contract-scanner">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1D9E75;--green-light:#E1F5EE;--green-text:#085041;--red:#E24B4A;--red-light:#FCEBEB;--red-text:#501313;--text:#1A1A18;--text-muted:#5F5E5A;--text-faint:#9B9A95;--border:rgba(0,0,0,0.08);--gray-50:#F8F8F7;--radius:10px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);line-height:1.7;}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.nav-logo{font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}.nav-logo span{color:var(--green);}
+.nav-links{display:flex;gap:22px;align-items:center;}
+.nav-links a{font-size:13px;color:var(--text-muted);text-decoration:none;font-weight:500;}.nav-links a:hover{color:var(--green);}
+.nav-toggle{display:none;background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-muted);}
+@media(max-width:600px){.nav-toggle{display:block;}.nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;gap:14px;border-bottom:1px solid var(--border);}.nav-links.open{display:flex;}}
+.wrap{max-width:700px;margin:0 auto;padding:48px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--text-faint);margin-bottom:24px;}.breadcrumb a{color:var(--text-faint);text-decoration:none;}.breadcrumb a:hover{color:var(--green);}
+h1{font-size:clamp(24px,4vw,34px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;margin-bottom:12px;}
+.meta{font-size:13px;color:var(--text-faint);margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--border);}
+h2{font-size:20px;font-weight:600;margin:36px 0 12px;}
+h3{font-size:16px;font-weight:600;margin:24px 0 8px;}
+p{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:16px;}
+ul{padding-left:22px;margin-bottom:16px;}
+li{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:6px;}
+.data-flow{background:var(--gray-50);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin:20px 0;font-size:14px;line-height:2;}
+.data-flow .step{display:flex;gap:12px;align-items:flex-start;padding:6px 0;}
+.step-num{background:var(--green);color:#fff;width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.clause-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;}
+@media(max-width:480px){.clause-grid{grid-template-columns:1fr;}}
+.clause-item{background:var(--gray-50);border:1px solid var(--border);border-radius:6px;padding:12px 14px;font-size:13px;color:var(--text-muted);}
+.clause-item strong{display:block;font-size:12px;margin-bottom:3px;color:var(--text);}
+.severity-red{border-left:3px solid var(--red);background:var(--red-light);padding:12px 14px;border-radius:0 6px 6px 0;margin-bottom:8px;}
+.severity-red p{color:var(--red-text);margin:0;font-size:14px;}
+.severity-amber{border-left:3px solid #EF9F27;background:#FAEEDA;padding:12px 14px;border-radius:0 6px 6px 0;margin-bottom:8px;}
+.severity-amber p{color:#633806;margin:0;font-size:14px;}
+.severity-green{border-left:3px solid var(--green);background:var(--green-light);padding:12px 14px;border-radius:0 6px 6px 0;margin-bottom:8px;}
+.severity-green p{color:var(--green-text);margin:0;font-size:14px;}
+.limit-box{background:#FAEEDA;border-left:3px solid #EF9F27;border-radius:0 var(--radius) var(--radius) 0;padding:14px 18px;margin:20px 0;}
+.limit-box p{color:#633806;margin:0;font-size:14px;}
+.cta{background:var(--green-light);border-radius:var(--radius);padding:20px 24px;margin-top:40px;text-align:center;}
+.cta a{display:inline-block;background:var(--green);color:#fff;padding:10px 24px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;margin-top:10px;}
+footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text-faint);border-top:1px solid var(--border);}
+footer a{color:var(--text-faint);text-decoration:none;}footer p+p{margin-top:6px;}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/"><span>Salary</span>Parity</a>
+  <div class="nav-links" id="navLinks">
+    <a href="/#tools">Tools</a><a href="/articles">Articles</a><a href="/methodology">Methodology</a><a href="/about">About</a><a href="/contact">Contact</a>
+  </div>
+  <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">☰</button>
+</nav>
+<div class="wrap">
+  <div class="breadcrumb"><a href="/methodology">← Methodology</a> / Contract Scanner</div>
+  <h1>Contract Red Flag Scanner — Methodology</h1>
+  <div class="meta">Last updated: July 2025 · Tool: <a href="/contract-scanner" style="color:var(--green);">Contract Red Flag Scanner</a></div>
+
+  <p>The Contract Red Flag Scanner uses AI to analyze contract text and identify clauses that commonly create problems for employees and freelancers. This page documents how it works, what it looks for, how it assigns severity, how your data is handled, and where its limitations lie.</p>
+
+  <h2>How the analysis works — data flow</h2>
+
+  <div class="data-flow">
+    <div class="step"><div class="step-num">1</div><div>You paste contract text into the browser and select contract type and jurisdiction.</div></div>
+    <div class="step"><div class="step-num">2</div><div>Your browser sends the text to SalaryParity's serverless API endpoint (api/scan.js hosted on Vercel).</div></div>
+    <div class="step"><div class="step-num">3</div><div>The API constructs a structured prompt and sends it to Anthropic's Claude API (model: claude-haiku-4-5-20251001) with your contract text and a detailed analysis instruction.</div></div>
+    <div class="step"><div class="step-num">4</div><div>Claude returns a structured JSON response containing flags, a score, a summary, and suggested questions.</div></div>
+    <div class="step"><div class="step-num">5</div><div>The API returns the analysis to your browser, which renders the results. The contract text is not stored at any point.</div></div>
+  </div>
+
+  <h2>What the scanner looks for</h2>
+  <p>The AI is instructed to identify and evaluate clauses in these categories:</p>
+  <div class="clause-grid">
+    <div class="clause-item"><strong>Non-compete clauses</strong>Duration, geography, scope, and whether restricted activity is proportionate to the role.</div>
+    <div class="clause-item"><strong>Intellectual property assignment</strong>Whether the clause extends to work done outside employment on personal equipment.</div>
+    <div class="clause-item"><strong>Arbitration and jury trial waivers</strong>Mandatory arbitration, class action waivers, who bears arbitration costs.</div>
+    <div class="clause-item"><strong>Termination conditions</strong>At-will with no severance, for-cause definitions, notice requirements.</div>
+    <div class="clause-item"><strong>Confidentiality duration</strong>Indefinite vs time-limited confidentiality obligations post-employment.</div>
+    <div class="clause-item"><strong>Non-solicitation scope</strong>Coverage of colleagues, clients, and how long after departure.</div>
+    <div class="clause-item"><strong>Payment terms (freelance)</strong>Net-90+ terms, late payment provisions, right to stop work for non-payment.</div>
+    <div class="clause-item"><strong>Work for hire clauses</strong>Who owns deliverables; portfolio rights; modification rights.</div>
+    <div class="clause-item"><strong>Signing bonus clawbacks</strong>Repayment conditions, proration, whether triggered by company-initiated termination.</div>
+    <div class="clause-item"><strong>Unilateral modification rights</strong>Whether the company can change terms without employee consent.</div>
+  </div>
+
+  <h2>How severity levels are assigned</h2>
+
+  <div class="severity-red"><p><strong>🚨 Red flag:</strong> A clause that is clearly harmful, legally risky, or substantially one-sided in ways that could significantly affect the signing party's career, finances, or legal rights. Examples: non-compete covering an entire industry for 3 years nationwide; IP assignment covering all personal work; mandatory arbitration with company-chosen arbitrators.</p></div>
+
+  <div class="severity-amber"><p><strong>⚠️ Yellow flag:</strong> A clause that is common and not inherently unreasonable, but where negotiation or clarification is advisable. Examples: net-60 payment terms; 12-month non-compete limited to the immediate market; at-will termination with no severance in a senior role.</p></div>
+
+  <div class="severity-green"><p><strong>✅ Green flag:</strong> A clause that is explicitly favorable to the signing party. Examples: severance equal to 3+ months; no non-compete; IP assignment clearly limited to work done during employment using company resources.</p></div>
+
+  <h2>The overall score (0–100)</h2>
+  <p>The score reflects the AI's holistic assessment of the contract's overall quality from the signing party's perspective. A score of 70+ indicates a relatively clean contract with few or no serious concerns. A score below 40 indicates significant red flags that warrant careful attention before signing. The score is generated by Claude based on the pattern and severity of flags identified — it is not calculated mechanically from the number of flags.</p>
+
+  <h2>Data handling and privacy</h2>
+  <ul>
+    <li>Contract text is transmitted over HTTPS to our Vercel API endpoint</li>
+    <li>The API does not log or store contract text — it is passed directly to Anthropic's API and discarded after the response is returned</li>
+    <li>Anthropic's data handling for API calls is governed by Anthropic's privacy policy at anthropic.com/privacy</li>
+    <li>We recommend redacting sensitive personal identifiers (SSN, bank details, personal health information) before pasting contract text</li>
+    <li>The tool is not suitable for processing contracts containing trade secrets where any third-party transmission is prohibited</li>
+  </ul>
+
+  <h2>Known limitations</h2>
+
+  <div class="limit-box"><p><strong>Not legal advice:</strong> AI analysis can misinterpret complex or unusual contract language, miss jurisdiction-specific nuances, or flag standard clauses as unusual based on phrasing. The scanner is a first-pass screening tool. For high-stakes contracts — executive employment, equity agreements, non-competes in competitive industries — consult a qualified employment attorney.</p></div>
+
+  <ul>
+    <li>The scanner evaluates language it can read — it cannot evaluate what is missing from a contract (e.g., the absence of any IP assignment clause is not flagged as unusual)</li>
+    <li>Jurisdiction-specific enforceability is addressed at a general level — the scanner knows California doesn't enforce non-competes, for example, but detailed state-by-state analysis is beyond its scope</li>
+    <li>Highly technical contracts (software licensing, patent assignment, complex equity agreements) may be analyzed less accurately than standard employment agreements</li>
+    <li>The scanner processes up to 8,000 characters of contract text per analysis — very long contracts should have their most important clauses pasted in separately</li>
+    <li>Results vary between analyses of the same text due to the probabilistic nature of language models</li>
+  </ul>
+
+  <div class="cta">
+    <strong>Use the tool</strong>
+    <p style="font-size:14px;color:var(--green-text);margin-top:4px;">Paste any contract or job offer to get an instant flag breakdown in plain English.</p>
+    <a href="/contract-scanner">Open Contract Scanner →</a>
+  </div>
+</div>
+<footer>
+  <p>© 2025 SalaryParity · <a href="/">Home</a> · <a href="/methodology">Methodology</a> · <a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/contact">Contact</a></p>
+  <p>Not legal advice. For important contracts, consult a qualified attorney in your jurisdiction.</p>
+</footer>
+</body>
+</html>
