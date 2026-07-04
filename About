@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About SalaryParity — Who Built This and Why</title>
+<meta name="description" content="SalaryParity was built by Mahmoud Mahdali, a software developer and career tools builder. Free career finance calculators backed by real data sources including BLS, Numbeo, and Levels.fyi.">
+<link rel="canonical" href="https://salaryparity.com/about">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7330952168261894" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1D9E75;--green-light:#E1F5EE;--green-text:#085041;--text:#1A1A18;--text-muted:#5F5E5A;--text-faint:#9B9A95;--border:rgba(0,0,0,0.08);--gray-50:#F8F8F7;--radius:10px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);line-height:1.7;}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.nav-logo{font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}.nav-logo span{color:var(--green);}
+.nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}.nav-back:hover{color:var(--text);}
+.wrap{max-width:680px;margin:0 auto;padding:48px 24px 80px;}
+.page-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--green);margin-bottom:16px;}
+h1{font-size:clamp(26px,4vw,36px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;margin-bottom:20px;}
+h2{font-size:20px;font-weight:600;margin:40px 0 14px;}
+h3{font-size:16px;font-weight:600;margin:24px 0 8px;}
+p{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:16px;}
+ul{padding-left:22px;margin-bottom:16px;}
+li{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:8px;}
+a{color:var(--green);}
+.creator-card{background:var(--gray-50);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin:32px 0;display:flex;gap:24px;align-items:flex-start;}
+@media(max-width:480px){.creator-card{flex-direction:column;gap:16px;}}
+.creator-avatar{width:72px;height:72px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;}
+.creator-info .ci-name{font-size:18px;font-weight:600;margin-bottom:4px;}
+.creator-info .ci-title{font-size:13px;color:var(--green);font-weight:500;margin-bottom:10px;}
+.creator-info .ci-bio{font-size:14px;color:var(--text-muted);line-height:1.7;margin:0;}
+.tools-list{display:grid;gap:12px;margin:20px 0;}
+.tool-item{background:var(--gray-50);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;}
+.tool-item .ti-name{font-size:15px;font-weight:600;margin-bottom:4px;}
+.tool-item .ti-desc{font-size:13px;color:var(--text-muted);line-height:1.6;}
+.sources-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
+@media(max-width:480px){.sources-grid{grid-template-columns:1fr;}}
+.source-item{background:var(--gray-50);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;}
+.source-item .si-name{font-size:13px;font-weight:600;margin-bottom:2px;}
+.source-item .si-desc{font-size:12px;color:var(--text-faint);}
+.contact-box{background:var(--green-light);border-radius:var(--radius);padding:24px;margin-top:40px;}
+.contact-box h3{font-size:17px;font-weight:600;color:var(--green-text);margin-bottom:8px;}
+.contact-box p{color:var(--green-text);margin:0;font-size:14px;}
+.contact-box a{color:var(--green-text);font-weight:600;}
+footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text-faint);border-top:1px solid var(--border);}
+footer a{color:var(--text-faint);text-decoration:none;}
+</style>
+</head>
+<body>
+<nav><a class="nav-logo" href="/"><span>Salary</span>Parity</a><a class="nav-back" href="/">← Home</a></nav>
+<div class="wrap">
+  <div class="page-label">About</div>
+  <h1>Who built this and why</h1>
+
+  <p>SalaryParity is a free suite of career finance tools built for people navigating salary negotiations, freelance pricing, business structure decisions, and employment contracts — without a finance degree or a lawyer on retainer.</p>
+
+  <h2>The creator</h2>
+
+  <div class="creator-card">
+    <div class="creator-avatar">M</div>
+    <div class="creator-info">
+      <div class="ci-name">Mahmoud Mahdali</div>
+      <div class="ci-title">Software Developer & Career Tools Builder · Cairo, Egypt</div>
+      <div class="ci-bio">Mahmoud is an independent software developer who builds practical web tools focused on career finance and professional decision-making. He has built and shipped multiple data-driven web products, with a focus on making complex financial calculations accessible to people without professional finance backgrounds. SalaryParity was built after noticing that most salary and career finance tools either require expensive subscriptions, demand account creation, or produce results without explaining the methodology behind them.</div>
+    </div>
+  </div>
+
+  <h2>Why SalaryParity exists</h2>
+
+  <p>Most people make major career and financial decisions — accepting or rejecting job offers, setting freelance rates, choosing a business structure, signing contracts — without access to the data that would help them decide well. The information exists, but it is scattered across government databases, academic studies, and paywalled tools that charge monthly fees for what should be basic financial literacy.</p>
+
+  <p>SalaryParity puts that data in one place, does the calculations, and explains the results in plain English. Every tool is free, requires no account, and stores none of your inputs. The goal is to level the information playing field between employers who negotiate salaries professionally every day and employees who do it once every few years.</p>
+
+  <h2>The tools</h2>
+
+  <div class="tools-list">
+    <div class="tool-item">
+      <div class="ti-name">💰 Salary Reality Check</div>
+      <div class="ti-desc">Adjusts any salary offer for cost of living across 50+ cities worldwide, estimates take-home pay after federal and state taxes, benchmarks against market data by role and experience level, and generates a negotiation email. Data: Numbeo 2025 CoL Index, BLS OES May 2024, Levels.fyi.</div>
+    </div>
+    <div class="tool-item">
+      <div class="ti-name">🧮 Freelance Rate Calculator</div>
+      <div class="ti-desc">Calculates the minimum viable hourly rate based on target income, business expenses, self-employment tax (15.3%), state income tax, and realistic billable hours per year. Benchmarks against market rates by field and experience level. Includes email templates for quoting clients, raising rates, and handling pushback.</div>
+    </div>
+    <div class="tool-item">
+      <div class="ti-name">📅 Last Day Calculator</div>
+      <div class="ti-desc">Calculates your exact last working day based on resignation date and notice period. Estimates PTO payout. Generates a departure timeline and three resignation letter templates.</div>
+    </div>
+    <div class="tool-item">
+      <div class="ti-name">🏢 LLC vs Sole Proprietor</div>
+      <div class="ti-desc">Side-by-side tax comparison between sole proprietor, default LLC, and LLC with S-Corporation election. Uses 2024 federal brackets and state tax rates. Shows exact tax liability and calculates annual savings from S-Corp election after payroll and accounting costs.</div>
+    </div>
+    <div class="tool-item">
+      <div class="ti-name">🔍 Contract Red Flag Scanner</div>
+      <div class="ti-desc">AI-powered contract analysis built on Anthropic's Claude model. Analyzes employment contracts, freelance agreements, NDAs, and non-competes. Returns a severity-scored breakdown of red flags, yellow flags, and protective clauses in plain English. Contract text is never stored.</div>
+    </div>
+  </div>
+
+  <h2>Data sources and methodology</h2>
+
+  <p>Every calculation is based on cited, publicly verifiable data. The methodology is transparent and sources are linked from each tool page.</p>
+
+  <div class="sources-grid">
+    <div class="source-item">
+      <div class="si-name">Numbeo Cost of Living Plus Rent Index 2025</div>
+      <div class="si-desc">Real-time crowdsourced CoL data across 50+ global cities. NYC = 100 baseline.</div>
+    </div>
+    <div class="source-item">
+      <div class="si-name">BLS Occupational Employment & Wage Statistics — May 2024</div>
+      <div class="si-desc">Median wages by occupation from ~1.1 million US business establishments.</div>
+    </div>
+    <div class="source-item">
+      <div class="si-name">Levels.fyi Compensation Data</div>
+      <div class="si-desc">Self-reported total compensation data for tech roles at major companies.</div>
+    </div>
+    <div class="source-item">
+      <div class="si-name">IRS 2024 Tax Brackets & FICA Rates</div>
+      <div class="si-desc">Federal income tax brackets, SS wage base ($168,600), and Medicare rates.</div>
+    </div>
+    <div class="source-item">
+      <div class="si-name">State Revenue Department Publications</div>
+      <div class="si-desc">Effective state income tax rates for all US states. Updated for 2024 tax year.</div>
+    </div>
+    <div class="source-item">
+      <div class="si-name">Anthropic Claude API</div>
+      <div class="si-desc">Powers contract analysis. Input text is not retained after response is returned.</div>
+    </div>
+  </div>
+
+  <h2>Accuracy and limitations</h2>
+
+  <p>Our tools provide directional estimates to help you make better-informed decisions. They are not a substitute for professional financial, tax, or legal advice.</p>
+
+  <ul>
+    <li><strong>Tax estimates</strong> use the standard deduction for single filers and do not account for itemized deductions, pre-tax contributions (401k, HSA), or other individual factors</li>
+    <li><strong>Salary benchmarks</strong> reflect BLS median wages adjusted for company size and cost of living — they do not capture every micromarket or specialty niche</li>
+    <li><strong>Cost of living indices</strong> are city-level averages — your actual expenses depend on neighborhood, lifestyle, and household size</li>
+    <li><strong>Contract analysis</strong> is AI-generated and informational only — not legal advice</li>
+    <li><strong>Business structure comparisons</strong> use simplified estimates — consult a CPA for advice specific to your situation</li>
+  </ul>
+
+  <p>Data is updated annually. If you notice an error or outdated figure, please contact us.</p>
+
+  <h2>Funding and independence</h2>
+
+  <p>SalaryParity is funded by Google AdSense display advertising on article and information pages. We do not place ads inside tool interfaces, charge for tool access, sell user data, or accept sponsored content. All tools remain free with no account required.</p>
+
+  <div class="contact-box">
+    <h3>Get in touch</h3>
+    <p>Data corrections, feedback, feature requests, or press inquiries: <a href="mailto:hello@salaryparity.com">hello@salaryparity.com</a></p>
+  </div>
+</div>
+<footer><p>© 2025 SalaryParity · <a href="/">Home</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/contact">Contact</a></p></footer>
+</body>
+</html>
