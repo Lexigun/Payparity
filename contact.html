@@ -15,7 +15,10 @@
 body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);line-height:1.7;}
 nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
 .nav-logo{font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}.nav-logo span{color:var(--green);}
-.nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}.nav-back:hover{color:var(--text);}
+.nav-links{display:flex;gap:22px;align-items:center;}
+.nav-links a{font-size:13px;color:var(--text-muted);text-decoration:none;font-weight:500;}.nav-links a:hover{color:var(--green);}
+.nav-toggle{display:none;background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-muted);}
+@media(max-width:600px){.nav-toggle{display:block;}.nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;gap:14px;border-bottom:1px solid var(--border);box-shadow:0 4px 12px rgba(0,0,0,0.08);}.nav-links.open{display:flex;}}
 .wrap{max-width:580px;margin:0 auto;padding:48px 24px 80px;}
 .page-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--green);margin-bottom:16px;}
 h1{font-size:clamp(26px,4vw,36px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;margin-bottom:16px;}
@@ -24,49 +27,61 @@ p{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:16px;}
 .contact-card{background:var(--gray-50);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;}
 .cc-icon{font-size:24px;margin-bottom:10px;}
 .cc-title{font-size:15px;font-weight:600;margin-bottom:6px;}
-.cc-desc{font-size:13px;color:var(--text-muted);margin-bottom:10px;line-height:1.6;}
-.cc-link{font-size:14px;font-weight:500;color:var(--green);text-decoration:none;}
-.cc-link:hover{text-decoration:underline;}
+.cc-desc{font-size:13px;color:var(--text-muted);margin-bottom:12px;line-height:1.6;}
+.cc-email{display:inline-block;font-size:14px;font-weight:600;color:#fff;background:var(--green);padding:8px 18px;border-radius:6px;text-decoration:none;}
+.cc-email:hover{background:#0F6E56;}
 footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text-faint);border-top:1px solid var(--border);}
-footer a{color:var(--text-faint);text-decoration:none;}
+footer a{color:var(--text-faint);text-decoration:none;}footer p+p{margin-top:6px;}
 </style>
 </head>
 <body>
-<nav><a class="nav-logo" href="/"><span>Salary</span>Parity</a><a class="nav-back" href="/">← Home</a></nav>
+<nav>
+  <a class="nav-logo" href="/"><span>Salary</span>Parity</a>
+  <div class="nav-links" id="navLinks">
+    <a href="/">Tools</a>
+    <a href="/articles">Articles</a>
+    <a href="/methodology">Methodology</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </div>
+  <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">☰</button>
+</nav>
 <div class="wrap">
   <div class="page-label">Contact</div>
   <h1>Get in touch</h1>
-  <p>We're a small team building tools that help people make better career and financial decisions. We read every message and respond to most within 1–2 business days.</p>
+  <p>SalaryParity is built and maintained by Mahmoud Mahdali, an independent web tool builder based in Cairo. Every message is read personally and most receive a reply within 1–2 business days.</p>
 
   <div class="contact-cards">
     <div class="contact-card">
       <div class="cc-icon">📊</div>
       <div class="cc-title">Data corrections & tool feedback</div>
-      <div class="cc-desc">If you notice a salary benchmark that seems off for your field or city, or a calculation that doesn't look right, we want to know. We take data accuracy seriously.</div>
-      <a class="cc-link" href="mailto:hello@salaryparity.com">hello@salaryparity.com</a>
+      <div class="cc-desc">If a salary benchmark looks off for your field or city, or a calculation doesn't seem right, send the details. Data accuracy matters and corrections are taken seriously.</div>
+      <a class="cc-email" href="mailto:hello@salaryparity.com">hello@salaryparity.com</a>
     </div>
     <div class="contact-card">
       <div class="cc-icon">💡</div>
       <div class="cc-title">Feature requests & suggestions</div>
-      <div class="cc-desc">Have an idea for a tool or feature that would help with a career finance decision? We build based on what people actually need.</div>
-      <a class="cc-link" href="mailto:hello@salaryparity.com">hello@salaryparity.com</a>
+      <div class="cc-desc">Have an idea for a tool or feature that would help with a career finance decision? New tools get built based on what people actually need.</div>
+      <a class="cc-email" href="mailto:hello@salaryparity.com">hello@salaryparity.com</a>
     </div>
     <div class="contact-card">
       <div class="cc-icon">🤝</div>
       <div class="cc-title">Partnerships & press</div>
-      <div class="cc-desc">For media inquiries, partnership discussions, or embedding our tools on your platform, reach out directly.</div>
-      <a class="cc-link" href="mailto:hello@salaryparity.com">hello@salaryparity.com</a>
+      <div class="cc-desc">For media inquiries, partnership discussions, or embedding tools on your platform, reach out directly.</div>
+      <a class="cc-email" href="mailto:hello@salaryparity.com">hello@salaryparity.com</a>
     </div>
     <div class="contact-card">
       <div class="cc-icon">🔒</div>
       <div class="cc-title">Privacy & data questions</div>
-      <div class="cc-desc">Questions about how we handle your data, cookie settings, or requests related to your personal information.</div>
-      <a class="cc-link" href="mailto:hello@salaryparity.com">hello@salaryparity.com</a>
+      <div class="cc-desc">Questions about how data is handled, cookie settings, or requests related to personal information.</div>
+      <a class="cc-email" href="mailto:hello@salaryparity.com">hello@salaryparity.com</a>
     </div>
   </div>
-
-  <p>For general questions about how to use any of our tools, the <a href="/articles" style="color:var(--green);">articles section</a> covers most common topics in detail.</p>
+  <p>For general questions about how to use any of the tools, the <a href="/articles" style="color:var(--green);">articles section</a> covers most common topics in detail.</p>
 </div>
-<footer><p>© 2025 SalaryParity · <a href="/">Home</a> · <a href="/about">About</a> · <a href="/privacy">Privacy</a></p></footer>
+<footer>
+  <p>© 2026 SalaryParity · <a href="/">Home</a> · <a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
+  <p>Created by Mahmoud Mahdali, an independent web tool builder. Not financial, legal, or tax advice.</p>
+</footer>
 </body>
 </html>
