@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLC vs Sole Proprietor Calculator Methodology — How the Tax Comparison Works</title>
+<meta name="description" content="How SalaryParity calculates tax liability under sole proprietor, default LLC, and LLC with S-Corp election. Full formulas, assumptions, and the S-Corp break-even calculation.">
+<link rel="canonical" href="https://salaryparity.com/methodology/llc-vs-sole">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1D9E75;--green-light:#E1F5EE;--green-text:#085041;--text:#1A1A18;--text-muted:#5F5E5A;--text-faint:#9B9A95;--border:rgba(0,0,0,0.08);--gray-50:#F8F8F7;--radius:10px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);line-height:1.7;}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.nav-logo{font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}.nav-logo span{color:var(--green);}
+.nav-links{display:flex;gap:22px;align-items:center;}
+.nav-links a{font-size:13px;color:var(--text-muted);text-decoration:none;font-weight:500;}.nav-links a:hover{color:var(--green);}
+.nav-toggle{display:none;background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-muted);}
+@media(max-width:600px){.nav-toggle{display:block;}.nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;gap:14px;border-bottom:1px solid var(--border);}.nav-links.open{display:flex;}}
+.wrap{max-width:700px;margin:0 auto;padding:48px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--text-faint);margin-bottom:24px;}.breadcrumb a{color:var(--text-faint);text-decoration:none;}.breadcrumb a:hover{color:var(--green);}
+h1{font-size:clamp(24px,4vw,34px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;margin-bottom:12px;}
+.meta{font-size:13px;color:var(--text-faint);margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--border);}
+h2{font-size:20px;font-weight:600;margin:36px 0 12px;}
+h3{font-size:16px;font-weight:600;margin:24px 0 8px;}
+p{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:16px;}
+ul{padding-left:22px;margin-bottom:16px;}
+li{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:6px;}
+.formula{background:var(--gray-50);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:0 var(--radius) var(--radius) 0;padding:16px 20px;margin:20px 0;font-family:'DM Mono',monospace;font-size:13px;line-height:1.8;color:var(--text);}
+.limit-box{background:#FAEEDA;border-left:3px solid #EF9F27;border-radius:0 var(--radius) var(--radius) 0;padding:14px 18px;margin:20px 0;}
+.limit-box p{color:#633806;margin:0;font-size:14px;}
+.cta{background:var(--green-light);border-radius:var(--radius);padding:20px 24px;margin-top:40px;text-align:center;}
+.cta a{display:inline-block;background:var(--green);color:#fff;padding:10px 24px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;margin-top:10px;}
+footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text-faint);border-top:1px solid var(--border);}
+footer a{color:var(--text-faint);text-decoration:none;}footer p+p{margin-top:6px;}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/"><span>Salary</span>Parity</a>
+  <div class="nav-links" id="navLinks">
+    <a href="/#tools">Tools</a><a href="/articles">Articles</a><a href="/methodology">Methodology</a><a href="/about">About</a><a href="/contact">Contact</a>
+  </div>
+  <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">☰</button>
+</nav>
+<div class="wrap">
+  <div class="breadcrumb"><a href="/methodology">← Methodology</a> / LLC vs Sole Proprietor</div>
+  <h1>LLC vs Sole Proprietor — Methodology</h1>
+  <div class="meta">Last updated: July 2025 · Tool: <a href="/llc-vs-sole" style="color:var(--green);">LLC vs Sole Proprietor Calculator</a></div>
+
+  <p>This tool calculates total tax liability under three business structures and shows the annual savings or costs of each. Here is exactly how each calculation works.</p>
+
+  <h2>Structure 1: Sole Proprietor (and default LLC)</h2>
+  <p>A sole proprietor and a single-member LLC with no tax election are treated identically by the IRS — both report income on Schedule C and pay self-employment tax on net profit. The calculation:</p>
+  <div class="formula">Net Profit = Gross Revenue − Business Expenses
+
+SE Tax Base = Net Profit × 0.9235
+SE Tax = SE Tax Base × 0.153
+
+SE Tax Deduction = SE Tax ÷ 2  (deductible from gross income)
+Taxable Income = Net Profit − SE Tax Deduction
+
+Federal Income Tax = Progressive brackets applied to Taxable Income
+State Income Tax = Taxable Income × State Rate
+
+Total Tax = SE Tax + Federal Income Tax + State Income Tax</div>
+
+  <h2>Structure 2: LLC with S-Corporation election</h2>
+  <p>Under S-Corp taxation, the owner splits income into two parts: a "reasonable salary" subject to payroll taxes, and distributions not subject to self-employment tax. This split is the source of potential tax savings.</p>
+  <div class="formula">Salary = User-entered reasonable salary (must be defensible as market rate)
+Distribution = Net Profit − Salary
+
+Payroll Tax on Salary = Salary × 0.153
+  (Both employee and employer sides, since owner pays both)
+Employer Payroll Tax = Salary × 0.0765
+  (Deductible as business expense)
+
+Taxable Income = Salary − Employer Payroll Tax + Distribution
+Federal Income Tax = Progressive brackets applied to Taxable Income
+State Income Tax = Taxable Income × State Rate
+
+Compliance Costs = $1,500 estimated
+  (Payroll service ~$600/yr + additional accounting ~$900/yr above Schedule C)
+
+Total Cost = Payroll Tax + Federal Income Tax + State Income Tax + Compliance Costs</div>
+
+  <h2>The S-Corp savings formula</h2>
+  <p>The savings from S-Corp election comes entirely from avoiding SE tax on the distribution portion:</p>
+  <div class="formula">SE Tax Saved = Distribution × 0.9235 × 0.153
+Net Annual Saving = SE Tax Saved − Compliance Costs
+
+Break-even occurs when SE Tax Saved > Compliance Costs
+At $1,500 compliance cost: Break-even ≈ $1,500 ÷ (0.9235 × 0.153) ≈ $10,625 in distributions
+Which means net profit needs to exceed salary + $10,625 to generate net savings
+
+In practice, the $60,000–$80,000 net profit threshold accounts for the need to pay a reasonable salary (~$50,000–$60,000) before meaningful distributions are possible.</div>
+
+  <h2>Why the compliance cost is fixed at $1,500</h2>
+  <p>We use $1,500 as a conservative estimate for the additional annual cost of S-Corp operation versus a simple Schedule C filing. This reflects: payroll service subscription ($400–$800/year for services like Gusto or ADP), additional CPA time to prepare Form 1120-S and review quarterly payroll filings ($700–$1,500/year above Schedule C cost), and estimated state-specific fees where applicable. In practice, costs range from $1,000 to $3,000+ depending on location and accountant. The $1,500 figure is intentionally conservative — it makes the tool more likely to recommend S-Corp only when savings are clear.</p>
+
+  <div class="limit-box"><p><strong>Limitation:</strong> This calculator does not account for California's $800 minimum franchise tax on LLCs, state-specific LLC gross receipts fees, or local business taxes. California-based users should add those costs to the LLC total before comparing. The tool also uses simplified federal tax brackets without itemized deductions — actual results will vary based on individual tax situations.</p></div>
+
+  <div class="cta">
+    <strong>Use the tool</strong>
+    <p style="font-size:14px;color:var(--green-text);margin-top:4px;">Enter your revenue and get a side-by-side tax comparison across all three structures.</p>
+    <a href="/llc-vs-sole">Open LLC vs Sole Proprietor Calculator →</a>
+  </div>
+</div>
+<footer>
+  <p>© 2025 SalaryParity · <a href="/">Home</a> · <a href="/methodology">Methodology</a> · <a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/contact">Contact</a></p>
+  <p>Not tax or legal advice. Consult a CPA before making business structure decisions.</p>
+</footer>
+</body>
+</html>
