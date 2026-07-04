@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — SalaryParity</title>
+<meta name="description" content="SalaryParity privacy policy. How we handle your data, cookies, advertising, and the contract text you submit for analysis.">
+<link rel="canonical" href="https://salaryparity.com/privacy">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7330952168261894" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1D9E75;--text:#1A1A18;--text-muted:#5F5E5A;--text-faint:#9B9A95;--border:rgba(0,0,0,0.08);--gray-50:#F8F8F7;--radius:10px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);line-height:1.7;}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.nav-logo{font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}.nav-logo span{color:var(--green);}
+.nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}.nav-back:hover{color:var(--text);}
+.wrap{max-width:680px;margin:0 auto;padding:48px 24px 80px;}
+.page-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--green);margin-bottom:16px;}
+h1{font-size:clamp(26px,4vw,36px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;margin-bottom:12px;}
+.updated{font-size:13px;color:var(--text-faint);margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid var(--border);}
+h2{font-size:18px;font-weight:600;margin:32px 0 12px;}
+p{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:16px;}
+ul{padding-left:22px;margin-bottom:16px;}
+li{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:6px;}
+a{color:var(--green);}
+.highlight{background:var(--gray-50);border-left:3px solid var(--green);padding:14px 18px;border-radius:0 var(--radius) var(--radius) 0;margin:20px 0;}
+.highlight p{margin:0;font-size:14px;}
+footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text-faint);border-top:1px solid var(--border);}
+footer a{color:var(--text-faint);text-decoration:none;}
+</style>
+</head>
+<body>
+<nav><a class="nav-logo" href="/"><span>Salary</span>Parity</a><a class="nav-back" href="/">← Home</a></nav>
+<div class="wrap">
+  <div class="page-label">Legal</div>
+  <h1>Privacy Policy</h1>
+  <div class="updated">Last updated: July 2, 2025 · Effective immediately</div>
+
+  <p>This Privacy Policy describes how SalaryParity ("we," "us," or "our") collects, uses, and shares information when you use salaryparity.com (the "Site"). We take your privacy seriously and have written this policy to be clear and readable.</p>
+
+  <h2>Information we collect</h2>
+
+  <p>SalaryParity is designed to work without requiring you to create an account or provide personal information. Specifically:</p>
+
+  <ul>
+    <li><strong>Calculator inputs:</strong> The salary figures, city selections, and other inputs you enter into our calculators are processed entirely in your browser. This data is never sent to our servers and is not stored.</li>
+    <li><strong>Contract Scanner:</strong> When you use the Contract Red Flag Scanner, the text you paste is sent to our secure serverless API endpoint, which forwards it to Anthropic's Claude API for analysis. The contract text is used only to generate your analysis results. We do not store, log, or retain the contract text you submit. Anthropic's data handling is governed by their privacy policy at anthropic.com/privacy.</li>
+    <li><strong>Usage data:</strong> We may collect anonymized, aggregated information about how the Site is used (such as which tools are most popular) through Google Analytics. This data does not identify individual users.</li>
+    <li><strong>Cookies:</strong> We use cookies for analytics and advertising purposes, as described below.</li>
+  </ul>
+
+  <h2>Google AdSense and advertising</h2>
+
+  <p>We use Google AdSense to display advertisements on this Site. Google and its partners use cookies to serve ads based on your prior visits to this and other websites.</p>
+
+  <div class="highlight"><p>Google uses advertising cookies to serve personalized ads to users based on their interests and browsing history. You can opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google's Ad Settings</a> or by visiting <a href="https://www.aboutads.info" target="_blank" rel="noopener">aboutads.info</a>.</p></div>
+
+  <p>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to our website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to our users based on their visit to our sites and/or other sites on the Internet.</p>
+
+  <p>For more information about how Google uses data from sites that use Google services, please visit <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a>.</p>
+
+  <h2>Google Analytics</h2>
+
+  <p>We use Google Analytics to understand how visitors use our Site. Google Analytics collects information such as how often users visit the Site, what pages they visit, and what other sites they used prior to coming to our Site. We use this information to improve the Site. Google Analytics collects only the IP address assigned to you on the date you visit the Site, not your name or other identifying information. We do not combine the information collected through Google Analytics with personally identifiable information.</p>
+
+  <p>You can prevent Google Analytics from recognizing you on return visits by disabling cookies in your browser, or by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+  <h2>How we use information</h2>
+
+  <p>We use the information we collect to:</p>
+  <ul>
+    <li>Provide and improve the tools and calculators on the Site</li>
+    <li>Understand how the Site is used and which features are most valuable</li>
+    <li>Display relevant advertising through Google AdSense</li>
+    <li>Comply with legal obligations</li>
+  </ul>
+
+  <h2>Information sharing</h2>
+
+  <p>We do not sell your personal information. We do not share your personal information with third parties except:</p>
+  <ul>
+    <li><strong>Service providers:</strong> We use Anthropic's API to power the Contract Scanner. Contract text you submit is passed to Anthropic solely to generate your analysis. We use Vercel to host the Site. Both are governed by their own privacy policies.</li>
+    <li><strong>Analytics providers:</strong> Anonymized usage data is shared with Google Analytics.</li>
+    <li><strong>Advertising partners:</strong> Google AdSense receives data as described above to serve relevant ads.</li>
+    <li><strong>Legal requirements:</strong> We may disclose information if required by law or to protect our rights.</li>
+  </ul>
+
+  <h2>Data retention</h2>
+
+  <p>Calculator inputs are never stored — they exist only in your browser during your session. Contract text submitted to the scanner is processed in real time and not retained after your analysis is returned. Analytics data is retained per Google Analytics' standard retention policies.</p>
+
+  <h2>Your rights and choices</h2>
+
+  <p>You can control advertising cookies through your browser settings or through Google's Ad Settings. You can opt out of Google Analytics as described above. If you are in the European Economic Area, United Kingdom, or California, you may have additional rights regarding your personal data. Contact us at the email below if you have questions about exercising these rights.</p>
+
+  <h2>Children's privacy</h2>
+
+  <p>The Site is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us and we will delete it.</p>
+
+  <h2>Changes to this policy</h2>
+
+  <p>We may update this Privacy Policy from time to time. We will note the date of the most recent update at the top of the page. Continued use of the Site after changes constitutes acceptance of the updated policy.</p>
+
+  <h2>Contact</h2>
+
+  <p>If you have questions about this Privacy Policy or how we handle your data, please contact us at: <a href="mailto:hello@salaryparity.com">hello@salaryparity.com</a></p>
+</div>
+<footer><p>© 2025 SalaryParity · <a href="/">Home</a> · <a href="/about">About</a> · <a href="/contact">Contact</a></p></footer>
+</body>
+</html>
