@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — SalaryParity</title>
+<meta name="description" content="SalaryParity terms of service. Rules for using our free career finance tools, disclaimers, and limitations of liability.">
+<link rel="canonical" href="https://salaryparity.com/terms">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7330952168261894" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1D9E75;--text:#1A1A18;--text-muted:#5F5E5A;--text-faint:#9B9A95;--border:rgba(0,0,0,0.08);--gray-50:#F8F8F7;--radius:10px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);line-height:1.7;}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.nav-logo{font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}.nav-logo span{color:var(--green);}
+.nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}.nav-back:hover{color:var(--text);}
+.wrap{max-width:680px;margin:0 auto;padding:48px 24px 80px;}
+.page-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--green);margin-bottom:16px;}
+h1{font-size:clamp(26px,4vw,36px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;margin-bottom:12px;}
+.updated{font-size:13px;color:var(--text-faint);margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid var(--border);}
+h2{font-size:18px;font-weight:600;margin:32px 0 12px;}
+p{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:16px;}
+ul{padding-left:22px;margin-bottom:16px;}
+li{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:6px;}
+a{color:var(--green);}
+footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text-faint);border-top:1px solid var(--border);}
+footer a{color:var(--text-faint);text-decoration:none;}
+</style>
+</head>
+<body>
+<nav><a class="nav-logo" href="/"><span>Salary</span>Parity</a><a class="nav-back" href="/">← Home</a></nav>
+<div class="wrap">
+  <div class="page-label">Legal</div>
+  <h1>Terms of Service</h1>
+  <div class="updated">Last updated: July 2, 2025 · Effective immediately</div>
+
+  <p>These Terms of Service ("Terms") govern your use of salaryparity.com (the "Site") and all tools, calculators, articles, and content provided on the Site. By using the Site, you agree to these Terms. If you do not agree, please do not use the Site.</p>
+
+  <h2>1. Use of the Site</h2>
+
+  <p>SalaryParity provides free career finance tools for informational and educational purposes. You may use the Site for personal, non-commercial purposes. You agree not to:</p>
+
+  <ul>
+    <li>Use the Site for any unlawful purpose or in violation of any applicable laws</li>
+    <li>Attempt to reverse-engineer, scrape, or copy the tools or their underlying code without permission</li>
+    <li>Use automated systems to access the Site in a manner that sends more requests than a human could reasonably produce</li>
+    <li>Misrepresent the source or accuracy of information derived from the Site's tools</li>
+    <li>Use the Contract Scanner to process information belonging to others without their consent</li>
+  </ul>
+
+  <h2>2. Not financial, legal, or tax advice</h2>
+
+  <p>The tools, calculators, and articles on SalaryParity are provided for informational and educational purposes only. Nothing on the Site constitutes financial advice, legal advice, tax advice, or professional advice of any kind.</p>
+
+  <p>Specifically:</p>
+  <ul>
+    <li>The Salary Reality Check provides estimates based on publicly available market data and approximated tax rates. It does not account for your individual tax situation, deductions, or filing status.</li>
+    <li>The Freelance Rate Calculator provides a directional estimate based on inputs you provide. Actual rates and tax obligations vary by individual circumstances.</li>
+    <li>The LLC vs Sole Proprietor calculator provides general tax comparisons. Business structure decisions should be made in consultation with a qualified CPA or attorney.</li>
+    <li>The Contract Red Flag Scanner provides AI-generated analysis for informational purposes only. It is not a substitute for review by a qualified employment attorney.</li>
+  </ul>
+
+  <p>Always consult qualified professionals before making financial, legal, tax, or business decisions.</p>
+
+  <h2>3. Accuracy of information</h2>
+
+  <p>We make reasonable efforts to ensure the accuracy of data used in our tools, including sourcing from BLS Occupational Employment Statistics, Numbeo Cost of Living data, and published IRS tax brackets. However, we make no warranties, express or implied, regarding the accuracy, completeness, or fitness for any particular purpose of any information on the Site.</p>
+
+  <p>Market conditions, tax rates, and cost of living figures change over time. Data displayed on the Site reflects the vintage noted on each page and may not reflect the most current figures at the time of your use.</p>
+
+  <h2>4. AI-generated content</h2>
+
+  <p>The Contract Red Flag Scanner uses Anthropic's Claude AI model to analyze contract text. AI-generated analysis can contain errors, omissions, or misinterpretations. The output of the Contract Scanner should be treated as a starting point for your own review, not a definitive legal analysis. We are not responsible for decisions made based on AI-generated contract analysis.</p>
+
+  <h2>5. Intellectual property</h2>
+
+  <p>The design, code, content, and tools on SalaryParity are owned by SalaryParity and protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works from any part of the Site without express written permission, except for personal, non-commercial use (such as sharing a link to a page).</p>
+
+  <p>Data sources used in our tools (BLS, Numbeo, Levels.fyi) are the property of their respective owners and are used in accordance with their terms of use.</p>
+
+  <h2>6. Limitation of liability</h2>
+
+  <p>To the maximum extent permitted by applicable law, SalaryParity and its operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the Site or its tools, including but not limited to damages resulting from reliance on salary estimates, tax calculations, contract analysis, or business structure comparisons provided by the Site.</p>
+
+  <p>Our total liability to you for any claim arising from your use of the Site shall not exceed the amount you paid to use the Site, which in most cases is zero.</p>
+
+  <h2>7. Third-party services</h2>
+
+  <p>The Site uses third-party services including Google AdSense (advertising), Google Analytics (usage analytics), Anthropic's Claude API (contract analysis), and Vercel (hosting). Your use of the Site is subject to the terms and privacy policies of these third-party providers. We are not responsible for the practices of third-party services.</p>
+
+  <h2>8. Changes to these Terms</h2>
+
+  <p>We may update these Terms from time to time. We will note the date of the most recent update at the top of this page. Continued use of the Site after changes constitutes acceptance of the updated Terms.</p>
+
+  <h2>9. Governing law</h2>
+
+  <p>These Terms are governed by applicable law. Any disputes arising from these Terms or your use of the Site shall be resolved in accordance with applicable law in the jurisdiction where SalaryParity operates.</p>
+
+  <h2>10. Contact</h2>
+
+  <p>For questions about these Terms, contact us at <a href="mailto:hello@salaryparity.com">hello@salaryparity.com</a>.</p>
+</div>
+<footer><p>© 2025 SalaryParity · <a href="/">Home</a> · <a href="/privacy">Privacy</a> · <a href="/about">About</a> · <a href="/contact">Contact</a></p></footer>
+</body>
+</html>
