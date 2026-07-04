@@ -19,7 +19,7 @@
 *{box-sizing:border-box;margin:0;padding:0;}body{font-family:'DM Sans',sans-serif;background:#F8F8F7;color:#1A1A18;min-height:100vh;}
 nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
 .nav-logo{font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}.nav-logo span{color:var(--green);}
-.nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}.nav-back:hover{color:var(--text);}
+.nav-links{display:flex;gap:22px;align-items:center;}.nav-links a{font-size:13px;color:var(--text-muted);text-decoration:none;font-weight:500;}.nav-links a:hover{color:var(--green);}.nav-toggle{display:none;background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-muted);}@media(max-width:600px){.nav-toggle{display:block;}.nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;gap:14px;border-bottom:1px solid var(--border);box-shadow:0 4px 12px rgba(0,0,0,0.08);}.nav-links.open{display:flex;}}
 .hero{text-align:center;padding:56px 24px 40px;max-width:620px;margin:0 auto;}
 .hero-badge{display:inline-block;font-size:11px;font-weight:500;background:var(--green-light);color:var(--green-text);padding:4px 12px;border-radius:999px;margin-bottom:18px;}
 h1{font-size:clamp(26px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;margin-bottom:14px;}
@@ -92,7 +92,6 @@ footer a{color:var(--text-faint);text-decoration:none;}
   <h1>What should you charge <em>per hour?</em></h1>
   <p class="hero-sub">Most freelancers underprice themselves by 20–40%. This calculator shows you the exact minimum rate you need to hit your income goal — after taxes, expenses, and realistic billable hours.</p>
 </section>
-<div class="ad-slot"><div class="ad-placeholder">Advertisement</div></div>
 <main>
   <div class="card">
     <div class="section-label">Your income goal</div>
@@ -142,7 +141,6 @@ footer a{color:var(--text-faint);text-decoration:none;}
       <div class="section-heading">How we got there</div>
       <div id="breakdown"></div>
     </div>
-    <div class="ad-mid">Advertisement</div>
     <div class="card">
       <div class="section-heading">Client proposal email <span class="badge-pill">copy & send</span></div>
       <div class="tab-row">
