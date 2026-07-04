@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Last Day Calculator Methodology — How Notice Periods and PTO Payouts Are Calculated</title>
+<meta name="description" content="How SalaryParity's Last Day Calculator determines your final working day, estimates PTO payout, and what state laws govern unused vacation pay.">
+<link rel="canonical" href="https://salaryparity.com/methodology/last-day">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1D9E75;--green-light:#E1F5EE;--green-text:#085041;--text:#1A1A18;--text-muted:#5F5E5A;--text-faint:#9B9A95;--border:rgba(0,0,0,0.08);--gray-50:#F8F8F7;--radius:10px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);line-height:1.7;}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.nav-logo{font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}.nav-logo span{color:var(--green);}
+.nav-links{display:flex;gap:22px;align-items:center;}
+.nav-links a{font-size:13px;color:var(--text-muted);text-decoration:none;font-weight:500;}.nav-links a:hover{color:var(--green);}
+.nav-toggle{display:none;background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-muted);}
+@media(max-width:600px){.nav-toggle{display:block;}.nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;gap:14px;border-bottom:1px solid var(--border);}.nav-links.open{display:flex;}}
+.wrap{max-width:700px;margin:0 auto;padding:48px 24px 80px;}
+.breadcrumb{font-size:12px;color:var(--text-faint);margin-bottom:24px;}.breadcrumb a{color:var(--text-faint);text-decoration:none;}.breadcrumb a:hover{color:var(--green);}
+h1{font-size:clamp(24px,4vw,34px);font-weight:600;line-height:1.2;letter-spacing:-0.5px;margin-bottom:12px;}
+.meta{font-size:13px;color:var(--text-faint);margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--border);}
+h2{font-size:20px;font-weight:600;margin:36px 0 12px;}
+h3{font-size:16px;font-weight:600;margin:24px 0 8px;}
+p{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:16px;}
+ul{padding-left:22px;margin-bottom:16px;}
+li{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:6px;}
+.formula{background:var(--gray-50);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:0 var(--radius) var(--radius) 0;padding:16px 20px;margin:20px 0;font-family:'DM Mono',monospace;font-size:13px;line-height:1.8;color:var(--text);}
+.state-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;}
+.state-table th{background:var(--gray-50);padding:10px 14px;text-align:left;font-weight:600;font-size:12px;color:var(--text-faint);border-bottom:2px solid var(--border);}
+.state-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text-muted);}
+.state-table tr:last-child td{border-bottom:none;}
+.limit-box{background:#FAEEDA;border-left:3px solid #EF9F27;border-radius:0 var(--radius) var(--radius) 0;padding:14px 18px;margin:20px 0;}
+.limit-box p{color:#633806;margin:0;font-size:14px;}
+.cta{background:var(--green-light);border-radius:var(--radius);padding:20px 24px;margin-top:40px;text-align:center;}
+.cta a{display:inline-block;background:var(--green);color:#fff;padding:10px 24px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;margin-top:10px;}
+footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text-faint);border-top:1px solid var(--border);}
+footer a{color:var(--text-faint);text-decoration:none;}footer p+p{margin-top:6px;}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/"><span>Salary</span>Parity</a>
+  <div class="nav-links" id="navLinks">
+    <a href="/#tools">Tools</a><a href="/articles">Articles</a><a href="/methodology">Methodology</a><a href="/about">About</a><a href="/contact">Contact</a>
+  </div>
+  <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">☰</button>
+</nav>
+<div class="wrap">
+  <div class="breadcrumb"><a href="/methodology">← Methodology</a> / Last Day Calculator</div>
+  <h1>Last Day Calculator — Methodology</h1>
+  <div class="meta">Last updated: July 2025 · Tool: <a href="/last-day" style="color:var(--green);">Last Day Calculator</a></div>
+
+  <p>The Last Day Calculator determines your exact final working day, estimates what you're owed in unused PTO, and provides a departure timeline. Here is how each calculation works.</p>
+
+  <h2>Last working day calculation</h2>
+  <p>The notice period is counted in calendar days starting from the day after you submit your resignation. If the resulting last day falls on a weekend, it is moved forward to the next Monday.</p>
+  <div class="formula">Resignation Date: Day 0 (the day you hand in notice)
+Notice Period Start: Day 1 (the following day)
+Calculated End Date: Resignation Date + Notice Period Days
+Last Working Day: Calculated End Date, adjusted forward to Monday if weekend
+
+Example: Resign on Wednesday July 2 with 14 days notice
+Day 1 = Thursday July 3
+Last Day = Wednesday July 16
+If July 16 were a Saturday → Last Day = Monday July 18</div>
+
+  <p>Most employment contracts count calendar days for notice periods. Some specify business days — if your contract uses business days, your actual last day will be later than shown. Always verify against your specific employment agreement.</p>
+
+  <h2>Working days remaining</h2>
+  <div class="formula">Working Days Remaining = Count of weekdays (Mon–Fri) between today and Last Working Day (inclusive)
+
+Federal holidays are not automatically excluded — adjust manually if your employer observes specific holidays during your notice period.</div>
+
+  <h2>PTO payout calculation</h2>
+  <div class="formula">Daily Rate = Annual Salary ÷ 260  (52 weeks × 5 working days)
+PTO Payout = Unused PTO Days × Daily Rate
+
+Example: $80,000 salary, 6 unused PTO days
+Daily Rate = $80,000 ÷ 260 = $307.69
+PTO Payout = 6 × $307.69 = $1,846.15</div>
+
+  <p>The 260-day divisor assumes a standard 5-day work week with no additional paid holidays. Some employers use 261 or 262 working days in a given year depending on where weekends fall — the difference is small (less than 1%).</p>
+
+  <h2>PTO payout laws by state</h2>
+  <p>Whether your employer is legally required to pay out unused vacation depends on your state. The tool asks for your policy setting, but here is the legal context:</p>
+
+  <table class="state-table">
+    <thead><tr><th>State</th><th>PTO payout required?</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>California</td><td>Yes — required by law</td><td>Accrued vacation is treated as earned wages. Cannot be forfeited.</td></tr>
+      <tr><td>Colorado</td><td>Yes — required by law</td><td>As of 2023, accrued PTO must be paid out regardless of company policy.</td></tr>
+      <tr><td>Illinois</td><td>Yes — if policy provides for it</td><td>If your employer has a PTO payout policy, it must be honored.</td></tr>
+      <tr><td>Massachusetts</td><td>Yes — required by law</td><td>Accrued vacation pay must be paid out upon termination.</td></tr>
+      <tr><td>New York</td><td>Depends on employer policy</td><td>No state law requirement, but company policy is binding once established.</td></tr>
+      <tr><td>Texas</td><td>Depends on employer policy</td><td>No state law requirement; employer policy governs.</td></tr>
+      <tr><td>Florida</td><td>Depends on employer policy</td><td>No state law requirement; employer policy governs.</td></tr>
+      <tr><td>Montana</td><td>Yes — required by law</td><td>All accrued wages including vacation must be paid upon separation.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="limit-box"><p><strong>Limitation:</strong> State PTO laws are complex and change over time. This table is a general guide, not legal advice. If your employer refuses to pay out PTO you believe you're owed, contact your state's Department of Labor. The tool's payout estimate is a mathematical calculation — whether you're legally entitled to that payout depends on your state law and employer policy.</p></div>
+
+  <div class="cta">
+    <strong>Use the tool</strong>
+    <p style="font-size:14px;color:var(--green-text);margin-top:4px;">Calculate your exact last day, PTO payout, and get a resignation letter ready to send.</p>
+    <a href="/last-day">Open Last Day Calculator →</a>
+  </div>
+</div>
+<footer>
+  <p>© 2025 SalaryParity · <a href="/">Home</a> · <a href="/methodology">Methodology</a> · <a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/contact">Contact</a></p>
+  <p>Not legal advice. State laws vary. Consult an employment attorney for advice specific to your situation.</p>
+</footer>
+</body>
+</html>
