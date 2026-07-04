@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version":  2,
   "routes": [
     { "src": "/", "dest": "/home.html" },
     { "src": "/salary-calculator", "dest": "/index.html" },
