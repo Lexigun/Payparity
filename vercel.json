@@ -2,7 +2,7 @@
   "version": 2,
   "rewrites": [
     { "source": "/", "destination": "/home.html" },
-    { "source": "/salary-calculator", "destination": "/index.html" },
+    { "source": "/salary-calculator", "destination": "/salary-calculator.html" },
     { "source": "/freelance-rate", "destination": "/freelance-rate.html" },
     { "source": "/last-day", "destination": "/last-day.html" },
     { "source": "/llc-vs-sole", "destination": "/llc-vs-sole.html" },
