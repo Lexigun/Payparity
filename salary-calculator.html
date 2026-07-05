@@ -92,11 +92,14 @@ footer a{color:var(--text-faint);text-decoration:none;}footer a:hover{color:var(
 <body>
 <nav>
   <a class="nav-logo" href="/"><span>Salary</span>Parity</a>
-  <div class="nav-links">
-    <a href="/articles">Articles</a>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
-  </div>
+  <div class="nav-links" id="navLinks">
+      <a href="/">Tools</a>
+      <a href="/articles">Articles</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">☰</button>
 </nav>
 
 <section class="hero">
@@ -217,7 +220,7 @@ footer a{color:var(--text-faint);text-decoration:none;}footer a:hover{color:var(
 </section>
 
 <footer>
-  <p>© 2025 SalaryParity · <a href="/">Home</a> · <a href="/articles">Guides</a> · <a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/contact">Contact</a></p>
+  <p>© 2025 SalaryParity · <a href="/">Home</a> · <a href="/articles">Articles</a> · <a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/contact">Contact</a></p>
   <p style="margin-top:6px;">Data: Numbeo 2025, BLS OES May 2024, Levels.fyi · Not financial advice · Updated annually</p>
 </footer>
 
