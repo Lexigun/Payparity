@@ -54,7 +54,7 @@
   .nav-logo { font-family: 'Instrument Serif', serif; font-size: 20px; color: var(--ink); text-decoration: none; }
   .nav-logo span { color: var(--green); }
   .nav-tag { font-size: 11px; color: var(--ink-faint); background: var(--green-light); padding: 3px 10px; border-radius: 999px; }
-
+.nav-links{display:flex;gap:22px;align-items:center;}.nav-links a{font-size:13px;color:var(--ink-muted);text-decoration:none;font-weight:500;}.nav-links a:hover{color:var(--green);}.nav-toggle{display:none;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-muted);}@media(max-width:600px){.nav-toggle{display:block;}.nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;gap:14px;border-bottom:1px solid var(--border);box-shadow:0 4px 12px rgba(0,0,0,0.08);z-index:99;}.nav-links.open{display:flex;}}
   /* HERO */
   .hero {
     max-width: 680px; margin: 0 auto;
@@ -211,7 +211,7 @@
 
 <nav>
   <a class="nav-logo" href="/"><span>Salary</span>Parity</a>
-  <span class="nav-tag">100% free · no signup</span>
+<div class="nav-links" id="navLinks"><a href="/">Tools</a><a href="/articles">Articles</a><a href="/methodology">Methodology</a><a href="/about">About</a><a href="/contact">Contact</a></div><button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">☰</button>
 </nav>
 
 <section class="hero">
@@ -297,7 +297,43 @@
     </div>
   </div>
 </section>
-
+<section class="tools-section">
+  <div class="tools-label">From the guides</div>
+  <div class="tools-grid">
+    <a class="tool-card" href="/articles/what-is-a-good-salary">
+      <div class="tool-icon">📊</div>
+      <div class="tool-info">
+        <div class="tool-name">What Is a Good Salary in 2026?</div>
+        <div class="tool-desc">What $80k, $100k, and $150k actually buy you after taxes and cost of living across major US cities.</div>
+      </div>
+      <div class="tool-arrow">→</div>
+    </a>
+    <a class="tool-card" href="/articles/how-to-negotiate-salary">
+      <div class="tool-icon">🤝</div>
+      <div class="tool-info">
+        <div class="tool-name">How to Negotiate Salary in 2026</div>
+        <div class="tool-desc">What to say, when to say it, and how to handle every response — a complete negotiation guide.</div>
+      </div>
+      <div class="tool-arrow">→</div>
+    </a>
+    <a class="tool-card" href="/articles/freelance-rate-guide">
+      <div class="tool-icon">🧾</div>
+      <div class="tool-info">
+        <div class="tool-name">What Should I Charge as a Freelancer?</div>
+        <div class="tool-desc">The correct formula for your minimum viable rate, plus market rates by field and experience level.</div>
+      </div>
+      <div class="tool-arrow">→</div>
+    </a>
+    <a class="tool-card" href="/articles/employment-contract-red-flags">
+      <div class="tool-icon">🚨</div>
+      <div class="tool-info">
+        <div class="tool-name">10 Employment Contract Red Flags</div>
+        <div class="tool-desc">Non-competes, IP assignment, arbitration — the clauses most likely to cause problems, in plain English.</div>
+      </div>
+      <div class="tool-arrow">→</div>
+    </a>
+  </div>
+</section>
 <footer>
 <p>© 2026 SalaryParity · <a href="/">Home</a> · <a href="/articles">Articles</a> · <a href="/methodology">Methodology</a> · <a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/contact">Contact</a></p><p style="margin-top:6px;">Created by Mahmoud Mahdali, an independent web tool builder. Not financial, legal, or tax advice.</p>
 </footer>
